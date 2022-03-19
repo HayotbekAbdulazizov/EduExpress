@@ -1,0 +1,96 @@
+#: main/models.py:84 templates/index.html:48
+msgid "English"
+msgstr ""
+
+#: main/models.py:84 templates/index.html:49
+msgid "Korean"
+msgstr ""
+
+#: main/models.py:84 main/models.py:85 main/models.py:86
+#: templates/index.html:50 templates/index.html:57
+msgid "Not sure"
+msgstr ""
+
+#: main/models.py:85 main/models.py:86
+msgid "Language course"
+msgstr ""
+
+#: main/models.py:85 main/models.py:86 templates/index.html:54
+msgid "Bachelor"
+msgstr ""
+
+#: main/models.py:85 main/models.py:86 templates/index.html:55
+msgid "Magistracy"
+msgstr ""
+
+#: main/models.py:85 main/models.py:86 templates/index.html:56
+msgid "Doctoral studies (PHD)"
+msgstr ""
+
+#: templates/index.html:42 templates/index.html:72
+msgid "Your name"
+msgstr ""
+
+#: templates/index.html:43 templates/index.html:46
+msgid "Surname"
+msgstr ""
+
+#: templates/index.html:44
+msgid "Age"
+msgstr ""
+
+#: templates/index.html:45
+msgid "The country you are going to study "
+msgstr ""
+
+#: templates/index.html:53
+msgid "Language Course"
+msgstr ""
+
+#: templates/index.html:59
+msgid "Phone number"
+msgstr ""
+
+#: templates/index.html:60
+msgid "Additional message"
+msgstr ""
+
+#: templates/index.html:61
+msgid "Send "
+msgstr ""
+
+#: templates/index.html:74
+msgid "Your surname"
+msgstr ""
+
+#: templates/index.html:76
+msgid "Your age"
+msgstr ""
+
+#: templates/index.html:78
+msgid "The country you want to study"
+msgstr ""
+
+#: templates/index.html:80
+msgid "The program you want to study"
+msgstr ""
+
+#: templates/index.html:82
+msgid "The language you want to study"
+msgstr ""
+
+#: templates/index.html:84
+msgid "Your phone number"
+msgstr ""
+
+#: templates/index.html:86
+msgid "Additional Message "
+msgstr ""
+
+#: templates/wrapper.html:67
+msgid "Language"
+msgstr ""
+
+#: templates/wrapper.html:111 templates/wrapper.html:116
+msgid "Welcome to our page"
+msgstr ""

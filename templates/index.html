@@ -1,0 +1,102 @@
+{% extends 'wrapper.html' %}
+{% load i18n %}
+
+
+{% block title %}
+    EduExpress | Home
+{% endblock title %}
+    
+
+
+{% block content %}
+    Hello, World !!!
+    Status : {{status}}
+
+    <!-- Universities -->
+    <h4> Universities </h4>
+    
+    {% for university in universities %}
+    <!-- <a href="url 'main:university_detail' slug=university.slug   %}">    {{university.slug}}</a>    -->
+    <a href="{% url 'main:university_detail' slug=university.slug  %}">    {{university.slug}}</a>      
+    <img src="{{university.image.url}}" width="150" height="150" alt="  University Image">    
+       <img src="{{university.country.image.url}}" width="60" height="50" alt=""> 
+    {% endfor %}
+        
+
+
+    <h4>Countries</h4>
+    {% for country in countries %}
+        <img src="{{country.image.url}}" width="60" height="50" alt=""> 
+    {% endfor %}
+        
+
+    {% if messages %}	
+    <div class="text-center" id="alert__message" style=" display:flex; justify-content: center; width: 100vw;">
+        <div class="alert alert-success absolute text-center" role="alert" style="z-index: 9999;" auto-close="2000">
+            {% for msg in messages %} {{msg}} {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+
+
+
+<h4> Form </h4>
+
+                <!-- <form action=""  method="POST">
+                        {% csrf_token %}
+                        <input type="text" placeholder=" {% trans 'Your name' %} " name="name">
+                        <input type="text" placeholder=" {% trans 'Surname' %} " name="surname">
+                        <input type="text" placeholder=" {% trans 'Age' %} " name="age">
+                        <input type="text" placeholder=" {% trans 'The country you are going to study ' %} " name="country">
+                        <input type="text" placeholder=" {% trans 'Surname' %} " name="surname">
+                        <select name="language" id="">
+                            <option value="English"> {% trans 'English' %} </option>
+                            <option value="Korean"> {% trans 'Korean' %} </option>
+                            <option value="Not sure"> {% trans 'Not sure' %} </option>
+                        </select>
+                        <select name="program" id="">
+                            <option value="language cource"> {% trans 'Language Course' %} </option>
+                            <option value="bachelor"> {% trans 'Bachelor' %} </option>
+                            <option value="Magistracy"> {% trans 'Magistracy' %} </option>
+                            <option value="Doctoral studies (PHD)"> {% trans 'Doctoral studies (PHD)' %} </option>
+                            <option value="Not sure"> {% trans 'Not sure' %} </option>
+                        </select>
+                        <input type="text" placeholder=" {% trans 'Phone number' %} " name="phone">
+                        <textarea name="additional" placeholder=" {% trans 'Additional message' %} "></textarea>
+                                <button  type="submit" class="thm-btn"><span> {% trans 'Send ' %} </span></button>
+                    </form> -->
+
+
+
+
+
+
+
+
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <label for="id_name"> {% trans 'Your name' %} </label>
+                        {{form.name}}
+                        <label for="id_name"> {% trans 'Your surname' %} </label>
+                        {{form.surname}}
+                        <label for="id_name"> {% trans 'Your age' %} </label>
+                        {{form.age}}
+                        <label for="id_name"> {% trans 'The program you want to study' %} </label>
+                        {{form.program}}
+                        <label for="id_name"> {% trans 'The language you want to study' %} </label>
+                        {{form.language}}
+
+                        <label for="id_name"> {% trans 'Your degree' %} </label>
+                        {{form.degree}}
+                        <label for="id_name"> {% trans 'The score you got' %} </label>
+                        {{form.score}}
+
+                        <label for="id_name"> {% trans 'Your phone number' %} </label>
+                        {{form.phone}}
+                        <label for="id_name"> {% trans 'Additional Message ' %} </label>
+                        {{form.additional}}
+                        <button  type="submit" class="thm-btn"><span> {% trans 'Send ' %} </span></button>
+                    </form>
+{% endblock content %}
+    

@@ -1,0 +1,33 @@
+{% extends 'wrapper.html' %}
+{% load i18n %}
+
+
+{% block title %}
+    EduExpress | Home
+{% endblock title %}
+    
+
+
+{% block content %}
+    Hello, World !!!
+    Status : {{status}}
+
+    <!-- Universities -->
+    <h4> Universities </h4>
+    
+    {% for university in universities %}
+    <!-- <a href="url 'main:university_detail' slug=university.slug   %}">    {{university.slug}}</a>    -->
+    <a href="{% url 'main:university_detail' slug=university.slug  %}">    {{university.slug}}</a>      
+    <img src="{{university.image.url}}" width="150" height="150" alt="  University Image">    
+       <img src="{{university.country.image.url}}" width="60" height="50" alt=""> 
+    {% endfor %}
+        
+
+
+    <h4>Countries</h4>
+    {% for country in countries %}
+        <img src="{{country.image.url}}" width="60" height="50" alt=""> 
+    {% endfor %}
+        
+{% endblock content %}
+    

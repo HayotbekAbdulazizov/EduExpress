@@ -1,0 +1,163 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  {% block title %}  {% endblock title %}</title>
+</head>
+<body>
+
+                          <!-- <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                                <input name="next" type="hidden" value="{{ redirect_to }}">
+                                <select name="language" onchange="this.form.submit()" class="custom-select" style="background: none; border: none; color: white; font-weight: bold;">
+                                    {% get_current_language as LANGUAGE_CODE %}
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% get_language_info_list for LANGUAGES as languages %}
+                                    {% for language in languages %}
+                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                             {{ language.code }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </form> -->
+
+
+                            <!-- <form action="{% url 'set_language' %}" method="post" >
+                                {% csrf_token %}
+                                {{LANGUAGE_CODE}}
+                                <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+                                <select name="language"  onchange="this.form.submit()" class="custom-select language__code" style="  background: none; border: none; font-weight: bold; text-transform: uppercase;">
+                                  {% get_language_info_list for LANGUAGES as languages %}
+                                    {% for language in languages %}
+                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}   class="language__code" >
+                                             {{ language.code }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                              </form> -->
+
+
+<!-- 
+
+                              <form action="{% url 'set_language' %}" method="post" >
+                                {% csrf_token %}
+                                {{LANGUAGE_CODE}}
+                                <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+                                <select name="language"  onchange="this.form.submit()" class="custom-select language__code" style="  background: none; border: none; font-weight: bold; text-transform: uppercase;">
+                                  {% get_language_info_list for LANGUAGES as languages %}
+                                    {% for language in languages %}
+                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}   class="language__code" >
+                                             {{ language.code }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                              </form> -->
+
+
+<!-- 
+
+      {% get_current_language as CURRENT_LANGUAGE %}
+      {% get_available_languages as AVAILABLE_LANGUAGES %}
+      {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+      <div class="languages">
+        <p>{% trans "Language" %}:</p>
+        <ul class="languages">
+          {% for language in languages %}
+            <li>
+              <a href="/{{ language.code }}/"
+                {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
+                {{ language.name_local }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% for course in courses %}
+        <div class="card p-4">
+          <h3>
+            {{ course.title }}
+            <em style="font-size: small">{{ course.date }}</em>
+          </h3>
+          <p>{{ course.description }}</p>
+          <strong>Price: $ {{ course.price }}</strong>
+        </div>
+        <hr />
+      {% empty %}
+        <p>Database is empty</p> -->
+      <!-- {% endfor %} -->
+
+ 
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+      {% get_current_language as LANGUAGE_CODE %}
+      <!-- Current language: {{ LANGUAGE_CODE }} -->
+      <!-- <p>{% translate "Welcome to our page" %}</p> -->
+      
+      <!-- {% language 'en' %} -->
+          <!-- {% get_current_language as LANGUAGE_CODE %} -->
+          <!-- Current language: {{ LANGUAGE_CODE }} -->
+          <!-- <p>{% translate "Welcome to our page" %}</p> -->
+      <!-- {% endlanguage %} -->
+      <!-- {% get_language_info for LANGUAGE_CODE as lang %} -->
+      <!-- {% get_language_info for "pl" as lang %}       --> 
+
+
+
+
+
+
+
+      
+    <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{redirect_to}}" />
+
+        <select class="selectpicker" name="language" style="width: auto;" onchange="this.form.submit()">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %}
+
+              <option
+                value="{{ language.code }}"
+                {% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}
+                data-content='<img src="/static/images/flags/{{ language.code }}.gif"></span>
+                <span style="display:inline-block; width:100px; padding-left: 10px; text-shadow:none">
+                  {{ language.name_local }}
+                  <!-- span style="color:#999;">&nbsp;[{{ language.code }}]</span -->
+                </span>'>
+                {{ language.code }}
+              </option>
+
+          {% endfor %}
+        </select>
+    </form>
+
+
+
+
+
+    {% block content %}
+        
+    {% endblock content %}
+        
+
+</body>
+</html>
