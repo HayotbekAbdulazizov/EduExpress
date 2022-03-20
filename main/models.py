@@ -1,4 +1,10 @@
+from distutils.command.upload import upload
+from distutils.text_file import TextFile
+from enum import unique
+from hashlib import blake2b
+from typing import Text
 from django.db import models
+from django.forms import DateTimeField, ImageField, SlugField
 from django.urls import reverse
 from parler.models import TranslatableModel, TranslatedFields
 from django.utils.translation import gettext as _
@@ -100,6 +106,7 @@ class Language(TranslatableModel):
         verbose_name = 'Language'
         verbose_name_plural = 'Languages'
 
+
 class Degree(TranslatableModel):
     translations = TranslatedFields(
         name = models.CharField('Name', max_length=200)
@@ -111,7 +118,6 @@ class Degree(TranslatableModel):
     class Meta:
         verbose_name = "Degree"    
         verbose_name_plural = "Degrees"    
-
 
 
 
@@ -137,3 +143,51 @@ class Request(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+
+
+
+
+
+# Student class -- University,Language,Program,Request,Country
+class Student(TranslatableModel):
+    university = models.ForeignKey(University, on_delete=models.PROTECT, null=True, blank=True)
+    language = models.ForeignKey(Language, on_delete=models.PROTECT, null=True, blank=True)
+    program = models.ForeignKey(Program, on_delete=models.PROTECT, null=True, blank=True)
+    request = models.ForeignKey(Request, on_delete=models.PROTECT, null=True, blank=True)
+    country = models.ForeignKey(Country, on_delete=models.PROTECT, null=True, blank=True)
+    translations = TranslatedFields(
+        name = models.CharField('Name', max_length=200, blank=True),
+        image = models.ImageField('Student image', upload_to='student_images/'),
+    )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Student"    
+        verbose_name_plural = "Students"    
+
+
+
+
+
+
+
+class Post(TranslatableModel):
+    translations = TranslatedFields(
+        title = models.CharField('Title', max_length=400, blank=True),
+        slug = models.SlugField('*', unique=True, blank=True),
+        image = models.ImageField('Image Cover', upload_to='news_images/', blank=True),
+        description = models.TextField('News description', blank=True),
+        date = models.DateTimeField('date', auto_now_add=True, blank=True),
+    )
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Post"    
+        verbose_name_plural = "Posts"    

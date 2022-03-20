@@ -26,12 +26,13 @@ class HomePageView(View):
 			language = form.cleaned_data['language']
 			degree = form.cleaned_data['degree']
 			score = form.cleaned_data['score']
-			print(score)
+			print(Request)
+			print(type(Request))
 			phone = form.cleaned_data['phone']
 			additional = form.cleaned_data['additional']
 			requester = Request.objects.create(name=name, surname=surname, age=age, country=country, program=program, language=language, degree=degree, score=score, phone=phone, additional=additional)
 			print(name, phone, "Thing have came !!!")
-			messages.success(request, _(f"{requester.name}, Your message was successfully submitted, please wait our call !"))
+			# messages.success(request, _(f"{requester.name}, Your message was successfully submitted, please wait our call !"))
 			print("redirecting !!!")
 			return redirect(f'/') 
 		else:
@@ -74,7 +75,9 @@ class UniversityDetailView(View):
 			print(score)
 			phone = form.cleaned_data['phone']
 			additional = form.cleaned_data['additional']
-			requester = Request.objects.create(university=univ, name=name, surname=surname, age=age, country=univ.country.name, program=program, language=language, degree=degree, score=score, phone=phone, additional=additional)
+			requester = Request.objects.create(university=univ, name=name, surname=surname, age=age, program=program, language=language, degree=degree, score=score, phone=phone, additional=additional)
+			# requester.country = univ.country.name
+			requester.save()
 			print(name, phone, "Thing have came !!!")
 			messages.success(request, _(f"{requester.name}, Your message was successfully submitted, please wait our call !"))
 			print("redirecting !!!")

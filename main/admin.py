@@ -56,6 +56,13 @@ class DegreeAdmin(TranslatableAdmin):
     list_display = ("name","id")
     fieldsets = ((None,{"fields": ("name",),},),)
 
+class StudentAdmin(TranslatableAdmin):
+    list_display = ("name","university","country")
+    fieldsets = ((None,{"fields": ("name","university", "language", "program", "request", "country"),},),)
+
+class PostAdmin(TranslatableAdmin):
+    list_display = ("title","date","id")
+    fieldsets = ((None,{"fields": ("title","slug", "image", "description", "date", "id"),},),)
 
 
 @admin.register(Request)
@@ -71,6 +78,8 @@ admin.site.register(University, UniversityAdmin)
 admin.site.register(Program, ProgramAdmin)
 admin.site.register(Language,LanguageAdmin)
 admin.site.register(Degree,DegreeAdmin)
+admin.site.register(Student,StudentAdmin)
+admin.site.register(Post,PostAdmin)
 admin.site.register(UniversityImage)
 
 
