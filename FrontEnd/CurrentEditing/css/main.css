@@ -19860,6 +19860,7 @@ select:-webkit-autofill:focus {
     border: none;
     border-right: 1px solid #b1dbf7;
   }
+  .logo__text{font-size: 20px;}
   .university{ padding-left:5px ;padding-right: 5px; }
 }
 
@@ -19898,16 +19899,25 @@ select:-webkit-autofill:focus {
 
 
 
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Kumbh+Sans:wght@500&family=Titillium+Web:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Kumbh+Sans:wght@500&family=Titillium+Web:wght@600&display=swap');
 
 
 
 
-
-
-
-
-
+.button__view_all{border-radius: 10px; border:1px solid #234a9f; background: none; color:#234a9f ;font-weight: bold; padding-top: 13px;padding-bottom: 13px;padding-left: 45px;padding-right: 45px;}
 *{
   padding: 0%;
   margin: 0%;
+  font-family: 'Titillium Web', sans-serif;
+}
+.button__view_all:hover{
+  background-color: #234a9f;color: white;transition: all 0.5s;
+}
+body{
+  font-family: 'Akaya Telivigala', cursive;
+
+  font-family: 'Kumbh Sans', sans-serif;
+
+  font-family: 'Titillium Web', sans-serif;
 }
