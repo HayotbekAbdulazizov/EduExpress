@@ -9,7 +9,7 @@ class HomePageView(View):
 	def get(self,request):
 		context = {
 			'status':200,
-			'universities': University.objects.all(),
+			'universities': University.objects.all()[0:3],
 			'countries': Country.objects.all(),
             "form":RequestForm,
 		}		    
@@ -87,3 +87,67 @@ class UniversityDetailView(View):
 			print("There is an ERROR !!!")
 			return redirect('/')
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import json
+from django.http import HttpResponse,JsonResponse
+from django.core import serializers
+
+import pickle
+
+# AJAX category filter
+def load_more(request):
+	# print('CAME TO FILTER')
+	# datas = {}
+	# info = request.GET.get('data')
+	# print(info)
+	# universities_all = list(University.objects.language(request.LANGUAGE_CODE).values())
+	# universities = universities_all[0:6]
+	# print(universities)
+	# print(type(request.LANGUAGE_CODE),request.LANGUAGE_CODE)
+	# print(universities_all)
+
+	#     print('Len 0 Events', len(events))
+	#     datas ['cities'] = []
+	#     for city in City.objects.all():
+	#         for location in events.values('location'):
+	#             print('CITY', city.name, location['location'], city.name in location['location'])
+	#             if city.name in location['location']:
+	#                 datas['cities'].append({'name':city.name, 'id':city.id})    
+	#                 break
+	#             # datas['cities'].append({'name':city.name, 'id':city.id} if str(city.name) in location['location'] else print('None'))
+	#             # print(datas['cities'])
+	#     print('CITIES', datas['cities'])
+	#     datas['themes'] = list(Theme.objects.filter(category_id=info[0]).values())
+	# else:
+	#     events = Event.objects.all()
+	#     datas['themes'] = list(Theme.objects.all().values())
+	#     print('Len Events ', len(events))
+	#     # datas['cities'] = list(City.objects.all().values())
+	# if info[1] != '':
+	#     events = events.filter(location__icontains=info[1])
+	# datas['data'] = events 
+	#     print('Len 2 Events ', len(events))
+	# for i in universities_all:
+		# print(i.name)
+	# universities_json = serializers.serialize('json',universities_all)
+	# return True
+	qs 	= University.objects.values_list('id', 'name')
+	print(qs)
+	# QuerySet [(1, 'Beatles Blog')]>
+	reloaded_qs = University.objects.all()
+	reloaded_qs.query = pickle.loads(pickle.dumps(qs.query))
+	print(reloaded_qs)
+	return JsonResponse(data={'universities':200,'totalCount':University.objects.count()})

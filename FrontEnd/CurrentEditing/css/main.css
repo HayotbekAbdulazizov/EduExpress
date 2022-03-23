@@ -19855,18 +19855,6 @@ select:-webkit-autofill:focus {
   }
 }
 
-@media (max-width: 543px) {
-  .table-responsive {
-    border: none;
-    border-right: 1px solid #b1dbf7;
-  }
-  .logo__text{font-size: 20px;}
-  .university{ padding-left:5px ;padding-right: 5px; }
-}
-
-
-
-
 
 
 
@@ -19947,4 +19935,22 @@ body{
 
 
 /* university detail */
+.title__text{color: white; font-size:4rem;}
+.detail__url{font-size: 1.6rem;}
+
+
+@media (max-width: 543px) {
+  .table-responsive {
+    border: none;
+    border-right: 1px solid #b1dbf7;
+  }
+  .logo__text{font-size: 20px;}
+  .university{ padding-left:5px ;padding-right: 5px; }
+  .title__text{font-size: 2.6rem;}
+  .detail__url{font-size: 1.3rem;}
+
+}
+
+
+
 

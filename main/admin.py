@@ -13,6 +13,10 @@ class UniversityImageStacked(TranslatableStackedInline):
     model = UniversityImage
     extra = 1
 
+class PostImageStacked(TranslatableStackedInline):
+    model = PostImage
+    extra = 1
+
 
 
 # University Admin
@@ -38,7 +42,15 @@ class UniversityAdmin(TranslatableAdmin):
 
 
 
+class PostAdmin(TranslatableAdmin):
+    inlines = [PostImageStacked]
+    list_display = ("title","date","id")
+    fieldsets = ((None,{"fields": ("title","slug", "image", "description", "date", "id"),},),)
 
+    def get_prepopulated_fields(self, request, obj=None):
+        return {"slug": ("title",)}
+
+    
 
 
 
@@ -60,9 +72,6 @@ class StudentAdmin(TranslatableAdmin):
     list_display = ("name","university","country")
     fieldsets = ((None,{"fields": ("name","university", "language", "program", "request", "country"),},),)
 
-class PostAdmin(TranslatableAdmin):
-    list_display = ("title","date","id")
-    fieldsets = ((None,{"fields": ("title","slug", "image", "description", "date", "id"),},),)
 
 
 @admin.register(Request)
@@ -81,6 +90,7 @@ admin.site.register(Degree,DegreeAdmin)
 admin.site.register(Student,StudentAdmin)
 admin.site.register(Post,PostAdmin)
 admin.site.register(UniversityImage)
+admin.site.register(PostImage)
 
 
 

@@ -191,3 +191,17 @@ class Post(TranslatableModel):
     class Meta:
         verbose_name = "Post"    
         verbose_name_plural = "Posts"    
+
+
+# PostImage TRModel --Post ++None
+class PostImage(TranslatableModel):
+    post = models.ForeignKey(Post, related_name="post_images", null=True, blank=True, on_delete=models.CASCADE)
+    translations = TranslatedFields(
+        image = models.ImageField('Post image', upload_to='post_images/', blank=True, null=True),
+    )
+    class Meta:
+        verbose_name = "PostImage"
+        verbose_name_plural = "PostImages"
+
+    def __str__(self):
+        return f"{self.post.title}"
