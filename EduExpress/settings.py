@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
         
+    'modeltranslation',
     'main',
-    'parler',
 ]
 
 MIDDLEWARE = [
@@ -121,28 +121,34 @@ USE_TZ = True
 
 
 import os
+from django.utils.translation import gettext as _
+
 LOCALE_PATHS = [
     os.path.join(BASE_DIR / 'locale')
 ]
 
-LANGUAGES = [
+# LANGUAGES = [
+#     ('en', 'English'),
+#     ('uz', 'Uzbek'),
+#     ('ru', 'Russian'),
+# ]
+
+
+# dynamic data translate
+# _ = lambda s: s
+
+LANGUAGES = (
     ('en', 'English'),
     ('uz', 'Uzbek'),
     ('ru', 'Russian'),
-]
 
-PARLER_LANGUAGES = {
-    None: (
-        {'code': 'en',},
-        {'code': 'uz',},
-        {'code': 'ru',},
-    ),
-    'default': {
-        'fallback': 'en',             # defaults to PARLER_DEFAULT_LANGUAGE_CODE
-        'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
-    }
-}
-PARLER_DEFAULT_LANGUAGE_CODE = 'en'
+)
+MODELTRANSLATION_LANGUAGES = ('en', 'uz', 'ru')
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_TRANSLATION_FILES = (
+    'main.translation',
+)
+
 
 
 # Static files (CSS, JavaScript, Images)
