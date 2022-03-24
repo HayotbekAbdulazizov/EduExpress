@@ -160,6 +160,10 @@ function LoadMore(){
             console.log('ERROR !!!')
 		}
 			document.getElementsByClassName('university_container')[0].innerHTML = div
+            if(document.getElementsByClassName('university').length === data['totalCount']){
+                document.getElementById('showmore').style.display = 'none'
+                document.getElementById('showless').style.display = 'inline-block'
+            }
         }else{
           console.log('not yet')
           }
@@ -169,6 +173,8 @@ function LoadMore(){
 	xhttp.open("GET", url+`?data=${`${document.getElementsByClassName('university').length}`}`, true);
     xhttp.send();
 }
+
+
 
 
 
@@ -182,8 +188,6 @@ function LoadLess(){
         if (xhttp.readyState === 4 && xhttp.status === 200) {
             let data = JSON.parse(this.responseText)
             let div = ''
-			console.log(data)
-			if(data.universities.length > 0){
             for(university of data['universities']){
                 console.log(university.name)
 				div += '<div class="university">\
@@ -192,11 +196,14 @@ function LoadLess(){
                         </div>\
                 '
             }
-		}else{
-			div = 'ERROR'
-            console.log('ERROR !!!')
-		}
 			document.getElementsByClassName('university_container')[0].innerHTML = div
+            document.getElementById('showless').style.display = 'none'  
+            document.getElementById('showmore').style.display = 'inline-block'  
+            // if(document.getElementsByClassName('university').length === data['totalCount']){
+                // document.getElementById('showmore').style.display = 'inline-block'
+            // }else{
+                // document.getElementById('showless').style.display = 'inline-block'
+            // }
         }else{
           console.log('not yet')
           }
@@ -210,5 +217,18 @@ function LoadLess(){
 
 </script>
 
+
+
+
+<style>
+    #showmore{
+        display: inline;
+    }
+    #showless{
+        display: none;
+    }
+    .hidden{ display: none; }
+    .show{ display: block; }
+</style>
                     {% endblock content %}
     
