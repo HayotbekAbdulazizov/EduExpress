@@ -113,3 +113,10 @@ def load_more(request):
 	print(universities)
 
 	return JsonResponse(data={'universities':universities,'totalCount':University.objects.count()})
+
+
+def load_less(request):
+	universities = list(University.objects.all()[0:int(request.GET.get('data'))-3].values())
+	print(universities)
+
+	return JsonResponse(data={'universities':universities,'totalCount':University.objects.count()})

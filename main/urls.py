@@ -11,6 +11,7 @@ urlpatterns = [
 	# path('about/',views.AboutPageView.as_view(), name='about'),
     path("<slug>", views.UniversityDetailView.as_view(), name="university_detail"),
     path("load_more/", views.load_more, name="load_more"),
+    path("load_less/", views.load_less, name="load_less"),
 	# path('product/<pk>', views.ProductDetailView.as_view(), name='product_detail'),
 	
 	# path('category_delete/<pk>', views.category_delete, name='category_delete'),
