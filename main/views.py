@@ -144,10 +144,19 @@ def load_more(request):
 		# print(i.name)
 	# universities_json = serializers.serialize('json',universities_all)
 	# return True
-	qs 	= University.objects.values_list('id', 'name')
+
+	# qs 	= University.objects.values_list('id')
+
+	# qs = University.objects.language(request.LANGUAGE_CODE).all()[0]
+	qs = list(University.objects.language(request.LANGUAGE_CODE).all())
 	print(qs)
+
+
+	# print(qs.translations.values())
+	# print(dict(.translations.values_list("name", "slug")))
+
 	# QuerySet [(1, 'Beatles Blog')]>
-	reloaded_qs = University.objects.all()
-	reloaded_qs.query = pickle.loads(pickle.dumps(qs.query))
-	print(reloaded_qs)
+	# reloaded_qs = University.objects.all()
+	# reloaded_qs.query = pickle.loads(pickle.dumps(qs.query))
+	# print(reloaded_qs)
 	return JsonResponse(data={'universities':200,'totalCount':University.objects.count()})
