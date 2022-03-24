@@ -25,14 +25,17 @@
     {% for university in universities %}
     <!-- <a href="url 'main:university_detail' slug=university.slug   %}">    {{university.slug}}</a>    -->
     <div class="university">
-    <a href="{% url 'main:university_detail' slug=university.slug  %}">    {{university.slug}}</a>      
     <a href="{% url 'main:university_detail' slug=university.slug  %}">    {{university.name}}</a>      
+    
+    {% if university.image %}
     <img src="{{university.image.url}}" width="150" height="150" alt="  University Image">    
-       <img src="{{university.country.image.url}}" width="60" height="50" alt=""> <br>
-    </div>
+    {% endif %}
+</div>
+        
     {% endfor %}
 </div>
     <button id="showmore" onclick="LoadMore()"> Show more </button>       
+    <button id="showless" onclick="LoadLess()"> Show Less </button>       
 
 
 
@@ -132,87 +135,77 @@
 
 <script>
 
-// function LoadMore(){
-// 	// let city_container = document.getElementById('')
-
-
-// 	if (window.XMLHttpRequest) {
-// 		var xhttp=new XMLHttpRequest();
-// 	} else { 
-//             var xhttp=new ActiveXObject("Microsoft.XMLHTTP");
-//         }
-//         xhttp.onreadystatechange = function() {
-//         if (xhttp.readyState === 4 && xhttp.status === 200) {
-//             let data = JSON.parse(this.responseText)
-//             // var json_data=JSON.parseJSON(res.universities);
-//             let div = ''
-// 			console.log(data['universities'][0])
-//             for(i of data['universities']){
-//                 // console.log('university')
-//             }
-// 			if(data.universities.length > 0){
-//             for(university of data['universities']){
-//                 // console.log(university.model)
-// 				event_theme = ''	
-// 				div += `				
-//                      <div class="university">
-//                     <a href="/${university.slug}">    ${university.slug}</a>      
-//                     <img src="/media/${university.image}" width="150" height="150" alt="  University Image">    
-//                        <img src="/media/${university.slug}" width="60" height="50" alt=""> <br>
-//                     </div>
-//                         `
-//             }
-// 		}else{
-// 			div = 'ERROR'
-//             console.log('ERROR !!!')
-// 		}
-// 			// document.getElementsByClassName('university_container')[0].innerHTML = div
-//         }else{
-//           console.log('not yet')
-//           }
-//       }
-
-//     var url = "/load_more/"
-// 	xhttp.open("GET", url+`?data=${`${document.getElementsByClassName('university').length}`}`, true);
-//     xhttp.send();
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function LoadMore(){
-        let result = `
-        
-        <div class="university">
-    <a href=" url 'main:university_detail' slug=univ5  %}">    {{university.name}}</a>      
-    <img src="{{university.image.url}}" width="150" height="150" alt="  University Image">    
-       <img src="{{university.country.image.url}}" width="60" height="50" alt=""> <br>
-    </div>
-        
-        
-        `
-            document.getElementsByClassName('university_container')[0].innerHTML = result
+	if (window.XMLHttpRequest) {
+		var xhttp=new XMLHttpRequest();
+	} else { 
+            var xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = function() {
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            let data = JSON.parse(this.responseText)
+            let div = ''
+			console.log(data)
+			if(data.universities.length > 0){
+            for(university of data['universities']){
+                console.log(university.name)
+				div += '<div class="university">\
+                    <a href=" ' + university.slug + '">' + university.name + ' </a>\
+                    <img src="/media/'    + university.image +     '" width="150" height="150" alt="  University Image">\
+                        </div>\
+                '
+            }
+		}else{
+			div = 'ERROR'
+            console.log('ERROR !!!')
+		}
+			document.getElementsByClassName('university_container')[0].innerHTML = div
+        }else{
+          console.log('not yet')
+          }
+      }
+
+    var url = "/load_more/"
+	xhttp.open("GET", url+`?data=${`${document.getElementsByClassName('university').length}`}`, true);
+    xhttp.send();
 }
 
 
 
+function LoadLess(){
+	if (window.XMLHttpRequest) {
+		var xhttp=new XMLHttpRequest();
+	} else { 
+            var xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = function(){
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            let data = JSON.parse(this.responseText)
+            let div = ''
+			console.log(data)
+			if(data.universities.length > 0){
+            for(university of data['universities']){
+                console.log(university.name)
+				div += '<div class="university">\
+                    <a href=" ' + university.slug + '">' + university.name + ' </a>\
+                    <img src="/media/'    + university.image +     '" width="150" height="150" alt="  University Image">\
+                        </div>\
+                '
+            }
+		}else{
+			div = 'ERROR'
+            console.log('ERROR !!!')
+		}
+			document.getElementsByClassName('university_container')[0].innerHTML = div
+        }else{
+          console.log('not yet')
+          }
+      }
 
-
-
-
-
+    var url = "/load_more/"
+	xhttp.open("GET", url+`?data=${`${document.getElementsByClassName('university').length}`}`, true);
+    xhttp.send();
+}
 
 
 </script>
