@@ -177,3 +177,16 @@ class PostImage(models.Model):
 
     def __str__(self):
         return f"{self.post.title}"
+
+
+class Creator(models.Model):
+    description = models.TextField('Description', blank=True)
+
+    def __str__(self):
+        return self.description
+
+    class Meta:
+        verbose_name = "Creator"    
+        verbose_name_plural = "Creators"  
+
+    

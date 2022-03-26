@@ -1,5 +1,5 @@
 from modeltranslation.translator import translator, TranslationOptions
-from .models import Country, University, UniversityImage, Program, Language, Degree, Request, Student, Post, PostImage
+from .models import Country, Creator, University, UniversityImage, Program, Language, Degree, Request, Student, Post, PostImage
 
 
 class UniversityTranslationOptions(TranslationOptions):
@@ -49,6 +49,8 @@ class PostImageTranslationOptions(TranslationOptions):
     fields = ('post', 'image')
 
 
+class CreatorTranslationOptions(TranslationOptions):
+    fields = ('description',)
 
 
 
@@ -65,3 +67,4 @@ translator.register(Language , LanguageTranslationOptions)
 translator.register(Degree, DegreeTranslationOptions)
 translator.register(PostImage, PostImageTranslationOptions)
 translator.register(Post , PostTranslationOptions)
+translator.register(Creator , CreatorTranslationOptions)

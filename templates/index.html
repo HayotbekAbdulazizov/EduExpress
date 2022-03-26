@@ -16,9 +16,12 @@
     <h4> Universities </h4>
 
     
-
-
-
+<select onchange="CountryFilter()" class="my-select select2-hidden-accessible" id="country_filter">
+    <option value="all" data-select2-id="select2-data-2-5jfa" selected> -- all countries -- </option>
+    {% for i in countries %}
+        <option value="{{i.id}}" data-select2-id="select2-data-2-5jfa"> {{i.name}} </option>
+    {% endfor %}
+</select>
 
 
     <div class="university_container">
@@ -213,6 +216,53 @@ function LoadLess(){
 	xhttp.open("GET", url+`?data=${`${document.getElementsByClassName('university').length}`}`, true);
     xhttp.send();
 }
+
+
+
+
+
+
+
+
+
+
+function CountryFilter(){
+    let country_id = document.getElementById('country_filter').value
+    console.log(country_filter)
+    if (window.XMLHttpRequest) {
+		var xhttp=new XMLHttpRequest();
+	} else { 
+            var xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = function(){
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            let data = JSON.parse(this.responseText)
+            let div = ''
+            for(university of data['universities']){
+                console.log(university.name)
+				div += '<div class="university">\
+                    <a href=" ' + university.slug + '">' + university.name + ' </a>\
+                    <img src="/media/'    + university.image +     '" width="150" height="150" alt="  University Image">\
+                        </div>\
+                '
+            }
+			document.getElementsByClassName('university_container')[0].innerHTML = div
+            document.getElementById('showless').style.display = 'none'  
+            document.getElementById('showmore').style.display = 'inline-block'  
+        }else{
+          console.log('not yet')
+          }
+      }
+
+    var url = "/country_filter/"
+	xhttp.open("GET", url+`?data=${`${document.getElementsByClassName('country_id')}`}`, true);
+    xhttp.send();
+}
+
+
+
+
+
 
 
 </script>
