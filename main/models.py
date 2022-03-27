@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.utils.translation import get_language
 # from parler.models import TranslatableModel, TranslatedFields
+from ckeditor.fields import RichTextField
 
 
 
@@ -33,10 +34,8 @@ class University(models.Model):
     rating = models.CharField('Rating', max_length=100, blank=True)
     world_rating = models.CharField('World Rating', max_length=100, blank=True)
     location = models.CharField('Location', max_length=200, blank=True)
-    faculties = models.TextField('Faculties', blank=True)
-    grands = models.TextField('Grands', blank=True)
+    description=RichTextField("Description",)
     image = models.ImageField('Image', upload_to='university_images/', blank=True)
-    description=models.TextField()
 
     class Meta:
         verbose_name = "University"

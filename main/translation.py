@@ -3,7 +3,7 @@ from .models import Country, Creator, University, UniversityImage, Program, Lang
 
 
 class UniversityTranslationOptions(TranslationOptions):
-    fields = ('name', 'slug','rating','world_rating','location','faculties','grands','description','image' )
+    fields = ('name', 'slug','rating','world_rating','location','description','image' )
 
 
 
