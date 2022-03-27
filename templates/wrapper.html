@@ -193,7 +193,7 @@
 
 
 
-    
+
     {% get_current_language as CURRENT_LANGUAGE %}
     {% get_available_languages as AVAILABLE_LANGUAGES %}
     {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
@@ -211,18 +211,7 @@
       </ul>
     </div>
 
-    {% for course in courses %}
-      <div class="card p-4">
-        <h3>
-          {{ course.title }}
-          <em style="font-size: small">{{ course.date }}</em>
-        </h3>
-        <p>{{ course.description }}</p>
-        <strong>Price: $ {{ course.price }}</strong>
-      </div>
-      <hr />
-    {% empty %}
-      <p>Database is empty</p>
+
 
 
 
