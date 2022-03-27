@@ -7,10 +7,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"href="https://img.icons8.com/material-outlined/344/laptop.png">
     <title>  {% block title %}  {% endblock title %}</title>
 </head>
 <body>
-
+  <script>
+    window.addEventListener('load', function () {
+      // const p = document.querySelector('p');
+      // p.innerHTML = 'Replaced!';
+    });
+  </script>
                           <!-- <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
                                 <input name="next" type="hidden" value="{{ redirect_to }}">
                                 <select name="language" onchange="this.form.submit()" class="custom-select" style="background: none; border: none; color: white; font-weight: bold;">
@@ -152,7 +158,7 @@
 
 
 
-    <form action="{% url 'set_language' %}" method="post">
+    <!-- <form action="{% url 'set_language' %}" method="post">
       {% csrf_token %}
       {% get_current_language as LANGUAGE_CODE %}
       {% get_available_languages as LANGUAGES %}
@@ -163,7 +169,24 @@
           </button>
         {% endif %}
       {% endfor %}
+    </form> -->
+
+
+
+
+    <form action="{% url 'set_language' %}" method="post" >
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+      <select name="language"  onchange="this.form.submit()" class="custom-select language__code" style="  background: none; border: none; font-weight: bold; text-transform: uppercase;">
+        {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %}
+              <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}   class="language__code" >
+                   {{ language.code }}
+              </option>
+          {% endfor %}
+      </select>
     </form>
+
 
 
     {% block content %}

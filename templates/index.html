@@ -12,6 +12,16 @@
     Hello, World !!!
     Status : {{status}}
 
+    <script>
+        window.addEventListener('load', function () {
+          // const p = document.querySelector('p');
+          // p.innerHTML = 'Replaced!';
+          console.log('reload')
+        });
+      </script>
+
+
+
     <!-- Universities -->
     <h4> Universities </h4>
 
@@ -26,7 +36,7 @@
 
     <div class="university_container">
     {% for university in universities %}
-    <div class="university" >
+    <div class="university" style="display: none;">
     <a href="{% url 'main:university_detail' slug=university.slug  %}">    {{university.name}}</a>      
     
     {% if university.image %}
@@ -137,7 +147,7 @@
 <script>
 console.log("Hello, World !!!")
 let universities = document.getElementsByClassName('university')
-// console.log(universities)
+console.log(universities)
 
 for(let x=0; x < 2; x++){
     universities[x].style.display = 'block'
