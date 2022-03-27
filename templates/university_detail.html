@@ -17,16 +17,18 @@
 
 
 
+    {{object.description|safe}}
+    <h5> OBJECT </h5>
     <form action="" method="POST">
         {% csrf_token %}
-<h5> OBJECT </h5>
-{{object.description|safe}}
 
 
 
 
 
-<input type="hidden" value="{{object.id}}" name="univ_id">
+<!-- <input type="hidden" value="{{object.id}}" name="univ_id"> -->
+<h2> ID </h2>
+<input  value="{{object.id}}" name="university_id" type="hidden">
 <br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br>
         <label for="id_name"> {% trans 'Your name' %} </label>
         {{form.name}}
