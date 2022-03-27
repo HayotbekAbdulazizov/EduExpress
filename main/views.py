@@ -9,7 +9,7 @@ class HomePageView(View):
 	def get(self,request):
 		context = {
 			'status':200,
-			'universities': University.objects.all()[0:3],
+			'universities': University.objects.all(),
 			'countries': Country.objects.all(),
             "form":RequestForm,
 		}		    
@@ -118,5 +118,11 @@ def load_less(request):
 	return JsonResponse(data={'universities':universities,'totalCount':University.objects.count()})
 
 def country_filter(request):
-	universities = list(University.objects.filter(country_id=request.GET.get("country_id")).values())
+	country_id = request.GET.get("data")
+	if country_id != 'all':
+		universities = list(University.objects.filter(country_id=country_id).values())
+		print("Universities", universities)
+	else:
+		universities = list(University.objects.all().values())
+		print("All Universities", universities)
 	return JsonResponse(data={'universities':universities,'totalCount':University.objects.count()})
