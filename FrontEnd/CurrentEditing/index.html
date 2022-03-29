@@ -11,6 +11,7 @@
 	<meta name="theme-color" content="#ffffff">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
@@ -31,7 +32,7 @@
 
 
 <div class="wrapper"><!-- start #wrap -->
-<header class="header">
+<header class="header" >
 	<div class="container-fluid container-fluid--custom">
 		<div class="row">
 			<div class="col-md-12">
@@ -44,7 +45,7 @@
 					</ul>
 				</div> -->
 
-				<div class="header_bottom">
+				<div class="header_bottom" style="height: 13vh;">
 					<div class="row row--flex row--flex-middle row--flex-wrap">
 						<div class="col-xs-12 col-md-3">
 							<div class="logo">
@@ -190,11 +191,11 @@
 
 <!-- SLider BAnner
  -->
-<section class="banner">
+<section class="banner" style="height: 87vh;">
   <!-- Swiper -->
-  <div class="banner-slider swiper-container">
+  <div class="banner-slider swiper-container" style="height: 100%;">
     <div class="swiper-wrapper">
-      <div class="banner-slide swiper-slide" style="background-image: url('img/banner-slider/01.png'); ">
+      <div class="banner-slide swiper-slide" style="background-image: url('img/banner-slider/01.png'); height: 100%; ">
         <div class="slide-container">
           <div class="slide-content slide-content--left" data-caption-animate="fadeInUp">
             <h2 class="slide-title">Professional Consulting For Your Business</h2>
@@ -236,7 +237,7 @@
         </div>
       </div>
 
-      <div class="banner-slide swiper-slide" style="background-image: url('img/banner-slider/03.png'); ">
+      <div class="banner-slide swiper-slide" style="background-image: url('img/banner-slider/03.png'); background-size: cover; height: 100%;">
         <div class="slide-container">
           <div class="slide-content slide-content--left" data-caption-animate="fadeInUp">
             <h2 class="slide-title">Working with a Great Care</h2>
@@ -349,11 +350,84 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <script src="src/js/main.js"></script> -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- UNIVERSITIES SECTION -->
-<section class="section-service">
+<section class="section-service" style="padding-top: 150px; z-index: 99;">
   <div class="container-fluid container-fluid--custom">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6 col-sm-12">
+
+<!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+<div class="custom-select" >
+  <select >
+    <option onclick="CountryFilter()" value="0">Select car:</option>
+    <option onclick="CountryFilter()" value="1">Audi</option>
+    <option onclick="console.log('Hello')" value="2">BMW</option>
+    <option onclick="console.log('Hello')" value="3">Citroen</option>
+    <option onclick="console.log('Hello')" value="4">Ford</option>
+    <option onclick="console.log('Hello')" value="5">Honda</option>
+    <option onclick="console.log('Hello')" value="6">Jaguar</option>
+    <option onclick="console.log('Hello')" value="7">Land Rover</option>
+    <option onclick="console.log('Hello')" value="8">Mercedes</option>
+    <option onclick="console.log('Hello')" value="9">Mini</option>
+    <option onclick="console.log('Hello')" value="10">Nissan</option>
+    <option onclick="console.log('Hello')" value="11">Toyota</option>
+    <option onclick="console.log('Hello')" value="12">Volvo</option>
+  </select>
+</div>
+      </div>
+      <div class="col-sm-12 col-md-6">
         <div class="section-heading">
           <span class="section-heading_secondary">Our Partners</span>
           <h2>Universities</h2>
@@ -361,58 +435,29 @@
       </div>
     </div>
 
-    <div class="row row--flex row--flex-wrap">
-
-      <div class="col-sm-12 col-md-4 col-lg-4 university" style="position: relative;" >
-        <a href="" >
-          <div class="university__inner" style=" box-shadow: inset 0 -40px 70px -0px #0e304b;border-radius: 15px;">
-            <div class="img__outer" style="height: 33vh;overflow: hidden;">
-            <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
-          </div>
-            <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; " >
-              <h4 style=" color: white;  "> INHA University More Description</h4>
-              <div class="bottom__locations" style="display: flex; justify-content: left;  ">
-                <svg width="19" height="19" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g opacity="0.5">
-                  <path d="M10 11.6667C11.3807 11.6667 12.5 10.5475 12.5 9.16675C12.5 7.78604 11.3807 6.66675 10 6.66675C8.61929 6.66675 7.5 7.78604 7.5 9.16675C7.5 10.5475 8.61929 11.6667 10 11.6667Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M14.7142 13.8808L11.1783 17.4167C10.8658 17.7289 10.4422 17.9042 10.0004 17.9042C9.55869 17.9042 9.13503 17.7289 8.82251 17.4167L5.28585 13.8808C4.35353 12.9485 3.71863 11.7606 3.46142 10.4674C3.20421 9.17419 3.33625 7.83376 3.84085 6.61561C4.34544 5.39745 5.19993 4.35628 6.29625 3.62376C7.39257 2.89123 8.68149 2.50024 10 2.50024C11.3185 2.50024 12.6075 2.89123 13.7038 3.62376C14.8001 4.35628 15.6546 5.39745 16.1592 6.61561C16.6638 7.83376 16.7958 9.17419 16.5386 10.4674C16.2814 11.7606 15.6465 12.9485 14.7142 13.8808V13.8808Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                  </g>
-                  </svg> <span style="font-weight: bold; color: whitesmoke; position: absolute; left: 16%;"> Korean </span>
-              </div>
-          </div>
-          </div>  
-      </a>
+    <!-- <div class="select-group" >
+      <button id="button" class="button" style="display: flex; align-items: center;">
+        <img src="https://mpng.subpng.com/20180419/hkw/kisspng-flags-of-the-world-national-flag-flag-of-the-unite-5ad84ef6e0eff4.4839458615241254309214.jpg" style="width: 30px;height: 30px; background: none;" alt="">
+        <span id="select-label" style="font-weight: bold;"> Filter By Country </span>
+        <div id="arrow" class="arrow"></div>
+      </button>
+      <div class="dropdown hidden" id="dropdown">
+        <input type="radio" id="select-internet" name="where" value="internet" class="option" onclick="console.log(this.value)">
+        <label for="select-internet" class="select-item">Internet search</label>
+        <input type="radio" id="select-family" name="where" value="family" class="option">
+        <label for="select-family" class="select-item">Friends & family</label>
+        <input type="radio" id="select-existing" name="where" value="existing" class="option">
+        <label for="select-existing" class="select-item">Existing customer</label>
       </div>
+    </div>  -->
 
-
-
-
-      <div class="col-sm-12 col-md-4 col-lg-4 university" style="position: relative;" >
-        <a href="" >
-          <div class="university__inner" style=" box-shadow: inset 0 -40px 70px -0px #0e304b;border-radius: 15px;">
-            <div class="img__outer" style="height: 33vh;overflow: hidden;">
-            <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
-          </div>
-          <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
-            <!-- <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; display: flex;align-items: center;" > -->
-              <div class="bottom__locations" style="position: absolute; bottom: 13px; display: flex; justify-content: left; left: 28px; ">
-                <svg width="19" height="19" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g opacity="0.5">
-                  <path d="M10 11.6667C11.3807 11.6667 12.5 10.5475 12.5 9.16675C12.5 7.78604 11.3807 6.66675 10 6.66675C8.61929 6.66675 7.5 7.78604 7.5 9.16675C7.5 10.5475 8.61929 11.6667 10 11.6667Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M14.7142 13.8808L11.1783 17.4167C10.8658 17.7289 10.4422 17.9042 10.0004 17.9042C9.55869 17.9042 9.13503 17.7289 8.82251 17.4167L5.28585 13.8808C4.35353 12.9485 3.71863 11.7606 3.46142 10.4674C3.20421 9.17419 3.33625 7.83376 3.84085 6.61561C4.34544 5.39745 5.19993 4.35628 6.29625 3.62376C7.39257 2.89123 8.68149 2.50024 10 2.50024C11.3185 2.50024 12.6075 2.89123 13.7038 3.62376C14.8001 4.35628 15.6546 5.39745 16.1592 6.61561C16.6638 7.83376 16.7958 9.17419 16.5386 10.4674C16.2814 11.7606 15.6465 12.9485 14.7142 13.8808V13.8808Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                  </g>
-                  </svg> 
-                  <span style=" color: whitesmoke; font-weight: 700; opacity: 0.8; "> Korean </span>
-              </div>
-          <!-- </div> -->
-          </div>  
-      </a>
-      </div>
+    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+    <div class="row row--flex row--flex-wrap" style="display: flex;justify-content: center;">
 
       <div class="col-sm-12 col-md-4 col-lg-4 university" style="position: relative;" >
         <a href="" >
-          <div class="university__inner" style=" box-shadow: inset 0 -40px 70px -0px #0e304b;border-radius: 15px;">
-            <div class="img__outer" style="height: 33vh;overflow: hidden;">
+          <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
+            <div class="img__outer" style="overflow: hidden;">
             <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
           </div>
           <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
@@ -433,10 +478,34 @@
 
 
 
+
       <div class="col-sm-12 col-md-4 col-lg-4 university" style="position: relative;" >
         <a href="" >
-          <div class="university__inner" style=" box-shadow: inset 0 -40px 70px -0px #0e304b;border-radius: 15px;">
-            <div class="img__outer" style="height: 33vh;overflow: hidden;">
+          <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
+            <div class="img__outer" style="overflow: hidden;">
+            <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
+          </div>
+          <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
+            <!-- <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; display: flex;align-items: center;" > -->
+              <div class="bottom__locations" style="position: absolute; bottom: 13px; display: flex; justify-content: left; left: 28px; ">
+                <svg width="19" height="19" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.5">
+                  <path d="M10 11.6667C11.3807 11.6667 12.5 10.5475 12.5 9.16675C12.5 7.78604 11.3807 6.66675 10 6.66675C8.61929 6.66675 7.5 7.78604 7.5 9.16675C7.5 10.5475 8.61929 11.6667 10 11.6667Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14.7142 13.8808L11.1783 17.4167C10.8658 17.7289 10.4422 17.9042 10.0004 17.9042C9.55869 17.9042 9.13503 17.7289 8.82251 17.4167L5.28585 13.8808C4.35353 12.9485 3.71863 11.7606 3.46142 10.4674C3.20421 9.17419 3.33625 7.83376 3.84085 6.61561C4.34544 5.39745 5.19993 4.35628 6.29625 3.62376C7.39257 2.89123 8.68149 2.50024 10 2.50024C11.3185 2.50024 12.6075 2.89123 13.7038 3.62376C14.8001 4.35628 15.6546 5.39745 16.1592 6.61561C16.6638 7.83376 16.7958 9.17419 16.5386 10.4674C16.2814 11.7606 15.6465 12.9485 14.7142 13.8808V13.8808Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  </svg> 
+                  <span style=" color: whitesmoke; font-weight: 700; opacity: 0.8; "> Korean </span>
+              </div>
+          <!-- </div> -->
+          </div>  
+      </a>
+      </div>
+
+
+      <div class="col-sm-12 col-md-4 col-lg-4 university" style="position: relative;" >
+        <a href="" >
+          <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
+            <div class="img__outer" style="overflow: hidden;">
             <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
           </div>
           <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
@@ -459,8 +528,32 @@
 
       <div class="col-sm-12 col-md-4 col-lg-4 university" style="position: relative;" >
         <a href="" >
-          <div class="university__inner" style=" box-shadow: inset 0 -40px 70px -0px #0e304b;border-radius: 15px;">
-            <div class="img__outer" style="height: 33vh;overflow: hidden;">
+          <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
+            <div class="img__outer" style="overflow: hidden;">
+            <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
+          </div>
+          <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
+            <!-- <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; display: flex;align-items: center;" > -->
+              <div class="bottom__locations" style="position: absolute; bottom: 13px; display: flex; justify-content: left; left: 28px; ">
+                <svg width="19" height="19" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.5">
+                  <path d="M10 11.6667C11.3807 11.6667 12.5 10.5475 12.5 9.16675C12.5 7.78604 11.3807 6.66675 10 6.66675C8.61929 6.66675 7.5 7.78604 7.5 9.16675C7.5 10.5475 8.61929 11.6667 10 11.6667Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14.7142 13.8808L11.1783 17.4167C10.8658 17.7289 10.4422 17.9042 10.0004 17.9042C9.55869 17.9042 9.13503 17.7289 8.82251 17.4167L5.28585 13.8808C4.35353 12.9485 3.71863 11.7606 3.46142 10.4674C3.20421 9.17419 3.33625 7.83376 3.84085 6.61561C4.34544 5.39745 5.19993 4.35628 6.29625 3.62376C7.39257 2.89123 8.68149 2.50024 10 2.50024C11.3185 2.50024 12.6075 2.89123 13.7038 3.62376C14.8001 4.35628 15.6546 5.39745 16.1592 6.61561C16.6638 7.83376 16.7958 9.17419 16.5386 10.4674C16.2814 11.7606 15.6465 12.9485 14.7142 13.8808V13.8808Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  </svg> 
+                  <span style=" color: whitesmoke; font-weight: 700; opacity: 0.8; "> Korean </span>
+              </div>
+          <!-- </div> -->
+          </div>  
+      </a>
+      </div>
+
+
+
+      <div class="col-sm-12 col-md-4 col-lg-4 university" style="position: relative;" >
+        <a href="" >
+          <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
+            <div class="img__outer" style="overflow: hidden;">
             <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
           </div>
           <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
@@ -1113,6 +1206,27 @@
 <!-- endinject -->
 
 <script src="js/main.js"></script>
+<script>
+function CountryFilter(){
+  country = document.getElementById("country_filter").value
+  console.log(country)
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
 
