@@ -600,3 +600,64 @@ function closeAllSelect(elmnt) {
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var modal = document.querySelector(".modal-former");
+var trigger = document.querySelector(".trigger");
+var closeButton = document.querySelector(".close-button");
+const body = document.querySelector("body");
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+    body.classList.toggle("overflow__hidden");
+}
+
+function windowOnClick(event) {
+  body.style.overflow = " "
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
