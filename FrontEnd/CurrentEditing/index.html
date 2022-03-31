@@ -392,28 +392,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- UNIVERSITIES SECTION -->
-<section class="section-service" style="padding-top: 150px; z-index: 99;">
-  <div class="container-fluid container-fluid--custom">
-    <div class="row">
-      <div class="col-md-2 col-sm-12 col-lg-2">
-
-<!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+<!-- 
 <div class="custom-select" >
   <select >
-    <option onclick="CountryFilter()" value="0">Select car:</option>
+    <option onclick="CountryFilter()" value="0">All</option>
     <option onclick="CountryFilter()  " value="1">Audi</option>
     <option onclick="console.log('Hello')" value="2">BMW</option>
     <option onclick="console.log('Hello')" value="3">Citroen</option>
@@ -429,14 +411,50 @@
   </select>
 </div>
       </div>
-      <div class="col-sm-12 col-md-10 col-lg-10">
-        <div class="section-heading" style="">
+ -->
+
+
+
+<!-- University Filter -->
+<div class="row text-center select_outer"> 
+  <h4> Search By Country </h4>
+  <div class="custom-select" >
+    <select class="mt-5">
+      <option value="0">All</option>
+      <option value="1">Audi</option>
+      <option value="2">BMW</option>
+      <option value="3">Citroen</option>
+      <option value="4">Ford</option>
+      <option value="5">Honda</option>
+      <option value="6">Jaguar</option>
+      <option value="7">Land Rover</option>
+      <option value="8">Mercedes</option>
+      <option value="9">Mini</option>
+      <option value="10">Nissan</option>
+      <option value="11">Toyota</option>
+      <option value="12">Volvo</option>
+    </select>
+  </div>
+</div>
+<!-- University Filter -->
+
+
+
+
+
+
+
+<!-- UNIVERSITIES SECTION -->
+<section class="section-service" style="padding-top: 150px; z-index: 99;">
+  <div class="container-fluid container-fluid--custom">
+<div class="row">
+      <div class="">
+        <div class="section-heading" style="text-align: center;">
           <span class="section-heading_secondary">Our Partners</span>
-          <h2>Universities</h2>
+          <h2>The Most Popular Universities</h2>
         </div>
       </div>
     </div>
-
     <!-- <div class="select-group" >
       <button id="button" class="button" style="display: flex; align-items: center;">
         <img src="https://mpng.subpng.com/20180419/hkw/kisspng-flags-of-the-world-national-flag-flag-of-the-unite-5ad84ef6e0eff4.4839458615241254309214.jpg" style="width: 30px;height: 30px; background: none;" alt="">
@@ -527,7 +545,30 @@
       </div>
 
 
+      <div class="col-sm-12 col-md-4 col-lg-4 university" style="position: relative;" >
+        <a href="" >
+          <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
+            <div class="img__outer" style="overflow: hidden;">
+            <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
+          </div>
+          <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
+            <!-- <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; display: flex;align-items: center;" > -->
+              <div class="bottom__locations" style="position: absolute; bottom: 13px; display: flex; justify-content: left; left: 28px; ">
+                <svg width="19" height="19" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.5">
+                  <path d="M10 11.6667C11.3807 11.6667 12.5 10.5475 12.5 9.16675C12.5 7.78604 11.3807 6.66675 10 6.66675C8.61929 6.66675 7.5 7.78604 7.5 9.16675C7.5 10.5475 8.61929 11.6667 10 11.6667Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14.7142 13.8808L11.1783 17.4167C10.8658 17.7289 10.4422 17.9042 10.0004 17.9042C9.55869 17.9042 9.13503 17.7289 8.82251 17.4167L5.28585 13.8808C4.35353 12.9485 3.71863 11.7606 3.46142 10.4674C3.20421 9.17419 3.33625 7.83376 3.84085 6.61561C4.34544 5.39745 5.19993 4.35628 6.29625 3.62376C7.39257 2.89123 8.68149 2.50024 10 2.50024C11.3185 2.50024 12.6075 2.89123 13.7038 3.62376C14.8001 4.35628 15.6546 5.39745 16.1592 6.61561C16.6638 7.83376 16.7958 9.17419 16.5386 10.4674C16.2814 11.7606 15.6465 12.9485 14.7142 13.8808V13.8808Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  </svg> 
+                  <span style=" color: whitesmoke; font-weight: 700; opacity: 0.8; "> Korean </span>
+              </div>
+          <!-- </div> -->
+          </div>  
+      </a>
+      </div>
 
+
+      
       <div class="col-sm-12 col-md-4 col-lg-4 university" style="position: relative;" >
         <a href="" >
           <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
@@ -959,7 +1000,7 @@
   <div class="container-fluid container-fluid--custom">
     <div class="row">
       <div class="col-md-12">
-        <div class="section-heading">
+        <div class="section-heading" style="text-align: center;">
           <span class="section-heading_secondary">Our Last</span>
           <h2 class="section-heading_main">News</h2>
         </div>
@@ -1151,11 +1192,11 @@
           </form>
           </div>
       <div class="col-md-6">
-        <!-- <section class="section-map"> -->
-          <!-- <div class="container-fluid" style=""> -->
-            <iframe  style="width: 100%; height: 100%;border:none;height: 53vh; border-radius: 10px;" loading="lazy" allowfullscreen="" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJPd-2guVnrjgR7ReMa26jOUs&amp;key=AIzaSyANJiysLYjIDVA6R0_jSYDs57O7GK_Z_Ok"></iframe>
-          <!-- </div> -->
-        <!-- </section> -->
+        <section class="section-map" style="width: 100%; height: 100%;border:none;height: 53vh; border-radius: 10px; background-color: whitesmoke;">
+          <div class="container-fluid" style="">
+
+          </div>
+        </section>
       </div>
     </div>
   </div>
@@ -1170,59 +1211,10 @@
   <div class="footer_top">
     <div class="container-fluid container-fluid--custom">
       <div class="row">
-        <div class="col-md-12 col-lg-3 mb-3">
-          <div class="logo logo--footer">
-            <a href="#">
-              <img src="img/logo-footer.png" alt="">
-            </a>
-          </div>
+        .col-sm-12
 
-          <p>
-            Jameson Consulting, established in 1994, offers a wide variety of consulting services for a range of businesses. We deliver smart and innovative solutions making the most out of your business.
-          </p>
 
-        </div>
 
-        <div class="col-md-6 col-lg-3">
-          <h3 class="title-widget">recent news</h3>
-          <ul class="links-list">
-            <li class="links-list_item">
-              <a href="news-single-page.html">Present your ideas to the Audit Committee the right way</a>
-              <span class="date"><i class="fi fi-calendar"></i>November 22, 2017</span>
-            </li>
-            <li class="links-list_item">
-              <a href="news-single-page.html">Biggest concerns when choosing a vendor</a>
-              <span class="date"><i class="fi fi-calendar"></i>November 22, 2017</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <h3 class="title-widget">Extra links</h3>
-          <ul class="links-list links-list--menu">
-            <li class="links-list_item"><a href="about.html">About</a></li>
-            <li class="links-list_item"><a href="services.html">News</a></li>
-            <li class="links-list_item"><a href="contact-us.html">Contacts</a></li>
-            <li class="links-list_item"><a href="testimonials.html">Testimonials</a></li>
-            <li class="links-list_item"><a href="typography.html">Typography</a></li>
-            <li class="links-list_item"><a href="services.html">Services</a></li>
-            <li class="links-list_item"><a href="careers.html">Careers</a></li>
-            <li class="links-list_item"><a href="our-team.html">Our team</a></li>
-            <li class="links-list_item"><a href="our-approach.html">Our approach</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <h3 class="title-widget">Subscribe</h3>
-          <p>Get latest updates and offers.</p>
-
-          <div class="subscribe">
-            <form action="#" id="form-subscribe" class="form">
-              <input type="email" class="form-control subscribe_input" name="email" placeholder="Enter Your E-mail" required >
-              <button type="submit" class="subscribe_send" title="Send"><i class="fi fi-black-envelope"></i></button>
-            </form>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1237,7 +1229,7 @@
         <ul class="socials socials--oval socials--right">
           <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-twitter"></i>Twitter</a></li>
           <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-facebook-logo"></i>Facebook</a></li>
-          <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-camera"></i>Instagram</a></li>
+          <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-camera  "></i>Instagram</a></li>
           <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-linkedin-logo"></i>Linkedin</a></li>
         </ul>
       </div>
@@ -1262,18 +1254,6 @@ function CountryFilter(){
   console.log(country)
 }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

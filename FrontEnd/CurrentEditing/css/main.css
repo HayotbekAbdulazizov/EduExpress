@@ -17330,14 +17330,14 @@ html:not(.lt-ie10) .not-animated {
   padding-bottom: 20px;
 }
 
-.section-heading_main:after {
+.section-heading_main:after{
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   margin: 0 auto;
-  width: 44px;
+  width: 4%;
   height: 3px;
   background-color: #5b9dc7;
   opacity: .4;
@@ -17360,7 +17360,7 @@ html:not(.lt-ie10) .not-animated {
 }
 
 .section-heading--left {
-  text-align: left;
+  text-align: center;
 }
 
 .section-heading--left .section-heading_main {
@@ -19945,41 +19945,14 @@ body{
     border-right: 1px solid #b1dbf7;
   }
   .logo__text{font-size: 20px;}
-  .university{ padding-left:5px ;padding-right: 5px; }
-  .img__outer{height: 28vh;width: 96vw;}
+  .university{ padding-left:12px ;padding-right: 5px; }
+  .img__outer{height: 30vh;width: 92vw;}
   .title__text{font-size: 2.6rem;}
   .detail__url{font-size: 1.3rem;}
   .section-map{padding-top: 20px;}
   .trigger{margin-top: 5px;}
   iframe{margin-top: 15px;}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -20022,6 +19995,7 @@ body{
 
 .custom-select select {
   display: none; /*hide original SELECT element:*/
+  
 }
 
 .select-selected {
@@ -20049,11 +20023,12 @@ body{
 /*style the items (options), including the selected item:*/
 .select-items div,.select-selected {
   color: black;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  padding: 8px 16px 0px 50px;
+  /* border: 1px solid transparent; */
+  /* border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent; */
   cursor: pointer;
   user-select: none;
+  text-align: left;
 }
 
 /*style items (options):*/
@@ -20075,6 +20050,25 @@ body{
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+
+/* Select */
+.select_outer{
+  /* width: 60%; */
+  /* position: absolute; */
+  /* border-radius: 15px; */
+  /* box-shadow: 15px darkgray; */
+  /* background-color: lightslategray; */
+  padding: 35px ;
+background: #fff;
+-webkit-box-shadow: 0 2px 16px rgba(0,0,0,.1);
+-moz-box-shadow: 0 2px 16px rgba(0,0,0,.1);
+box-shadow: 0 2px 16px rgba(0,0,0,.1);
+-webkit-border-radius: 12px;
+-moz-border-radius: 12px;
+border-radius: 12px;
+margin-bottom: 20px;
+}
+/* Select */
 
 
 
@@ -20159,3 +20153,10 @@ transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 .overflow__hidden{overflow: hidden;}
+
+
+
+
+
+
+
