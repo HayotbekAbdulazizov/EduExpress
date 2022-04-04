@@ -396,8 +396,12 @@
 <div class=" mt-5 row text-center select_outer p-2 university_filter_container" style="position: relative; bottom: 60px; z-index: 99;" > 
   <h4> Search By Country </h4>
   <div class="dropdown">
-    <div onclick="myFunction()" class="dropbtn " id="dropdown_button">Countries </div>
+    <div onclick="myFunction()" class="dropbtn " id="dropdown_button"> <p>Countries  </p> </div>
     <div id="myDropdown" class="dropdown-content">
+      <div class="element_outer" onclick="DropdownItem(this.id)" id="North Korea">
+         <p id="link1inner" class="country_paragraph" > -- All --</p>
+      </div>
+
       <div class="element_outer" onclick="DropdownItem(this.id)" id="North Korea">
         <img class="country_flag" src="img/mal.png" alt="" style=""> <p id="link1inner" class="country_paragraph" > Malaysia</p>
       </div>
