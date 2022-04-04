@@ -11,9 +11,9 @@
 	<meta name="theme-color" content="#ffffff">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"> -->
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
 	<link rel="stylesheet" href="css/main.css">
@@ -33,7 +33,7 @@
 
 
 <div class="wrapper"><!-- start #wrap -->
-<header class="header"  style="height: 100%;">
+<header class="header" >
 	<div class="container-fluid container-fluid--custom">
 		<div class="row">
 			<div class="col-md-12" style="height: 80%; padding: 5px 15px 10px 15px ;">
@@ -141,7 +141,7 @@
 	</div>
 </header>
 
-<svg style='position: absolute; width: 0; height: 0; overflow: hidden;'>
+<!-- <svg style='position: absolute; width: 0; height: 0; overflow: hidden;'>
 	<defs>
 		<symbol id="icon-medal" viewBox="0 0 32 32">
 			<title>medal</title>
@@ -180,11 +180,7 @@
 			<path fill="#54c0eb" style="fill: var(--color5, #54c0eb)" d="M28.733 13.667c0 0.847-0.686 1.533-1.533 1.533s-1.533-0.687-1.533-1.533c0-0.847 0.686-1.533 1.533-1.533s1.533 0.687 1.533 1.533z"></path>
 		</symbol>
 	</defs>
-</svg>
-
-
-
-
+</svg> -->
 
 
 
@@ -193,14 +189,14 @@
 
 <!-- SLider BAnner
  -->
-<section class="banner" style="height: 87vh;">
+<section class="banner" >
   <!-- Swiper -->
   <div class="banner-slider swiper-container" style="height: 100%;">
     <div class="swiper-wrapper">
       <div class="banner-slide swiper-slide" style="background-image: url('img/banner-slider/01.png'); height: 100%; ">
         <div class="slide-container">
-          <div class="slide-content slide-content--left" data-caption-animate="fadeInUp">
-            <h2 class="slide-title">Professional Consulting For Your Business</h2>
+          <div class="slide-content slide-content--left" data-caption-animate="fadeInUp" style="">
+            <h2 class="slide-title" >Professional Consulting For Your Educational Success</h2>
             <p class="slide-text">
               Being professionals in business consulting for over a decade, 
               we use our experience at its fullest for your business to prosper.
@@ -212,7 +208,7 @@
             </div>
 
             <div class="slide-content_img slide-content_img--lg">
-              <img src="img/banner-slider/01_man.png" alt="">
+              <img src="img/girl3.png" alt="" style="transform: scale(1.1); position: relative;right: 40px;">
             </div>
           </div>
         </div>
@@ -221,7 +217,7 @@
       <div class="banner-slide swiper-slide" style="background-image: url('img/banner-slider/02.png'); ">
         <div class="slide-container">
           <div class="slide-content slide-content--right" data-caption-animate="fadeInUp">
-            <h2 class="slide-title">Innovative Strategies and Methods</h2>
+            <h2 class="slide-title" >Innovative Strategies and Methods</h2>
             <p class="slide-text">
               Jameson Consulting uses only up-to-date information and new business methods, 
               providing the most effective solutions for your business
@@ -233,7 +229,8 @@
             </div>
 
             <div class="slide-content_img">
-              <img src="img/banner-slider/02_man.png" alt="">
+              <img src="img/girl.png" alt="" style="position: relative; bottom: 150px; left: 100px; transform: scale(0.9);">
+              <!-- <img src="img/girl.png" alt="" style="position: relative; bottom: 150px; left: 100px;"> -->
             </div>
           </div>
         </div>
@@ -253,7 +250,7 @@
             </div>
 
             <div class="slide-content_img slide-content_img--lg">
-              <img src="img/banner-slider/03_man.png" alt="">
+              <img src="img/girld4.png" style="transform: scale(1.2); position: relative; right: 80px;" alt="">
             </div>
           </div>
         </div>
@@ -392,50 +389,30 @@
 
 
 
-<!-- 
-<div class="custom-select" >
-  <select >
-    <option onclick="CountryFilter()" value="0">All</option>
-    <option onclick="CountryFilter()  " value="1">Audi</option>
-    <option onclick="console.log('Hello')" value="2">BMW</option>
-    <option onclick="console.log('Hello')" value="3">Citroen</option>
-    <option onclick="console.log('Hello')" value="4">Ford</option>
-    <option onclick="console.log('Hello')" value="5">Honda</option>
-    <option onclick="console.log('Hello')" value="6">Jaguar</option>
-    <option onclick="console.log('Hello')" value="7">Land Rover</option>
-    <option onclick="console.log('Hello')" value="8">Mercedes</option>
-    <option onclick="console.log('Hello')" value="9">Mini</option>
-    <option onclick="console.log('Hello')" value="10">Nissan</option>
-    <option onclick="console.log('Hello')" value="11">Toyota</option>
-    <option onclick="console.log('Hello')" value="12">Volvo</option>
-  </select>
-</div>
-      </div>
- -->
 
 
-
+<center>
 <!-- University Filter -->
-<div class="row text-center select_outer"> 
+<div class=" mt-5 row text-center select_outer p-2 university_filter_container" style="position: relative; bottom: 60px; z-index: 99;" > 
   <h4> Search By Country </h4>
-  <div class="custom-select" >
-    <select class="mt-5">
-      <option value="0">All</option>
-      <option value="1">Audi</option>
-      <option value="2">BMW</option>
-      <option value="3">Citroen</option>
-      <option value="4">Ford</option>
-      <option value="5">Honda</option>
-      <option value="6">Jaguar</option>
-      <option value="7">Land Rover</option>
-      <option value="8">Mercedes</option>
-      <option value="9">Mini</option>
-      <option value="10">Nissan</option>
-      <option value="11">Toyota</option>
-      <option value="12">Volvo</option>
-    </select>
-  </div>
+  <div class="dropdown">
+    <div onclick="myFunction()" class="dropbtn " id="dropdown_button">Countries </div>
+    <div id="myDropdown" class="dropdown-content">
+      <div class="element_outer" onclick="DropdownItem(this.id)" id="North Korea">
+        <img class="country_flag" src="img/mal.png" alt="" style=""> <p id="link1inner" class="country_paragraph" > Malaysia</p>
+      </div>
+
+      <div class="element_outer" onclick="DropdownItem(this.id)" id="United States">
+        <img class="country_flag" src="img/usa.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> United States</p>
+      </div>
+
+      <div class="element_outer" onclick="DropdownItem(this.id)" id="Australia">
+        <img class="country_flag" src="img/aus.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> Australia</p>
+      </div>
+    </div>
+  </div> 
 </div>
+</center>
 <!-- University Filter -->
 
 
@@ -445,7 +422,7 @@
 
 
 <!-- UNIVERSITIES SECTION -->
-<section class="section-service" style="padding-top: 150px; z-index: 99;">
+<section class="section-service" style="padding-top: 60px; z-index: 99;">
   <div class="container-fluid container-fluid--custom">
 <div class="row">
       <div class="">
@@ -478,7 +455,7 @@
         <a href="" >
           <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
             <div class="img__outer" style="overflow: hidden;">
-            <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
+            <!-- <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;"> -->
           </div>
           <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
             <!-- <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; display: flex;align-items: center;" > -->
@@ -503,7 +480,7 @@
         <a href="" >
           <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
             <div class="img__outer" style="overflow: hidden;">
-            <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
+            <!-- <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;"> -->
           </div>
           <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
             <!-- <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; display: flex;align-items: center;" > -->
@@ -526,7 +503,7 @@
         <a href="" >
           <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
             <div class="img__outer" style="overflow: hidden;">
-            <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
+            <!-- <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;"> -->
           </div>
           <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
             <!-- <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; display: flex;align-items: center;" > -->
@@ -549,7 +526,7 @@
         <a href="" >
           <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
             <div class="img__outer" style="overflow: hidden;">
-            <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
+            <!-- <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;"> -->
           </div>
           <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
             <!-- <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; display: flex;align-items: center;" > -->
@@ -573,7 +550,7 @@
         <a href="" >
           <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
             <div class="img__outer" style="overflow: hidden;">
-            <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
+            <!-- <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;"> -->
           </div>
           <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
             <!-- <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; display: flex;align-items: center;" > -->
@@ -597,7 +574,7 @@
         <a href="" >
           <div class="university__inner" style=" box-shadow: inset 0 -80px 80px -3px #0e304b;border-radius: 15px;">
             <div class="img__outer" style="overflow: hidden;">
-            <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
+            <!-- <img src="https://i.pinimg.com/originals/3a/a8/4b/3aa84b0be71734263afea22dca2b3cd9.jpg" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;"> -->
           </div>
           <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> INHA University More Description</h4>
             <!-- <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; display: flex;align-items: center;" > -->
@@ -1113,12 +1090,33 @@
 
 
 
-<div class="modal-former" style="z-index: 9;">
-    <div class="modal-content">
+<div class="modal-former" style="z-index: 9; ">
+    <div class="modal-content" >
         <span class="close-button">×</span>
-        <form action="">
-          
-        </form>
+          <form action="#" id="contact-form" class="form">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 ">
+                <input type="text" class="form-control" name="first-name" placeholder="First Name" style="border-radius: 10px; font-weight: bold;">
+              </div>
+
+              <div class="col-md-6">
+                <input type="email" class="form-control" name="email" placeholder="Email" style="border-radius: 10px; font-weight: bold;">
+              </div>
+
+              <div class="col-md-6">
+                <input type="text" class="form-control" name="phone" placeholder="Phone" style="border-radius: 10px; font-weight: bold;">
+              </div>
+
+              <div class="col-md-12">
+                <textarea rows="8" class="form-control" name="message" placeholder="Your Message" style="border-radius: 10px; font-weight: bold;"></textarea>
+              </div>
+              <div class="col-md-12 text-right text-center">
+                <center> <button class="button__view_all" style=""> Send </button> </center>
+                <div id="progress" style="position: absolute; bottom: 0; display: none; ">msg</div>
+              </div>
+
+            </div>
+          </form>
       </div>
 </div>
 
@@ -1231,6 +1229,7 @@
           <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-facebook-logo"></i>Facebook</a></li>
           <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-camera  "></i>Instagram</a></li>
           <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-linkedin-logo"></i>Linkedin</a></li>
+          <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-you-tube"></i>Linkedin</a></li>
         </ul>
       </div>
     </div>
