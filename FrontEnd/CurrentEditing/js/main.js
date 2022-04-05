@@ -541,6 +541,9 @@ window.onclick = function(event) {
 
 function DropdownItem(id){
   document.getElementById('dropdown_button').innerHTML = document.getElementById(`${id}`).innerHTML
+        // <div class="element_outer" onclick="DropdownItem(this.id)" id="Korea">
+        {/* <img class="country_flag" src="img/kor.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> Korea</p> */}
+      {/* </div> */}
   console.log(document.getElementById(`${id}`).innerHTML)
 }
 

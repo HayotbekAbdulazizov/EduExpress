@@ -7297,11 +7297,11 @@ output {
   color: #5b7b95;
 }
 
-.form-control {
+ .form-control {
   display: block;
   width: 100%;
-  height: 36px;
-  padding: 6px 12px;
+  height: 56px;
+  padding: 12px 12px;
   font-size: 14px;
   line-height: 1.6;
   color: #5b7b95;
@@ -7314,7 +7314,7 @@ output {
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   -moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-}
+} 
 
 .form-control:focus {
   border-color: #619ccf;
@@ -19933,7 +19933,14 @@ body{
 
 
 
-
+.university_filter_container{
+  margin-top: 80px;
+  background-color: whitesmoke;
+  width: 46vw;
+  box-shadow: lightgray 5px 1px 20px;
+  position: relative;
+  border-radius: 15px;
+}
 /* university detail */
 .title__text{color: white; font-size:4rem;}
 .detail__url{font-size: 1.6rem;}
@@ -19949,9 +19956,12 @@ body{
   .section-map{padding-top: 20px;}
   .trigger{margin-top: 5px;}
   iframe{margin-top: 15px;}
-  .header{height: 10vh; max-height: 10vh; overflow: hidden;}
+  .header{height: 10vh; max-height: 10vh;}
   .banner{height: 90vh;max-height: 90vh; overflow: hidden;}
+  .university_filter_container{width: 100%; margin-left: 0%;}
+  .modal-content{ width: 95%; }
 }
+/* .university_filter_container{width: 56vh;} */
 
 .banner-slide{padding-top: 0px 0 0 0;}
 
@@ -19974,15 +19984,6 @@ body{
 
 
 
-.university_filter_container{
-  margin-top: 80px;
-  background-color: whitesmoke;
-   width: 600px;
-    box-shadow: lightgray 5px 1px 20px;
-     position: relative;
-  border-radius: 15px;
-}
-
 .country_flag{
    width: 40px;background: none;
 }
@@ -19990,7 +19991,7 @@ body{
  /* Dropdown Button */
  .dropbtn {
    color: black;
-   padding: 12px;
+   /* padding: 12px; */
    font-size: 16px;
    cursor: pointer;
    display: flex;
@@ -20000,11 +20001,13 @@ body{
    /* border-radius: 15px; */
    border-top-left-radius: 15px;
    border-top-right-radius: 15px;
+   border: 1px solid rgba(165, 165, 165, 0.48);
 
 }
 
 .country_paragraph{
   font-size: 1.7rem;
+  padding-left: 5px;
 }
 
 /* Dropdown button on hover & focus */
@@ -20044,11 +20047,14 @@ body{
   display: flex;
   align-items: center;
   justify-content: left;
-  border: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  /* border-bottom-left-radius: 15px; */
+  /* border-bottom-right-radius: 15px; */
 }
 
+
 /* Change color of dropdown links on hover */
-.dropdown-content .element_outer:hover {background-color: #ddd}
+.dropdown-content .element_outer:hover {background-color: #ddd;border-bottom-left-radius: 15px;  border-bottom-right-radius: 15px; }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;} 
@@ -20080,7 +20086,7 @@ body{
 
 
 .trigger{
-  /* text-align: center; */
+  text-align: center;
 /* padding: 7px 13px; */
 /* background: #3e3e3e; */
 /* color: #fff; */
@@ -20137,5 +20143,69 @@ transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 
 
 
+
+/* Form */
+.form-control {
+  /* color: #5b7b95; */
+  color: lightslategrey;
+  /* background-color:  	rgba( 	35 	,74 	,159, 0.3); */
+  /* background: lightgray; */
+  border: 1px solid lightgray;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  
+}
+
+/* Social Media form */
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap");
+
+* {
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+  /* line-height: 120px; */
+}
+
+.button {
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	background: #fff;
+	overflow: hidden;
+	border-radius: 20px;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button span {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 60px;
+	margin-left: 10px;
+}
+
+.button{
+	width: 200px;
+}
+
+
+
+.button .icon {
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	border-radius: 50px;
+	display: inline-block;
+	transition: all 0.3s ease-in-out;
+}
+
+.button .icon i {
+	font-size: 25px;
+	line-height: 60px;
+	transition: all 0.3s ease-in-out;
+}
+
+/* .button:hover  { */
+	/* color: #fff; */
+/* } */
 
 
