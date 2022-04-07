@@ -397,7 +397,7 @@
 <div class="p-2 university_filter_container" style="margin-top: 50px;"  > 
   <h4> Search By Country </h4>
   <div class="dropdown">
-    <div onclick="myFunction()" class="dropbtn " id="dropdown_button" style="padding:8px 0px 8px 20px ;"> <p style="padding: 7px 0px 7px 20px ;">Countries  </p> </div>
+    <div onclick="myFunction()" class="dropbtn " id="dropdown_button" style="padding:8px 0px 8px 20px ;"> <p style="padding: 7px 0px 7px 20px ; font-weight: bold;">Countries  </p> </div>
     <div id="myDropdown" class="dropdown-content">
       <div class="element_outer" onclick="DropdownItem(this.id)" id="-- All --">
          <p id="link1inner" class="country_paragraph" > -- All --</p>
@@ -1212,44 +1212,55 @@
           </form>
           </div>
       <div class="col-md-6">
-        <section class="section-map" style="width: 100%; height: 100%;border:none;height: 53vh; background-color: whitesmoke;">
-              <div class="wrapper" style="display: flex; justify-content: space-evenly;">
-                <div class="button">
-                  <div class="icon">
-                    <i class="fab fa-instagram"></i>
-                    <!-- <i class="fab fa-instagram-square"></i> -->
-                  </div>
-                  <!-- <span>Instagram</span> -->
-                  <span>Instagra</span>
+        <section >
+          <!-- <h4> Our social media </h4> -->
+          <div class="social-media col-md-6 col-sm-6 ">
+              <div class="outer_container" style="border: 2px solid red;">
+                <div class="social_icon_outer" style="background-color: red; padding: 12px 12px 12px 12px ;">
+                  <i class="fab fa-youtube fa-2x" style="color: #fff;"></i>
                 </div>
-            
-                <div class="button">
-                  <div class="icon">
-                    <i class="fab fa-telegram-plane"></i>
-                    <!-- <i class="fab fa-telegram"></i> -->
-                  </div>
-                  <!-- <span>Telegram</span> -->
-                  <span>TikTok</span>
-
-                </div>
-
-            
-                <div class="button">
-                  <div class="icon">
-                    <i class="fab fa-tiktok"></i>
-                  </div>
-                  <span>TikTok</span>
-                </div>
-            
-                <div class="button">
-                  <div class="icon">
-                    <i class="fab fa-youtube"></i>
-                  </div>
-                  <span>YouTube</span>
-                </div>
-            
- 
+                <div class="social__text" style="color: red;">EduExpress_Consulting</div>
               </div>
+            </div>
+
+            <div class="social-media col-md-6 col-sm-6 ">
+              <div class="outer_container" style="border: 2px solid #fd0054;">
+                <div class="social_icon_outer" style="background-color:#fd0054;  padding: 12px 15px 12px 15px; color: white;">
+                  <i class="fab fa-instagram fa-2x" ></i>
+                </div>
+                <div class="social__text" style="color:#fd0054;">EduExpress_Consulting</div>
+              </div>
+            </div>
+
+            <div class="social-media col-md-6 col-sm-6">
+              <div class="outer_container" style="border: 2px solid black;">
+                <div class="social_icon_outer" style="background-color: black;padding: 12px 16px 12px 15px; "> 
+                  <i class="fab fa-tiktok fa-2x" style="color: white;"></i>
+                </div>
+                <div class="social__text" style="color: black;">EduExpress_Consulting</div>
+              </div>
+            </div>
+
+            <div class="social-media col-md-6 col-sm-6 ">
+              <div class="outer_container" style="border: 2px solid #229ED9;">
+                <div class="social_icon_outer" style="background-color: #229ED9; padding: 12px 16px 12px 15px;">
+                  <i class="fab fa-telegram-plane fa-2x" style="color: white;"></i>
+                </div>
+                <div class="social__text" style="color: #229ED9;">EduExpress_Consulting</div>
+              </div>
+            </div>
+            
+            <!-- <h4> Location and Phone Numbers</h4> -->
+            <div class="social-media col-md-12 col-sm-12 mt-5 " style="margin: 40px 0 0 0 ;">
+              <div class="outer_container" style="border: 2px solid #0c2c47">
+                <div class="social_icon_outer" style="background-color: #0c2c47; padding: 12px 16px 12px 15px;">
+                  <i class="fas fa-phone fa-2x" style="color: white;"></i>
+                </div>
+                <a href="tel:+998916020335" class="social__text" style="color: #0c2c47;"> <img class="country_flag" src="img/kor.png" alt=""> +998916020335 </a>
+                <a href="tel:+998916020335" class="social__text" style="color: #0c2c47;"> <img class="country_flag" src="img/kor.png" alt=""> +821067853883 </a>
+              </div>
+            </div>
+            
         </section>
       </div>
     </div>
