@@ -19943,7 +19943,7 @@ body{
 .detail__url{font-size: 1.6rem;}
 .img__outer{height: 33vh; width: 100%;}
 .footer_logo{transform: scale(0.8);}
-
+.creator{float: right;}
 @media (max-width: 543px) {
   .table-responsive {border: none;border-right: 1px solid #b1dbf7;}
   .logo__text{font-size: 20px;}
@@ -19960,7 +19960,9 @@ body{
   .modal-content{ width: 95%; }
   .footer_logo{transform: scale(1.1);}
   .ptm-5{padding-top: 20px;}
+  .creator{float: left ;}
 }
+
 /* .university_filter_container{width: 56vh;} */
 
 .banner-slide{padding-top: 0px 0 0 0;}
