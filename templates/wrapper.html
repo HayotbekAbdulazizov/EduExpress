@@ -1,230 +1,242 @@
 {% load i18n %}
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png"href="https://img.icons8.com/material-outlined/344/laptop.png">
-    <title>  {% block title %}  {% endblock title %}</title>
+	<meta charset="UTF-8">
+	<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<![endif]-->
+        
+    <title>
+        {% block title %}  {% endblock title %}
+    </title>            
+	<link href='/static/img/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed' sizes='192x192'>
+	<link href='/static/img/favicon.ico' rel='shortcut icon' type='image/x-icon'>
+	<meta name="theme-color" content="#ffffff">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/fontawesome-free-5.15.4-web/css/all.css">
+    <link rel="stylesheet" href="/static/css/fontawesome-free-5.15.4-web/css/all.min.css">
+  <!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body>
-  <script>
-    window.addEventListener('load', function () {
-      // const p = document.querySelector('p');
-      // p.innerHTML = 'Replaced!';
-    });
-  </script>
-                          <!-- <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                                <input name="next" type="hidden" value="{{ redirect_to }}">
-                                <select name="language" onchange="this.form.submit()" class="custom-select" style="background: none; border: none; color: white; font-weight: bold;">
-                                    {% get_current_language as LANGUAGE_CODE %}
-                                    {% get_available_languages as LANGUAGES %}
-                                    {% get_language_info_list for LANGUAGES as languages %}
-                                    {% for language in languages %}
-                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                                             {{ language.code }}
-                                        </option>
-                                    {% endfor %}
-                                </select>
-                            </form> -->
 
 
-                            <!-- <form action="{% url 'set_language' %}" method="post" >
-                                {% csrf_token %}
-                                {{LANGUAGE_CODE}}
-                                <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
-                                <select name="language"  onchange="this.form.submit()" class="custom-select language__code" style="  background: none; border: none; font-weight: bold; text-transform: uppercase;">
-                                  {% get_language_info_list for LANGUAGES as languages %}
-                                    {% for language in languages %}
-                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}   class="language__code" >
-                                             {{ language.code }}
-                                        </option>
-                                    {% endfor %}
-                                </select>
-                              </form> -->
 
 
-<!-- 
-
-                              <form action="{% url 'set_language' %}" method="post" >
-                                {% csrf_token %}
-                                {{LANGUAGE_CODE}}
-                                <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
-                                <select name="language"  onchange="this.form.submit()" class="custom-select language__code" style="  background: none; border: none; font-weight: bold; text-transform: uppercase;">
-                                  {% get_language_info_list for LANGUAGES as languages %}
-                                    {% for language in languages %}
-                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}   class="language__code" >
-                                             {{ language.code }}
-                                        </option>
-                                    {% endfor %}
-                                </select>
-                              </form> -->
 
 
-<!-- 
 
-      {% get_current_language as CURRENT_LANGUAGE %}
-      {% get_available_languages as AVAILABLE_LANGUAGES %}
-      {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
-      <div class="languages">
-        <p>{% trans "Language" %}:</p>
-        <ul class="languages">
-          {% for language in languages %}
-            <li>
-              <a href="/{{ language.code }}/"
-                {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
-                {{ language.name_local }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
 
-      {% for course in courses %}
-        <div class="card p-4">
-          <h3>
-            {{ course.title }}
-            <em style="font-size: small">{{ course.date }}</em>
-          </h3>
-          <p>{{ course.description }}</p>
-          <strong>Price: $ {{ course.price }}</strong>
+
+<div class="wrapper"><!-- start #wrap -->
+<header class="header" >
+	<div class="container-fluid container-fluid--custom">
+		<div class="row">
+			<div class="col-md-12" style="height: 80%; padding: 5px 15px 10px 15px ;">
+
+				<div class="header_bottom" style="height: 100%; padding: 0%;">
+					<div class="row row--flex row--flex-middle row--flex-wrap">
+						<div class="col-xs-12 col-md-3">
+							<div class="logo" style="margin: 0px;">
+								<a href="index.html" style="overflow: hidden;">
+									<img src="/static/main_logo.png" alt="" style="transform: scale(0.9);">
+								</a>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-md-9 text-right">
+							<button type="button" class="btn btn--menu-mobile js-mobile-menu">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+
+							<nav class="menu">
+								<ul class="menu_list">
+									<li class="menu_item menu_item--custom menu_item-has-children">
+										<a href="about.html">About us</a>
+										<ul class="sub-menu">
+											<li class="menu_item"><a href="our-approach.html">Our approach</a></li>
+											<li class="menu_item"><a href="our-partners.html">Our partners</a></li>
+											<li class="menu_item menu_item-has-children">
+												<a href="careers.html">Careers</a>
+												<ul class="sub-menu">
+													<li class="menu_item"><a href="career-single-page.html">Single Page</a></li>
+												</ul>
+											</li>
+											<li class="menu_item"><a href="our-team.html">Our Team</a></li>
+											<li class="menu_item"><a href="team-single-page.html">Our Team Single</a></li>
+										</ul>
+									</li>
+									<li class="menu_item menu_item-has-children">
+										<a href="services.html">Services</a>
+										<ul class="sub-menu">
+											<li class="menu_item"><a href="service-single.html">Service Single</a></li>
+											<li class="menu_item"><a href="services-tabs.html">Services Tabs</a></li>
+										</ul>
+									</li>
+									<li class="menu_item menu_item-has-children">
+										<a href="cases.html">Cases</a>
+										<!--<ul class="sub-menu">-->
+											<!--<li class="menu_item"><a href="cases-single.html">Cases Single</a></li>-->
+										<!--</ul>-->
+									</li>
+									<li class="menu_item menu_item-has-children">
+										<a href="portfolio.html">Portfolio</a>
+										<ul class="sub-menu">
+											<li class="menu_item"><a href="portfolio-single.html">Portfolio Single</a></li>
+										</ul>
+									</li>
+									<li class="menu_item"><a href="contact-us.html">Contacts</a></li>
+									<li class="menu_item menu_item-has-children">
+										<a href="#">Pages</a>
+										<ul class="sub-menu">
+											<li class="menu_item"><a href="404.html">404</a></li>
+											<li class="menu_item"><a href="503.html">503</a></li>
+											<li class="menu_item"><a href="news-single-page.html">News Single</a></li>
+											<li class="menu_item"><a href="testimonials.html">Testimonials</a></li>
+											<li class="menu_item"><a href="typography.html">Typography</a></li>
+										</ul>
+									</li>
+								</ul>
+
+								<ul class="contacts hidden-md hidden-lg">
+									<li class="contacts_item"><i class="fi fi-placeholder"></i>1010 Avenue of the Moon, New York, NY 10018 US.</li>
+									<li class="contacts_item"><i class="fi fi-clock-circular-outline"></i>Mon - Sat 8.00 - 18.00. Sunday CLOSED</li>
+									<li class="contacts_item"><i class="fi fi-phone-receiver"></i>+1 628 123 4000</li>
+									<li class="contacts_item"><i class="fi fi-envelope"></i>jameson@example.com</li>
+								</ul>
+
+								<ul class="socials hidden-md hidden-lg">
+									<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-facebook-logo"></i>Facebook</a></li>
+									<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-twitter"></i>Twitter</a></li>
+									<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-google-plus"></i>Google Plus</a></li>
+								</ul>
+							</nav>
+
+							<ul class="socials hidden-xs hidden-sm">
+								<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-facebook-logo"></i>Facebook</a></li>
+								<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-twitter"></i>Twitter</a></li>
+								<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-google-plus"></i>Google Plus</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+{% block content %}
+    
+{% endblock content %}
+    
+
+
+
+<!-- Site footer -->
+<footer class="footer-section">
+    <div class="container pt-5" >
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo" style="overflow: hidden; width: 230px; height: 100px; margin: 0%; display: flex; align-items: center; padding-left: 10px;">
+                            <a href="index.html" ><img src="/static/footerlogo3.png" style="position: relative; transform: scale(1.2);" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="footer-text " style="padding-left: 0px;">
+                          <!-- <a class="font-dark" style="padding: 0px  0 0 0;color: #878787; ">Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                            elit,Lorem ipsum dolor sit amet.</a> -->
+                            
+                        </div>
+  
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30 ptm-5">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Home Page</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Universities</a></li>
+                            <li><a href="#">Latest News</a></li>
+                            <li><a href="#">Social Media</a></li>
+                            <li><a href="#">Footer</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50 ptm-5">
+                    <div class="footer-widget ">
+                        <div class="footer-widget-heading">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="subscribe-form">
+                          <div class="footer-social-icon">
+                            <a href="#"><i class="fab fa-youtube youtube-bg"></i></a>
+                            <a href="#"><i class="fab fa-instagram instagram-bg"></i></a>
+                            <a href="#"><i class="fab fa-tiktok tiktok-bg"></i></a>
+                            <a href="#"><i class="fab fa-telegram-plane telegram-bg"></i></a>
+                        </div>
+                        <a class="creator font-white" style=" font-size:1.8rem; cursor: pointer;">
+                          Разработано в <img src="/static/mylogo2.png" style="width: 70px;"  alt="">
+						</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <hr />
-      {% empty %}
-        <p>Database is empty</p> -->
-      <!-- {% endfor %} -->
-
- 
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-
-
-      {% get_current_language as LANGUAGE_CODE %}
-      <!-- Current language: {{ LANGUAGE_CODE }} -->
-      <!-- <p>{% translate "Welcome to our page" %}</p> -->
-      
-      <!-- {% language 'en' %} -->
-          <!-- {% get_current_language as LANGUAGE_CODE %} -->
-          <!-- Current language: {{ LANGUAGE_CODE }} -->
-          <!-- <p>{% translate "Welcome to our page" %}</p> -->
-      <!-- {% endlanguage %} -->
-      <!-- {% get_language_info for LANGUAGE_CODE as lang %} -->
-      <!-- {% get_language_info for "pl" as lang %}       --> 
-
-
-
-
-
-
-
-      
-    <!-- <form action="{% url 'set_language' %}" method="post"> -->
-        <!-- {% csrf_token %} -->
-        <!-- <input name="next" type="hidden" value="{{redirect_to}}" /> -->
-<!--  -->
-        <!-- <select class="selectpicker" name="language" style="width: auto;" onchange="this.form.submit()"> -->
-          <!-- {% get_current_language as LANGUAGE_CODE %} -->
-          <!-- {% get_available_languages as LANGUAGES %} -->
-          <!-- {% get_language_info_list for LANGUAGES as languages %} -->
-          <!-- {% for language in languages %} -->
-<!--  -->
-              <!-- <option -->
-                <!-- value="{{ language.code }}" -->
-                <!-- {% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %} -->
-                <!-- data-content='<img src="/static/images/flags/{{ language.code }}.gif"></span> -->
-                <!-- <span style="display:inline-block; width:100px; padding-left: 10px; text-shadow:none"> -->
-                  <!-- {{ language.name_local }} -->
-                  <!-- span style="color:#999;">&nbsp;[{{ language.code }}]</span -->
-                <!-- </span>'> -->
-                <!-- {{ language.code }} -->
-              <!-- </option> -->
-<!--  -->
-          <!-- {% endfor %} -->
-        <!-- </select> -->
-    <!-- </form> -->
-
-
-
-    <!-- <form action="{% url 'set_language' %}" method="post">
-      {% csrf_token %}
-      {% get_current_language as LANGUAGE_CODE %}
-      {% get_available_languages as LANGUAGES %}
-      {% for language in LANGUAGES %}
-        {% if language.0 != LANGUAGE_CODE %}
-          <button type="submit" name="language" value="{{ language.0 }}">
-            {{ language.1 }}
-          </button>
-        {% endif %}
-      {% endfor %}
-    </form> -->
-
-
-
-    <!-- <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" /> -->
-
-    <!-- <form action="{% url 'set_language' %}" method="post" >
-      {% csrf_token %}
-      <input name="next" type="hidden" value="{{redirect_to}}" />
-      <select name="language"  onchange="this.form.submit()" class="custom-select language__code" style="  background: none; border: none; font-weight: bold; text-transform: uppercase;">
-        {% get_language_info_list for LANGUAGES as languages %}
-          {% for language in languages %}
-              <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}   class="language__code" >
-                   {{ language.code }}
-              </option>
-          {% endfor %}
-      </select>
-    </form> -->
-
-
-
-
-
-
-
-    {% get_current_language as CURRENT_LANGUAGE %}
-    {% get_available_languages as AVAILABLE_LANGUAGES %}
-    {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
-    <div class="languages">
-      <p>{% trans "Language" %}:</p>
-      <ul class="languages">
-        {% for language in languages %}
-          <li>
-            <a href="/{{ language.code }}/"
-              {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
-              {{ language.name_local }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
     </div>
-
-
-
-
-
-
-    {% block content %}
-        
-    {% endblock content %}
-        
-
-
-
-
-
-
-</body>
-</html>
+    <div class="copyright-area" style="background-color: #081b2c;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-sm-12 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2019, EduExpress Consulting All Rights Reserved | Web-Site is developer by <a href="instgaram.com"> Hayotbek Abdulazizov </a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+  
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  
+  
+  <!-- inject:js -->
+  <script src="/static/js/vendor/jquery.js"></script>
+  <script src="/static/js/vendor/Chart.min.js"></script>
+  <script src="/static/js/vendor/bootstrap.min.js"></script>
+  <script src="/static/js/vendor/jquery.validate.min.js"></script>
+  <script src="/static/js/vendor/masonry.pkgd.min.js"></script>
+  <script src="/static/js/vendor/mixitup.min.js"></script>
+  <script src="/static/js/vendor/swiper.jquery.min.js"></script>
+  <!-- endinject -->
+  
+  <script src="/static/js/main.js"></script>
+  <script>
+  function CountryFilter(){
+    country = document.getElementById("country_filter").value
+    console.log(country)
+  }
+  </script>
+  
+  
+  
+  </body>
+  </html>
+  
+  

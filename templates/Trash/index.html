@@ -1,0 +1,249 @@
+{% extends 'wrapper.html' %}
+{% load i18n %}
+
+
+{% block title %}
+    EduExpress | Home
+{% endblock title %}
+    
+
+
+{% block content %}
+    Hello, World !!!
+    Status : {{status}}
+
+    <script>
+        window.addEventListener('load', function () {
+          // const p = document.querySelector('p');
+          // p.innerHTML = 'Replaced!';
+          console.log('reload')
+        });
+      </script>
+
+
+
+    <!-- Universities -->
+    <h4> Universities </h4>
+
+    
+<select onchange="CountryFilter()" class="my-select select2-hidden-accessible" id="country_filter">
+    <option value="all" data-select2-id="select2-data-2-5jfa" selected> -- all countries -- </option>
+    {% for i in countries %}
+        <option value="{{i.id}}" data-select2-id="select2-data-2-5jfa"> {{i.name}} </option>
+    {% endfor %}
+</select>
+
+
+    <div class="university_container">
+    {% for university in universities %}
+    <div class="university" style="display: none;">
+    <a href="{% url 'main:university_detail' slug=university.slug  %}">    {{university.name}}</a>      
+    
+    {% if university.image %}
+    <img src="{{university.image.url}}" width="150" height="150" alt="  University Image">    
+    {% endif %}
+    </div>
+    {% endfor %}
+</div>
+    <button id="showmore" onclick="LoadMore()"> Show more </button>       
+    <button id="showless" onclick="LoadLess()"> Show Less </button>       
+
+
+
+
+    <h4>Countries</h4>
+    {% for country in countries %}
+        <img src="{{country.image.url}}" width="60" height="50" alt=""> 
+    {% endfor %}
+        
+
+    {% if messages %}	
+    <div class="text-center" id="alert__message" style=" display:flex; justify-content: center; width: 100vw;">
+        <div class="alert alert-success absolute text-center" role="alert" style="z-index: 9999;" auto-close="2000">
+            {% for msg in messages %} {{msg}} {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+
+
+
+<h4> Form </h4>
+
+                <!-- <form action=""  method="POST">
+                        {% csrf_token %}
+                        <input type="text" placeholder=" {% trans 'Your name' %} " name="name">
+                        <input type="text" placeholder=" {% trans 'Surname' %} " name="surname">
+                        <input type="text" placeholder=" {% trans 'Age' %} " name="age">
+                        <input type="text" placeholder=" {% trans 'The country you are going to study ' %} " name="country">
+                        <input type="text" placeholder=" {% trans 'Surname' %} " name="surname">
+                        <select name="language" id="">
+                            <option value="English"> {% trans 'English' %} </option>
+                            <option value="Korean"> {% trans 'Korean' %} </option>
+                            <option value="Not sure"> {% trans 'Not sure' %} </option>
+                        </select>
+                        <select name="program" id="">
+                            <option value="language cource"> {% trans 'Language Course' %} </option>
+                            <option value="bachelor"> {% trans 'Bachelor' %} </option>
+                            <option value="Magistracy"> {% trans 'Magistracy' %} </option>
+                            <option value="Doctoral studies (PHD)"> {% trans 'Doctoral studies (PHD)' %} </option>
+                            <option value="Not sure"> {% trans 'Not sure' %} </option>
+                        </select>
+                        <input type="text" placeholder=" {% trans 'Phone number' %} " name="phone">
+                        <textarea name="additional" placeholder=" {% trans 'Additional message' %} "></textarea>
+                                <button  type="submit" class="thm-btn"><span> {% trans 'Send ' %} </span></button>
+                    </form> -->
+
+
+
+
+
+
+
+
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <label for="id_name"> {% trans 'Your name' %} </label>
+                        {{form.name}}
+                        <label for="id_name"> {% trans 'Your surname' %} </label>
+                        {{form.surname}}
+                        <label for="id_name"> {% trans 'Your age' %} </label>
+                        {{form.age}}
+                        <label for="id_name"> {% trans 'The program you want to study' %} </label>
+                        {{form.program}}
+                        <label for="id_name"> {% trans 'The language you want to study' %} </label>
+                        {{form.language}}
+
+                        <label for="id_name"> {% trans 'Your degree' %} </label>
+                        {{form.degree}}
+                        <label for="id_name"> {% trans 'The score you got' %} </label>
+                        {{form.score}}
+
+                        <label for="id_name"> {% trans 'Your phone number' %} </label>
+                        {{form.phone}}
+                        <label for="id_name"> {% trans 'Additional Message ' %} </label>
+                        {{form.additional}}
+                        <button  type="submit" class="thm-btn"><span> {% trans 'Send ' %} </span></button>
+                    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+console.log("Hello, World !!!")
+let universities = document.getElementsByClassName('university')
+console.log(universities)
+
+for(let x=0; x < 2; x++){
+    universities[x].style.display = 'block'
+    console.log('done', x)
+}
+
+
+function LoadMore(){
+    let universities = document.getElementsByClassName("university")
+    let limit = 2
+    for(i of universities){
+        if(limit === 0){
+            break
+        }
+        if(i.style.display === 'block'){ console.log("passs") }else{
+            console.log("Hello")
+            i.style.display = 'block'
+            limit -= 1
+        }
+    }
+}
+
+
+
+
+
+function LoadLess(){
+
+}
+
+
+
+
+
+
+
+
+
+
+function CountryFilter(){
+    let country_id = parseInt(document.getElementById('country_filter').value)
+    console.log("Country ID",country_id, typeof country_id)
+    if (window.XMLHttpRequest){
+		var xhttp=new XMLHttpRequest();
+	} else { 
+            var xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = function(){
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            let data = JSON.parse(this.responseText)
+            let div = ''
+            for(university of data['universities']){
+                console.log(university.name)
+				div += '<div class="university" style="display: none;">\
+                    <a href=" ' + university.slug + '">' + university.name + ' </a>\
+                    <img src="/media/'    + university.image +     '" width="150" height="150" alt="  University Image">\
+                        </div>\
+                '
+            }
+			document.getElementsByClassName('university_container')[0].innerHTML = div
+            document.getElementById('showless').style.display = 'none'  
+            document.getElementById('showmore').style.display = 'inline-block'  
+            for(let x=0; x < 2; x++){
+                universities[x].style.display = 'block'
+                console.log('done', x)
+            }
+        }else{
+          console.log('not yet')
+          }
+      }
+
+    var url = "/country_filter/"
+	xhttp.open("GET", url+`?data=${`${document.getElementById('country_filter').value}`}`, true);
+    xhttp.send();
+}
+
+
+
+
+
+
+
+</script>
+
+
+
+
+<style>
+    #showmore{
+        display: inline;
+    }
+    #showless{
+        display: none;
+    }
+    .hidden{ display: none; }
+    .show{ display: block; }
+</style>
+                    {% endblock content %}
+    

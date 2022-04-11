@@ -1,10 +1,8 @@
 from django.db import models
 from django.forms import DateTimeField, ImageField, SlugField
 from django.urls import reverse
-# from parler.models import TranslatableModel, TranslatedFields
 from django.utils.translation import gettext as _
 from django.utils.translation import get_language
-# from parler.models import TranslatableModel, TranslatedFields
 from ckeditor.fields import RichTextField
 
 
@@ -110,7 +108,6 @@ class Request(models.Model):
     degree = models.ForeignKey(Degree, on_delete=models.PROTECT, blank=True, null=True)
     score = models.FloatField('Score', blank=True, null=True,default=0 )
     phone = models.CharField('Phone Number', max_length=30)
-
     additional = models.TextField('Message', blank=True)
     date = models.DateTimeField('Date', auto_now_add=True, blank=True)  
     

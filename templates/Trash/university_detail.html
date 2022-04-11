@@ -1,0 +1,56 @@
+{% extends 'wrapper.html' %}
+{% load i18n %}
+
+
+{% block title %}
+    EduExpress | {{object.name}}
+{% endblock title %}
+    
+
+
+{% block content %}
+    {{object.name}}
+
+
+
+
+
+
+
+    {{object.description|safe}}
+    <h5> OBJECT </h5>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+
+
+
+
+<!-- <input type="hidden" value="{{object.id}}" name="univ_id"> -->
+<h2> ID </h2>
+<input  value="{{object.id}}" name="university_id" type="hidden">
+<br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br>
+        <label for="id_name"> {% trans 'Your name' %} </label>
+        {{form.name}}
+        <label for="id_name"> {% trans 'Your surname' %} </label>
+        {{form.surname}}
+        <label for="id_name"> {% trans 'Your age' %} </label>
+        {{form.age}}
+        <label for="id_name"> {% trans 'The program you want to study' %} </label>
+        {{form.program}}
+        <label for="id_name"> {% trans 'The language you want to study' %} </label>
+        {{form.language}}
+
+        <label for="id_name"> {% trans 'Your degree' %} </label>
+        {{form.degree}}
+        <label for="id_name"> {% trans 'The score you got' %} </label>
+        {{form.score}}
+
+        <label for="id_name"> {% trans 'Your phone number' %} </label>
+        {{form.phone}}
+        <label for="id_name"> {% trans 'Additional Message ' %} </label>
+        {{form.additional}}
+        <button  type="submit" class="thm-btn"><span> {% trans 'Send ' %} </span></button>
+    </form>
+{% endblock content %}
+    
