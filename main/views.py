@@ -125,8 +125,6 @@ def country_filter(request):
 	country_id = request.GET.get("data")
 	if country_id != 'all':
 		universities = list(University.objects.filter(country_id=country_id).values())
-		print("Universities", universities)
 	else:
 		universities = list(University.objects.all().values())
-		print("All Universities", universities)
 	return JsonResponse(data={'universities':universities,'totalCount':University.objects.count()})
