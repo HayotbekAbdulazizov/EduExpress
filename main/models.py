@@ -26,7 +26,7 @@ class Country(models.Model):
 
 # University Model  -- Country   ++UniversityImages
 class University(models.Model):
-    country = models.ForeignKey(Country, null=True, related_name='universities',blank=True, on_delete=models.PROTECT)
+    country = models.ForeignKey(Country, null=True, related_name='universities',blank=True, on_delete=models.CASCADE)
     name=models.CharField("Name", max_length=200)
     slug=models.SlugField("Slug")
     rating = models.CharField('Rating', max_length=100, blank=True)
@@ -98,14 +98,14 @@ class Degree(models.Model):
 
 # Request Model --Languages,Program,University  ++ None
 class Request(models.Model):
-    university = models.ForeignKey(University, on_delete=models.PROTECT, blank=True, null=True)
+    university = models.ForeignKey(University, on_delete=models.CASCADE, blank=True, null=True)
     name = models.CharField('Name', max_length=200)
     surname = models.CharField("Surname", max_length=200, blank=True)    
     age = models.CharField('Age', max_length=10)
     country = models.CharField('Country', max_length=300, blank=True)
-    program = models.ForeignKey(Program, related_name="requests", null=True, blank=True, on_delete=models.PROTECT)
-    language = models.ForeignKey(Language, related_name="requests", null=True, blank=True, on_delete=models.PROTECT)
-    degree = models.ForeignKey(Degree, on_delete=models.PROTECT, blank=True, null=True)
+    program = models.ForeignKey(Program, related_name="requests", null=True, blank=True, on_delete=models.CASCADE)
+    language = models.ForeignKey(Language, related_name="requests", null=True, blank=True, on_delete=models.CASCADE)
+    degree = models.ForeignKey(Degree, on_delete=models.CASCADE, blank=True, null=True)
     score = models.FloatField('Score', blank=True, null=True,default=0 )
     phone = models.CharField('Phone Number', max_length=30)
     additional = models.TextField('Message', blank=True)
@@ -127,11 +127,11 @@ class Request(models.Model):
 
 # Student class -- University,Language,Program,Request,Country
 class Student(models.Model):
-    university = models.ForeignKey(University, on_delete=models.PROTECT, null=True, blank=True)
-    language = models.ForeignKey(Language, on_delete=models.PROTECT, null=True, blank=True)
-    program = models.ForeignKey(Program, on_delete=models.PROTECT, null=True, blank=True)
-    request = models.ForeignKey(Request, on_delete=models.PROTECT, null=True, blank=True)
-    country = models.ForeignKey(Country, on_delete=models.PROTECT, null=True, blank=True)
+    university = models.ForeignKey(University, on_delete=models.CASCADE, null=True, blank=True)
+    language = models.ForeignKey(Language, on_delete=models.CASCADE, null=True, blank=True)
+    program = models.ForeignKey(Program, on_delete=models.CASCADE, null=True, blank=True)
+    request = models.ForeignKey(Request, on_delete=models.CASCADE, null=True, blank=True)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField('Name', max_length=200, blank=True),
     image = models.ImageField('Student image', upload_to='student_images/'),
 
