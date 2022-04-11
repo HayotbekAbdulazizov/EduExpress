@@ -521,31 +521,6 @@ if (lineChart.length) {
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
-function DropdownItem(id){
-  document.getElementById('dropdown_button').innerHTML = document.getElementById(`${id}`).innerHTML
-        // <div class="element_outer" onclick="DropdownItem(this.id)" id="Korea">
-        {/* <img class="country_flag" src="img/kor.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> Korea</p> */}
-      {/* </div> */}
-  console.log(document.getElementById(`${id}`).innerHTML)
-}
 
 
 
