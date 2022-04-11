@@ -267,7 +267,7 @@ EduExpress Consulting
     -->
       
       {% for country in countries %}
-      <div class="element_outer" onclick="DropdownItem(this.id)" id="{{country.name}}">
+      <div class="element_outer" onclick="DropdownItem(this.id, this.nonce)" nonce = "{{country.id}}" id="{{country.name}}">
         <img class="country_flag" src="{{country.image.url}}" alt="" style=""> <p id="link1inner" class="country_paragraph"> {{country.name}}</p>
       </div>        
       {% endfor %}
@@ -299,7 +299,7 @@ EduExpress Consulting
 
 
     <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
-    <div class="row row--flex row--flex-wrap" style="display: flex;justify-content: center;">
+    <div class="row row--flex row--flex-wrap" id="university_container" style="display: flex;justify-content: center;">
 
       <!-- <div class="col-sm-12 col-md-4 col-lg-4 university" style="position: relative;" >
         <a href="" >
@@ -864,9 +864,7 @@ EduExpress Consulting
   
   
   
-  function CountryFilter(){
-      let country_id = parseInt(document.getElementById('country_filter').value)
-      // console.log("Country ID",country_id, typeof country_id)
+  function CountryFilter(id){
       if (window.XMLHttpRequest){
       var xhttp=new XMLHttpRequest();
     } else { 
@@ -884,9 +882,9 @@ EduExpress Consulting
                           </div>\
                   '
               }
-        document.getElementsByClassName('university_container')[0].innerHTML = div
-              document.getElementById('showless').style.display = 'none'  
-              document.getElementById('showmore').style.display = 'inline-block'  
+        document.getElementById("university_container").innerHTML = div
+              // document.getElementById('showless').style.display = 'none'  
+              // document.getElementById('showmore').style.display = 'inline-block'  
               for(let x=0; x < 2; x++){
                   universities[x].style.display = 'block'
                   console.log('done', x)
@@ -897,7 +895,7 @@ EduExpress Consulting
         }
   
       var url = "/country_filter/"
-    xhttp.open("GET", url+`?data=${`${document.getElementById('country_filter').value}`}`, true);
+    xhttp.open("GET", url+`?data=${`${id}`}`, true);
       xhttp.send();
   }
   
@@ -935,12 +933,14 @@ window.onclick = function(event) {
     }
   }
 }
-function DropdownItem(id){
+function DropdownItem(id, country_id){
   console.log(id)
   document.getElementById('dropdown_button').innerHTML = document.getElementById(`${id}`).innerHTML
-        // <div class="element_outer" onclick="DropdownItem(this.id)" id="Korea">
-        // {/* <img class="country_flag" src="img/kor.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> Korea</p> */}
-      // {/* </div> */}
+  console.log(country_id, id)
+  // <div class="element_outer" onclick="DropdownItem(this.id)" id="Korea">
+    // {/* <img class="country_flag" src="img/kor.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> Korea</p> */}
+    // {/* </div> */}
+    CountryFilter( country_id)
 }
 
   </script>
