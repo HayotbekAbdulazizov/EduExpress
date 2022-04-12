@@ -128,3 +128,21 @@ def country_filter(request):
 	else:
 		universities = list(University.objects.all().values())
 	return JsonResponse(data={'universities':universities,'totalCount':University.objects.count()})
+
+
+
+
+
+
+
+
+
+
+
+
+	DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
