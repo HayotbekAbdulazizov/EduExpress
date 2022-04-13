@@ -19941,14 +19941,14 @@ body{
 /* university detail */
 .title__text{color: white; font-size:4rem;}
 .detail__url{font-size: 1.6rem;}
-/* .img__outer{height: 25vh; width: 100%; overflow: hidden;} */
+.img__outer{height: 33vh; width: 100%;}
 .footer_logo{transform: scale(0.8);}
 /* .creator{float: right;} */
 @media (max-width: 543px) {
   .table-responsive {border: none;border-right: 1px solid #b1dbf7;}
   .logo__text{font-size: 20px;}
   .university{ padding-left:12px ;padding-right: 5px; }
-  .img__outer{height: 25vh;width: 92vw; overflow: hidden;}
+  .img__outer{height: 30vh;width: 92vw;}
   .title__text{font-size: 2.6rem;}
   .detail__url{font-size: 1.3rem;}
   .section-map{padding-top: 20px;}
@@ -20126,7 +20126,19 @@ padding: 1rem 1.5rem;
 /* width: 24rem; */
 border-radius: 0.5rem;
 }
-
+.modal-former .modal-content .close-button {
+  font-size: 30px;
+float: right;
+width: 5.5rem;
+line-height: 2.5rem;
+text-align: center;
+cursor: pointer;
+position: relative;
+/* background-color: lightgray; */
+}
+.modal-former .modal-content .close-button:hover {
+background-color: darkgray;
+}
 .show-modal {
 opacity: 1;
 visibility: visible;

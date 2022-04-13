@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-&+agkg8=2y2c4k2fk6h%acd--@)bkl(gn-v6_pcvfez+fp120l
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ["www.eduexpress.uz", "https://eduexpress.uz", "http://eduexpress.uz", "eduexpress.uz"]
 
 
 # Application definition
@@ -172,11 +173,19 @@ MODELTRANSLATION_TRANSLATION_FILES = (
 #   os.path.join(BASE_DIR, 'staticfiles')) ,
 
 
+# STATIC_URL = '/static/'
+# MEDIA_URL = '/media/'
+# STATICFILES_DIRS=[str(BASE_DIR) + "staticfiles",]
+# MEDIA_ROOT = '/home/eduexpre/EduExpress/django/media' 
+# STATIC_ROOT ='/home/eduexpre/EduExpress/django/static'
+
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
-STATICFILES_DIRS=[str(BASE_DIR) + "staticfiles",]
-MEDIA_ROOT = '/home/eduexpre/EduExpress/django/media' 
-STATIC_ROOT ='/home/eduexpre/EduExpress/django/static'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'staticfiles')) ,
 
 
 # Default primary key field type

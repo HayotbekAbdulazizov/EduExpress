@@ -54,9 +54,13 @@ class HomePageView(View):
 class UniversityDetailView(View):
 	def get(self,request, slug):
 
+		object = University.objects.get(slug=slug)
+		print(object.country)
 		context = {
-			"object":University.objects.get(slug=slug),
+			"object":object,
 			"form":RequestForm,
+			# "similar_universities":University.objects.filter(country=object.country.id).order_by("?")
+			"similar_universities":University.objects.all().order_by("?")[:5]
 		}
 		return render(request, 'university_detail.html', context)
 
@@ -123,6 +127,8 @@ def load_less(request):
 
 def country_filter(request):
 	country_id = request.GET.get("data")
+	print("Country ID", country_id)
+	print("Country ID", country_id)
 	if country_id != 'all':
 		universities = list(University.objects.filter(country_id=country_id).values())
 	else:

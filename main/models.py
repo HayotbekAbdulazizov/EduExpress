@@ -46,6 +46,11 @@ class University(models.Model):
     def get_absolute_url(self):
         return reverse("main:university_detail", kwargs={"slug": self.slug})
 
+    def get_country_name(self):
+        # return reverse("main:university_detail", kwargs={"country_name": self.country.name})
+        return self.country.name
+
+
 
     
 

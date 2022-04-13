@@ -15,6 +15,7 @@ EduExpress Consulting
   <!-- Swiper -->
   <div class="banner-slider swiper-container" style="height: 100%;">
     <div class="swiper-wrapper">
+      <!-- <div class="banner-slide swiper-slide" style="background-image: url('/static/img/banner-slider/01.png'); height: 100%; "> -->
       <div class="banner-slide swiper-slide" style="background-image: url('/static/img/banner-slider/01.png'); height: 100%; ">
         <div class="slide-container">
           <div class="slide-content slide-content--left" data-caption-animate="fadeInUp" style="">
@@ -35,7 +36,7 @@ EduExpress Consulting
         </div>
       </div>
 
-      <div class="banner-slide swiper-slide" style="background-image: url('img/banner-slider/02.png'); ">
+      <div class="banner-slide swiper-slide" style="background-image: url('/static/img/banner-slider/02.png'); ">
         <div class="slide-container">
           <div class="slide-content slide-content--right" data-caption-animate="fadeInUp">
             <h2 class="slide-title" >Get your 100% scholarship In Top Universities .</h2>
@@ -55,7 +56,7 @@ EduExpress Consulting
         </div>
       </div>
 
-      <div class="banner-slide swiper-slide" style="background-image: url('img/banner-slider/03.png'); background-size: cover; height: 100%;">
+      <div class="banner-slide swiper-slide" style="background-image: url('/static/img/banner-slider/03.png'); background-size: cover; height: 100%;">
         <div class="slide-container">
           <div class="slide-content slide-content--left" data-caption-animate="fadeInUp">
             <h2 class="slide-title">Start your new life at your Dream University  </h2>
@@ -239,9 +240,9 @@ EduExpress Consulting
   <div class="dropdown">
     <div onclick="myFunction()" class="dropbtn" id="dropdown_button" style="padding:8px 0px 8px 20px ;"> <p style="padding: 7px 0px 7px 20px ; font-weight: bold;">Countries  </p> </div>
     <div id="myDropdown" class="dropdown-content">
-      <div class="element_outer" onclick="DropdownItem(this.id)" id="-- All --">
-         <p style="padding: 6px 0px 6px 0;" id="link1inner" class="country_paragraph" > -- All --</p>
-      </div>
+      <!-- <div class="element_outer" onclick="DropdownItems(this.id, this.nonce)" nonce = "all" id="-- All --"> -->
+         <!-- <p style="padding: 6px 0px 6px 0;" id="link1inner" class="country_paragraph" > -- All --</p> -->
+      <!-- </div> -->
 
       <!-- <div class="element_outer" onclick="DropdownItem(this.id)" id="Malaysia">
         <img class="country_flag" src="/static/img/mal.png" alt="" style=""> <p id="link1inner" class="country_paragraph" > Malaysia</p>
@@ -267,7 +268,7 @@ EduExpress Consulting
     -->
       
       {% for country in countries %}
-      <div class="element_outer" onclick="DropdownItem(this.id, this.nonce)" style="cursor: pointer;" nonce = "{{country.id}}" id="{{country.name}}">
+      <div class="element_outer" onclick="DropdownItems(this.id, this.nonce)" style="cursor: pointer;" nonce = "{{country.id}}" id="{{country.name}}">
         <img class="country_flag" src="{{country.image.url}}" alt="" style=""> <p id="link1inner w-100"  class="country_paragraph" style="width: 100%; text-align: left;"> {{country.name}} <span style="float: right; margin-right: 30px;" > {{country.universities.all.count}} </span> </p>
       </div>        
       {% endfor %}
@@ -832,12 +833,14 @@ EduExpress Consulting
 <script>
   console.log("Hello, World !!!")
   let universities = document.getElementsByClassName('university')
-  console.log(universities)
+  // console.log(universities)
   
   for(let x=0; x < 6; x++){
+    if(universities[x]){
       universities[x].style.display = 'block'
-      console.log('done', x)
-  }
+      // console.log('done', x)
+    }
+    }
   
   
   function LoadMore(){
@@ -865,7 +868,10 @@ EduExpress Consulting
   
   
   
-  function CountryFilter(id){
+  function CountryFilter(id, name){
+    console.log("In Contry_Filer")
+    console.log("ID=", id)
+    console.log("NAME=", name)
       if (window.XMLHttpRequest){
       var xhttp=new XMLHttpRequest();
     } else { 
@@ -877,7 +883,7 @@ EduExpress Consulting
               let div = ''
 
               for(university of data['universities']){
-                  console.log(university.name)
+                  console.log("Country Name",university.name)
                 div += `
                 
                 <div class="col-sm-12 col-md-4 col-lg-4 university" style="position: relative; display: none;" >
@@ -894,7 +900,7 @@ EduExpress Consulting
                   <path d="M14.7142 13.8808L11.1783 17.4167C10.8658 17.7289 10.4422 17.9042 10.0004 17.9042C9.55869 17.9042 9.13503 17.7289 8.82251 17.4167L5.28585 13.8808C4.35353 12.9485 3.71863 11.7606 3.46142 10.4674C3.20421 9.17419 3.33625 7.83376 3.84085 6.61561C4.34544 5.39745 5.19993 4.35628 6.29625 3.62376C7.39257 2.89123 8.68149 2.50024 10 2.50024C11.3185 2.50024 12.6075 2.89123 13.7038 3.62376C14.8001 4.35628 15.6546 5.39745 16.1592 6.61561C16.6638 7.83376 16.7958 9.17419 16.5386 10.4674C16.2814 11.7606 15.6465 12.9485 14.7142 13.8808V13.8808Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                   </g>
                   </svg> 
-                  <span style=" color: whitesmoke; font-weight: 700; opacity: 0.8; padding-left:3px;"> ${university.location} </span>
+                  <span style=" color: whitesmoke; font-weight: 700; opacity: 0.8; padding-left:3px;"> ${name} </span> 
               </div>
           </div>  
       </a>
@@ -911,9 +917,11 @@ EduExpress Consulting
 
         document.getElementById("university_container").innerHTML = div
               for(let x=0; x < 3; x++){
-                  universities[x].style.display = 'block'
-                  console.log('done', x)
-              }
+                if(universities[x]){  
+                universities[x].style.display = 'block'
+                  // console.log('done', x)
+                }
+                }
           }else{
             console.log('not yet')
             }
@@ -958,11 +966,12 @@ window.onclick = function(event) {
     }
   }
 }
-function DropdownItem(id, country_id){
-  console.log(id)
+function DropdownItems(id, country_id){
+  console.log("Counry ID",id)
   document.getElementById('dropdown_button').innerHTML = document.getElementById(`${id}`).innerHTML
-  console.log(country_id, id)
-   CountryFilter( country_id)
+  // console.log(country_id, id)
+  console.log("Con")
+   CountryFilter( country_id ,id)
 }
 
   </script>
