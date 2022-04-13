@@ -43,42 +43,18 @@
             </div>
             <br>
             
-            <h2>challenge</h2>
-
-            <p style="font-size: 1.7rem;">
-              The biggest challenge was that Arguzo was not utilizing technology properly. Too much of the work was still
-              being recorded manually, which meant that the numbers took a long time to note down and then to be analyzed.
-              Live data was also not available and decisions can only be made after all the required data and been
-              received. This was holding Arguzo back; they knew they could corner more of the market if they had the
-              ability to be more mobile. The work addressed three critical issues for Pharm Ltd.:
-            </p>
-            
-            <h2>challenge</h2>
-            
-            <p style="font-size: 1.7rem;">
-              The biggest challenge was that Arguzo was not utilizing technology properly. Too much of the work was still
-              being recorded manually, which meant that the numbers took a long time to note down and then to be analyzed.
-              Live data was also not available and decisions can only be made after all the required data and been
-              received. This was holding Arguzo back; they knew they could corner more of the market if they had the
-              ability to be more mobile. The work addressed three critical issues for Pharm Ltd.:
-            </p>
-            
-            <h2>challenge</h2>
-
-            <p style="font-size: 1.7rem;">
-              The biggest challenge was that Arguzo was not utilizing technology properly. Too much of the work was still
-              being recorded manually, which meant that the numbers took a long time to note down and then to be analyzed.
-              Live data was also not available and decisions can only be made after all the required data and been
-              received. This was holding Arguzo back; they knew they could corner more of the market if they had the
-              ability to be more mobile. The work addressed three critical issues for Pharm Ltd.:
-            </p>        </section>
+            {{ object.description|safe }}
+          
+          
+          </section>
             
 
             <aside class="col-md-4 text-center" style="padding-top: 30px;">
               <h4 style="color: #2a2d49;"> Similar Universities </h4>
               {% for univ in similar_universities %}
-              <div class="col-sm-12 university pt-2" style="position: relative;width: 100%; height: 30vh; overflow: hidden; border-radius: 30px;" >
-                    <div class="university__inner" style=" box-shadow: inset 0 -40px 70px -0px #0e304b;border-radius: 15px;">
+              <div class="col-sm-12 university pt-2" style="position: relative;width: 100%; height: 30vh; overflow: hidden;" >
+                  <a href="{% url 'main:university_detail' univ.slug %}"  style=" ">
+                    <div class="university__inne" style=" box-shadow: inset 0 -40px 70px -0px #0e304b;border-radius: 15px;">
                       <div class="img__oute" style="height: 33vh;overflow: hidden;">
                       <img src="{{univ.image.url}}" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
                     </div>
@@ -95,6 +71,7 @@
                           </div>
                           <!-- </div> -->
                     </div>  
+                  </a>
                 </div>
               {% endfor %}
         </aside>
