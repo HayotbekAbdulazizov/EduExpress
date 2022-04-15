@@ -12,6 +12,7 @@ class HomePageView(View):
 			'status':200,
 			'universities': University.objects.all(),
 			'countries': Country.objects.all(),
+			'posts': Post.objects.all(),
             "form":RequestForm,
 		}		    
 		return render(request, 'index.html', context)
@@ -99,7 +100,49 @@ class UniversityDetailView(View):
 
 
 
+class PostDetailView(View):
+	def get(self,request, slug):
 
+		object = Post.objects.get(slug=slug)
+		# print(object.)
+		context = {
+			"object":object,
+			# "form":RequestForm,
+			"similar_posts":Post.objects.all().order_by("?")[:5],
+			# "similar_universities":University.objects.all().order_by("?")[:5]
+		}
+		return render(request, 'post_detail.html', context)
+
+	# def post(self, request, slug):
+	# 	form  = RequestForm(request.POST)
+	# 	if form.is_valid():
+	# 		# university_id = form.cleaned_data['university_id']
+	# 		university_id = request.POST.get('university_id')
+	# 		print(form.cleaned_data)
+	# 		univ = University.objects.get(id=int(university_id))
+	# 		# univ = University.objects.get(id=)
+
+	# 		name = form.cleaned_data['name']
+	# 		surname = form.cleaned_data['surname']
+	# 		age = form.cleaned_data['age']
+	# 		program = form.cleaned_data['program']
+	# 		language = form.cleaned_data['language']
+	# 		degree = form.cleaned_data['degree']
+	# 		score = form.cleaned_data['score']
+	# 		print(score)
+	# 		phone = form.cleaned_data['phone']
+	# 		additional = form.cleaned_data['additional']
+	# 		requester = Request.objects.create(university=univ, name=name, surname=surname, age=age, program=program, language=language, degree=degree, score=score, phone=phone, additional=additional)
+	# 		requester.country = univ.country.name
+	# 		requester.save()
+	# 		print(name, phone, "Thing have came !!!")
+	# 		messages.success(request, _(f"{requester.name}, Your message was successfully submitted, please wait our call !"))
+	# 		print("Requester Country", requester.country)
+	# 		telegram_bot_sendtext(f'NEW USER {requester.country}',)
+	# 		return redirect(f'/') 
+	# 	else:
+	# 		form = RequestForm
+	# 		return redirect('/')
 
 
 

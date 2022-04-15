@@ -21,7 +21,7 @@ EduExpress Consulting
           <div class="slide-content slide-content--left" data-caption-animate="fadeInUp" style="">
             <h2 class="slide-title" >Professional Consulting For Your Educational Success</h2>
             <p class="slide-text">
-              Being a professional in Dducation Consulting for more than four years we use our experience at its fullest for your educational success
+              Being a professional in Education Consulting for more than four years we use our experience at its fullest for your educational success
             </p>
 
             <div class="slide-btn-group">
@@ -467,6 +467,7 @@ EduExpress Consulting
     </div>
 
     <div class="row row--flex row--flex-wrap row--nopadding">
+<!--       
       <div class="col-xs-12 col-sm-6 col-lg-3">
         <article class="post post--news">
           <header class="entry-header">
@@ -525,27 +526,33 @@ EduExpress Consulting
             <span class="date"><i class="fi fi-calendar"></i>November 22, 2017</span>
           </footer>
         </article>
-      </div>
+      </div> -->
 
-      <div class="col-xs-12 col-sm-6 col-lg-3">
-        <article class="post post--news">
-          <header class="entry-header">
-            <a href="cases-single.html" class="entry-header_cover">
-              <img src="/static/img/news/04.jpg" alt="">
-            </a>
-          </header>
+{% for post in posts %}  
+<div class="col-xs-12 col-sm-6 col-lg-3">
+  <article class="post post--news">
+    <header class="entry-header">
+      <a href="{% url 'main:post_detail' post.slug %}" class="entry-header_cover">
+        <img src="{{post.image.url}}" alt="">
+      </a>
+    </header>
 
-          <div class="entry-content">
-            <h3 class="post_title">
-              <a href="cases-single.html">Charity affairs and their benefits</a>
-            </h3>
-          </div>
+    <div class="entry-content">
+      <h3 class="post_title">
+        <a href="cases-single.html">{{post.title}}</a>
+      </h3>
+    </div>
 
-          <footer class="entry-footer">
-            <span class="date"><i class="fi fi-calendar"></i>November 22, 2017</span>
-          </footer>
-        </article>
-      </div>
+    <footer class="entry-footer">
+      <span class="date"><i class="fi fi-calendar"></i>{{post.date}}</span>
+    </footer>
+  </article>
+</div>
+{% endfor %}
+  
+
+
+
     </div>
   </div>
 </section>
@@ -916,7 +923,7 @@ EduExpress Consulting
 
 
         document.getElementById("university_container").innerHTML = div
-              for(let x=0; x < 3; x++){
+              for(let x=0; x < 6; x++){
                 if(universities[x]){  
                 universities[x].style.display = 'block'
                   // console.log('done', x)
@@ -974,8 +981,6 @@ function DropdownItems(id, country_id){
    CountryFilter( country_id ,id)
 }
 
-  </script>
-  
 
 
 
@@ -986,6 +991,40 @@ function DropdownItems(id, country_id){
 
 
 
+
+
+var modal = document.querySelector(".modal-former");
+var trigger = document.querySelector(".trigger");
+var closeButton = document.querySelector(".close-buttona");
+const body = document.querySelector("body");
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+    body.classList.toggle("overflow__hidden");
+}
+
+function windowOnClick(event) {
+  body.style.overflow = " "
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 
 {% endblock content %}
 

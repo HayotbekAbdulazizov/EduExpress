@@ -10,6 +10,7 @@ urlpatterns = [
 	path('',views.HomePageView.as_view(), name='home'),
 	# path('about/',views.AboutPageView.as_view(), name='about'),
     path("<slug>", views.UniversityDetailView.as_view(), name="university_detail"),
+    path("post/<slug>", views.PostDetailView.as_view(), name="post_detail"),
     path("load_more/", views.load_more, name="load_more"),
     path("load_less/", views.load_less, name="load_less"),
     path("country_filter/", views.country_filter, name="country_filter"),

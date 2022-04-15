@@ -46,25 +46,7 @@ class University(models.Model):
     def get_absolute_url(self):
         return reverse("main:university_detail", kwargs={"slug": self.slug})
 
-    def get_country_name(self):
-        # return reverse("main:university_detail", kwargs={"country_name": self.country.name})
-        return self.country.name
 
-
-
-    
-
-# Product TRModel --University ++None
-class UniversityImage(models.Model):
-    university = models.ForeignKey(University, related_name="images", null=True, blank=True, on_delete=models.CASCADE)
-    image = models.ImageField('University image', upload_to='university_images/')
-    class Meta:
-        verbose_name = "UniversityImage"
-        verbose_name_plural = "UniversityImages"
-
-    def __str__(self):
-        return f"{self.university.name}"
-    
 
 # Product Model --None ++Request
 class Program(models.Model):
@@ -87,6 +69,7 @@ class Language(models.Model):
     class Meta:
         verbose_name = 'Language'
         verbose_name_plural = 'Languages'
+
 
 
 class Degree(models.Model):
@@ -157,7 +140,7 @@ class Post(models.Model):
     title = models.CharField('Title', max_length=400, blank=True)
     slug = models.SlugField('*', unique=True, blank=True)
     image = models.ImageField('Image Cover', upload_to='news_images/', blank=True)
-    description = models.TextField('News description', blank=True)
+    description = RichTextField('Description', blank=True)
     date = models.DateTimeField('date', auto_now_add=True, blank=True)
 
     def __str__(self):
@@ -168,16 +151,6 @@ class Post(models.Model):
         verbose_name_plural = "Posts"    
 
 
-# PostImage TRModel --Post ++None
-class PostImage(models.Model):
-    post = models.ForeignKey(Post, related_name="post_images", null=True, blank=True, on_delete=models.CASCADE)
-    image = models.ImageField('Post image', upload_to='post_images/', blank=True, null=True)
-    class Meta:
-        verbose_name = "PostImage"
-        verbose_name_plural = "PostImages"
-
-    def __str__(self):
-        return f"{self.post.title}"
 
 
 class Creator(models.Model):
