@@ -52,7 +52,7 @@
             <aside class="col-md-4 text-center" style="padding-top: 30px;">
               <h4 style="color: #2a2d49;"> Similar Universities </h4>
               {% for univ in similar_universities %}
-              <div class="col-sm-12 university pt-2" style="position: relative;width: 100%; height: 30vh; overflow: hidden;" >
+              <div class="col-sm-12 university pt-2" style="position: relative;width: 100%;   overflow: hidden;" >
                   <a href="{% url 'main:university_detail' univ.slug %}"  style=" ">
                     <div class="university__inne" style=" box-shadow: inset 0 -40px 70px -0px #0e304b;border-radius: 15px;">
                       <div class="img__oute" style="height: 33vh;overflow: hidden;">

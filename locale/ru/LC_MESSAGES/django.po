@@ -1,96 +1,142 @@
-#: main/models.py:84 templates/index.html:48
-msgid "English"
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-15 21:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: main/views.py:37 main/views.py:91
+#, python-brace-format
+msgid ""
+"{requester.name}, Your message was successfully submitted, please wait our "
+"call !"
 msgstr ""
 
-#: main/models.py:84 templates/index.html:49
-msgid "Korean"
-msgstr ""
-
-#: main/models.py:84 main/models.py:85 main/models.py:86
-#: templates/index.html:50 templates/index.html:57
-msgid "Not sure"
-msgstr ""
-
-#: main/models.py:85 main/models.py:86
-msgid "Language course"
-msgstr ""
-
-#: main/models.py:85 main/models.py:86 templates/index.html:54
-msgid "Bachelor"
-msgstr ""
-
-#: main/models.py:85 main/models.py:86 templates/index.html:55
-msgid "Magistracy"
-msgstr ""
-
-#: main/models.py:85 main/models.py:86 templates/index.html:56
-msgid "Doctoral studies (PHD)"
-msgstr ""
-
-#: templates/index.html:42 templates/index.html:72
+#: templates/Trash/index.html:75 templates/Trash/index.html:106
+#: templates/Trash/indexss.html:75 templates/Trash/indexss.html:106
+#: templates/Trash/university_detail.html:33
 msgid "Your name"
 msgstr ""
 
-#: templates/index.html:43 templates/index.html:46
+#: templates/Trash/index.html:76 templates/Trash/index.html:79
+#: templates/Trash/indexss.html:76 templates/Trash/indexss.html:79
 msgid "Surname"
 msgstr ""
 
-#: templates/index.html:44
+#: templates/Trash/index.html:77 templates/Trash/indexss.html:77
 msgid "Age"
 msgstr ""
 
-#: templates/index.html:45
+#: templates/Trash/index.html:78 templates/Trash/indexss.html:78
 msgid "The country you are going to study "
 msgstr ""
 
-#: templates/index.html:53
+#: templates/Trash/index.html:81 templates/Trash/indexss.html:81
+msgid "English"
+msgstr ""
+
+#: templates/Trash/index.html:82 templates/Trash/indexss.html:82
+msgid "Korean"
+msgstr ""
+
+#: templates/Trash/index.html:83 templates/Trash/index.html:90
+#: templates/Trash/indexss.html:83 templates/Trash/indexss.html:90
+msgid "Not sure"
+msgstr ""
+
+#: templates/Trash/index.html:86 templates/Trash/indexss.html:86
 msgid "Language Course"
 msgstr ""
 
-#: templates/index.html:59
+#: templates/Trash/index.html:87 templates/Trash/indexss.html:87
+msgid "Bachelor"
+msgstr ""
+
+#: templates/Trash/index.html:88 templates/Trash/indexss.html:88
+msgid "Magistracy"
+msgstr ""
+
+#: templates/Trash/index.html:89 templates/Trash/indexss.html:89
+msgid "Doctoral studies (PHD)"
+msgstr ""
+
+#: templates/Trash/index.html:92 templates/Trash/indexss.html:92
 msgid "Phone number"
 msgstr ""
 
-#: templates/index.html:60
+#: templates/Trash/index.html:93 templates/Trash/indexss.html:93
 msgid "Additional message"
 msgstr ""
 
-#: templates/index.html:61
+#: templates/Trash/index.html:94 templates/Trash/index.html:126
+#: templates/Trash/indexss.html:94 templates/Trash/indexss.html:126
+#: templates/Trash/university_detail.html:53
 msgid "Send "
 msgstr ""
 
-#: templates/index.html:74
+#: templates/Trash/index.html:108 templates/Trash/indexss.html:108
+#: templates/Trash/university_detail.html:35
 msgid "Your surname"
 msgstr ""
 
-#: templates/index.html:76
+#: templates/Trash/index.html:110 templates/Trash/indexss.html:110
+#: templates/Trash/university_detail.html:37
 msgid "Your age"
 msgstr ""
 
-#: templates/index.html:78
-msgid "The country you want to study"
-msgstr ""
-
-#: templates/index.html:80
+#: templates/Trash/index.html:112 templates/Trash/indexss.html:112
+#: templates/Trash/university_detail.html:39
 msgid "The program you want to study"
 msgstr ""
 
-#: templates/index.html:82
+#: templates/Trash/index.html:114 templates/Trash/indexss.html:114
+#: templates/Trash/university_detail.html:41
 msgid "The language you want to study"
 msgstr ""
 
-#: templates/index.html:84
+#: templates/Trash/index.html:117 templates/Trash/indexss.html:117
+#: templates/Trash/university_detail.html:44
+msgid "Your degree"
+msgstr ""
+
+#: templates/Trash/index.html:119 templates/Trash/indexss.html:119
+#: templates/Trash/university_detail.html:46
+msgid "The score you got"
+msgstr ""
+
+#: templates/Trash/index.html:122 templates/Trash/indexss.html:122
+#: templates/Trash/university_detail.html:49
 msgid "Your phone number"
 msgstr ""
 
-#: templates/index.html:86
+#: templates/Trash/index.html:124 templates/Trash/indexss.html:124
+#: templates/Trash/university_detail.html:51
 msgid "Additional Message "
 msgstr ""
 
-#: templates/wrapper.html:67
+#: templates/Trash/wrapper.html:73 templates/Trash/wrapper.html:201
 msgid "Language"
 msgstr ""
 
-#: templates/wrapper.html:111 templates/wrapper.html:116
+#: templates/Trash/wrapper.html:117 templates/Trash/wrapper.html:122
 msgid "Welcome to our page"
 msgstr ""
+
+#: templates/index.html:23
+msgid " Professional Consulting For Your Educational Success"
+msgstr "Профессиональный консалтинг для вашего успеха в образовании"

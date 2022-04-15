@@ -12,7 +12,7 @@ class HomePageView(View):
 			'status':200,
 			'universities': University.objects.all(),
 			'countries': Country.objects.all(),
-			'posts': Post.objects.all(),
+			'posts': Post.objects.all().order_by("-date")[:4],
             "form":RequestForm,
 		}		    
 		return render(request, 'index.html', context)

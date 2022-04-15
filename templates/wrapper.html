@@ -46,7 +46,7 @@
 					<div class="row row--flex row--flex-middle row--flex-wrap">
 						<div class="col-xs-12 col-md-3">
 							<div class="logo" style="margin: 0px;">
-								<a href="index.html" style="overflow: hidden;">
+								<a href="{% url 'main:home' %}" style="overflow: hidden;">
 									<img src="/static/main_logo.png" alt="" style="transform: scale(0.9);">
 								</a>
 							</div>
@@ -60,52 +60,22 @@
 								<span></span>
 							</button>
 
-							<nav class="menu">
+							<nav class="menu" style="display: flex; align-items: center;">
 								<ul class="menu_list">
-									<li class="menu_item menu_item--custom menu_item-has-children">
-										<a href="about.html">About us</a>
-										<ul class="sub-menu">
-											<li class="menu_item"><a href="our-approach.html">Our approach</a></li>
-											<li class="menu_item"><a href="our-partners.html">Our partners</a></li>
-											<li class="menu_item menu_item-has-children">
-												<a href="careers.html">Careers</a>
-												<ul class="sub-menu">
-													<li class="menu_item"><a href="career-single-page.html">Single Page</a></li>
-												</ul>
-											</li>
-											<li class="menu_item"><a href="our-team.html">Our Team</a></li>
-											<li class="menu_item"><a href="team-single-page.html">Our Team Single</a></li>
-										</ul>
+									<li class="menu_item  menu_item-has-children">
+										<a href="#home">Home </a>
+									</li>
+									<li class="menu_item  menu_item-has-children">
+										<a href="#about">About us</a>
 									</li>
 									<li class="menu_item menu_item-has-children">
-										<a href="services.html">Services</a>
-										<ul class="sub-menu">
-											<li class="menu_item"><a href="service-single.html">Service Single</a></li>
-											<li class="menu_item"><a href="services-tabs.html">Services Tabs</a></li>
-										</ul>
+										<a href="#universities">Universities</a>
 									</li>
 									<li class="menu_item menu_item-has-children">
-										<a href="cases.html">Cases</a>
-										<!--<ul class="sub-menu">-->
-											<!--<li class="menu_item"><a href="cases-single.html">Cases Single</a></li>-->
-										<!--</ul>-->
+										<a href="#news">News</a>
 									</li>
 									<li class="menu_item menu_item-has-children">
-										<a href="portfolio.html">Portfolio</a>
-										<ul class="sub-menu">
-											<li class="menu_item"><a href="portfolio-single.html">Portfolio Single</a></li>
-										</ul>
-									</li>
-									<li class="menu_item"><a href="contact-us.html">Contacts</a></li>
-									<li class="menu_item menu_item-has-children">
-										<a href="#">Pages</a>
-										<ul class="sub-menu">
-											<li class="menu_item"><a href="404.html">404</a></li>
-											<li class="menu_item"><a href="503.html">503</a></li>
-											<li class="menu_item"><a href="news-single-page.html">News Single</a></li>
-											<li class="menu_item"><a href="testimonials.html">Testimonials</a></li>
-											<li class="menu_item"><a href="typography.html">Typography</a></li>
-										</ul>
+										<a href="#contact">Contact</a>
 									</li>
 								</ul>
 
@@ -124,9 +94,18 @@
 							</nav>
 
 							<ul class="socials hidden-xs hidden-sm">
-								<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-facebook-logo"></i>Facebook</a></li>
+								<!-- <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-facebook-logo"></i>Facebook</a></li>
 								<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-twitter"></i>Twitter</a></li>
-								<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-google-plus"></i>Google Plus</a></li>
+								<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-google-plus"></i>Google Plus</a></li> -->
+                                <div class="dropdown__lang">
+                                    <button class="dropbtn__lang">Dropdown</button>
+                                    <div class="dropdown-content">
+                                    <a href="#">Link 1</a>
+                                    <a href="#">Link 2</a>
+                                    <a href="#">Link 3</a>
+                                    </div>
+                                  </div>
+
 							</ul>
 						</div>
 					</div>
@@ -153,7 +132,7 @@
                 <div class="col-xl-4 col-lg-4 mb-50">
                     <div class="footer-widget">
                         <div class="footer-logo" style="overflow: hidden; width: 230px; height: 100px; margin: 0%; display: flex; align-items: center; padding-left: 10px;">
-                            <a href="index.html" ><img src="/static/footerlogo3.png" style="position: relative; transform: scale(1.2);" class="img-fluid" alt="logo"></a>
+                            <a href="{% url 'main:home' %}" ><img src="/static/footerlogo3.png" style="position: relative; transform: scale(1.2);" class="img-fluid" alt="logo"></a>
                         </div>
                         <div class="footer-text " style="padding-left: 0px;">
                           <!-- <a class="font-dark" style="padding: 0px  0 0 0;color: #878787; ">Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
@@ -235,6 +214,49 @@
   </script> -->
   
   
+  
+<style>
+
+.dropbtn__lang {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px;
+  font-size: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown__lang {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown__lang .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 99;
+}
+
+.dropdown__lang .dropdown-content a {
+  color: red;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown__lang .dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown__lang:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown__lang:hover .dropbtn__lang {
+  background-color: #3e8e41;
+}
+</style>
   
   </body>
   </html>
