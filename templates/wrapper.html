@@ -52,7 +52,7 @@
 							</div>
 						</div>
 
-						<div class="col-xs-12 col-md-9 text-right">
+						<div class="col-xs-12 col-md-9 text-left">
 							<button type="button" class="btn btn--menu-mobile js-mobile-menu">
 								<span></span>
 								<span></span>
@@ -60,7 +60,7 @@
 								<span></span>
 							</button>
 
-							<nav class="menu" style="display: flex; align-items: center;">
+							<nav class="menu" style="align-items: center; padding-top: 10px;">
 								<ul class="menu_list">
 									<li class="menu_item  menu_item-has-children">
 										<a href="#home">Home </a>
@@ -79,34 +79,54 @@
 									</li>
 								</ul>
 
-								<ul class="contacts hidden-md hidden-lg">
-									<li class="contacts_item"><i class="fi fi-placeholder"></i>1010 Avenue of the Moon, New York, NY 10018 US.</li>
-									<li class="contacts_item"><i class="fi fi-clock-circular-outline"></i>Mon - Sat 8.00 - 18.00. Sunday CLOSED</li>
-									<li class="contacts_item"><i class="fi fi-phone-receiver"></i>+1 628 123 4000</li>
-									<li class="contacts_item"><i class="fi fi-envelope"></i>jameson@example.com</li>
-								</ul>
+                
+								<ul class="social hidden-md hidden-lg">
+                  <form action="{% url 'set_language' %}" method="post">
+                  <li class="menu_item menu_item-has-children hidden-md hidden-lg" style="display: flex;">
+                  {% csrf_token %}
+                  <input name="next" type="hidden" value="{{redirect_to}}" />
 
-								<ul class="socials hidden-md hidden-lg">
-									<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-facebook-logo"></i>Facebook</a></li>
-									<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-twitter"></i>Twitter</a></li>
-									<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-google-plus"></i>Google Plus</a></li>
-								</ul>
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+
+                    <a href="/{{ language.code }}/" onclick="this.form.submit()" style="display: flex; align-items: center;  "> <div class="image__outerlang" style="border-radius: 50px; overflow: hidden;"> <img src="/static/{{language.code}}.svg" alt="" style="width: 35px; "> </div><span style="text-transform: uppercase; padding-left: 5px;">{{ language.code }}</span> </a>
+                    {% endfor %}
+                </li>
+              </form>
+                </ul>
+                <ul class="contacts hidden-md hidden-lg">
+                  <li class="contacts_item"><i class="fi fi-placeholder"></i>1010 Avenue of the Moon, New York, NY 10018 US.</li>
+                  <li class="contacts_item"><i class="fi fi-clock-circular-outline"></i>Mon - Sat 8.00 - 18.00. Sunday CLOSED</li>
+                  <li class="contacts_item"><i class="fi fi-phone-receiver"></i>+1 628 123 4000</li>
+                  <li class="contacts_item"><i class="fi fi-envelope"></i>jameson@example.com</li>
+                </ul>
 							</nav>
 
-							<ul class="socials hidden-xs hidden-sm">
-								<!-- <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-facebook-logo"></i>Facebook</a></li>
-								<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-twitter"></i>Twitter</a></li>
-								<li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-google-plus"></i>Google Plus</a></li> -->
-                                <div class="dropdown__lang">
-                                    <button class="dropbtn__lang">Dropdown</button>
-                                    <div class="dropdown-content">
-                                    <a href="#">Link 1</a>
-                                    <a href="#">Link 2</a>
-                                    <a href="#">Link 3</a>
-                                    </div>
-                                  </div>
+							<div class="socials hidden-xs hidden-sm">
+								<!-- <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-facebook-logo"></i>Facebook</a></li> -->
+								<!-- <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-twitter"></i>Twitter</a></li> -->
+								<!-- <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-google-plus"></i>Google Plus</a></li> -->
+                <form class="socials_item" action="{% url 'set_language' %}" method="post">
+                  {% csrf_token %}
+                  <input name="next" type="hidden" value="{{redirect_to}}" />
+                  <div id="dropdown__lang" class="dropdown__lang">
+                    <div class="dropbtn__lang" >Dropdown</div>
+                    <div class="dropdown-content__lang" style="display: none;" id="dropdown-content__lang">
+                      {% get_current_language as LANGUAGE_CODE %}
+                      {% get_available_languages as LANGUAGES %}
+                      {% get_language_info_list for LANGUAGES as languages %}
+                      
+                      {% for language in languages %}
+                      <a href="/{{ language.code }}/" onclick="this.form.submit()" style="display: flex; align-items: center;  "> <div class="image__outerlang" style="border-radius: 50px; overflow: hidden;"> <img src="/static/{{language.code}}.svg" alt="" style="width: 35px; "> </div>{{ language.code }}</span> </a>
+                      {% endfor %}
+                    </div>
+                  </div> 
 
-							</ul>
+              </form>
+
+                </div>
 						</div>
 					</div>
 				</div>
@@ -195,24 +215,7 @@
   </footer>
   
   
-  <!-- inject:js -->
-  <script src="/static/js/vendor/jquery.js"></script>
-  <script src="/static/js/vendor/Chart.min.js"></script>
-  <script src="/static/js/vendor/bootstrap.min.js"></script>
-  <script src="/static/js/vendor/jquery.validate.min.js"></script>
-  <script src="/static/js/vendor/masonry.pkgd.min.js"></script>
-  <script src="/static/js/vendor/mixitup.min.js"></script>
-  <script src="/static/js/vendor/swiper.jquery.min.js"></script>
-  <!-- endinject -->
-  
-  <script src="/static/js/main.js"></script>
-  <!-- <script>
-  function CountryFilter(){
-    country = document.getElementById("country_filter").value
-    console.log(country)
-  }
-  </script> -->
-  
+
   
   
 <style>
@@ -231,7 +234,7 @@
   display: inline-block;
 }
 
-.dropdown__lang .dropdown-content {
+.dropdown__lang .dropdown-content__lang {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -240,25 +243,122 @@
   z-index: 99;
 }
 
-.dropdown__lang .dropdown-content a {
+.dropdown__lang .dropdown-content__lang a {
   color: red;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown__lang .dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown__lang .dropdown-content__lang a:hover {background-color: #f1f1f1}
 
-.dropdown__lang:hover .dropdown-content {
-  display: block;
-}
+/* .dropdown__lang:hover .dropdown-content__lang { */
+  /* display: block; */
+/* } */
 
 .dropdown__lang:hover .dropbtn__lang {
   background-color: #3e8e41;
 }
+
+
+
+.dblock{display: block;}
+.dinline{display:inline ;}
+.dnone{display: none;}
 </style>
   
-  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+dropdown__lang = document.getElementById("dropdown__lang")
+function LanguageDropdown(){
+  console.log("Dropdown Lang")
+  // document.getElementById("dropdown-content__lang").style.display.toggle("block")
+  console.log(document.getElementById("dropdown-content__lang").style.display)
+
+  if(document.getElementById("dropdown-content__lang").style.display === 'none'){
+    document.getElementById("dropdown-content__lang").style.display = 'block'
+  }else{
+    document.getElementById("dropdown-content__lang").style.display = 'none'
+  }
+
+  console.log(document.getElementById("dropdown-content__lang").style.display)
+
+
+}
+dropdown__lang.addEventListener("click", LanguageDropdown)
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- inject:js -->
+  <script src="/static/js/vendor/jquery.js"></script>
+  <script src="/static/js/vendor/Chart.min.js"></script>
+  <script src="/static/js/vendor/bootstrap.min.js"></script>
+  <script src="/static/js/vendor/jquery.validate.min.js"></script>
+  <script src="/static/js/vendor/masonry.pkgd.min.js"></script>
+  <script src="/static/js/vendor/mixitup.min.js"></script>
+  <script src="/static/js/vendor/swiper.jquery.min.js"></script>
+  <!-- endinject -->
+  
+  <script src="/static/js/main.js"></script>
+  <!-- <script>
+  function CountryFilter(){
+    country = document.getElementById("country_filter").value
+    console.log(country)
+  }
+  </script> -->
+  
+</body>
   </html>
   
   
