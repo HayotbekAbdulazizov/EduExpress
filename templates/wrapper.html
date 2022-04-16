@@ -110,16 +110,16 @@
 								<!-- <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-google-plus"></i>Google Plus</a></li> -->
                 <form class="socials_item" action="{% url 'set_language' %}" method="post">
                   {% csrf_token %}
+                  {% get_current_language as LANGUAGE_CODE %}
+                  {% get_available_languages as LANGUAGES %}
+                  {% get_language_info_list for LANGUAGES as languages %}
                   <input name="next" type="hidden" value="{{redirect_to}}" />
                   <div id="dropdown__lang" class="dropdown__lang">
-                    <div class="dropbtn__lang" >Dropdown</div>
-                    <div class="dropdown-content__lang" style="display: none;" id="dropdown-content__lang">
-                      {% get_current_language as LANGUAGE_CODE %}
-                      {% get_available_languages as LANGUAGES %}
-                      {% get_language_info_list for LANGUAGES as languages %}
-                      
+                    <!-- <div class="dropbtn__lang" >Dropdown</div> -->
+                    <a class="dropbtn__lang"  onclick="this.form.submit()" style="display: flex; align-items: center;"> <img src="/static/{{LANGUAGE_CODE}}.svg" alt="" style="width: 35px; "> <span style="color: black; padding-left: 10px; z-index: 999; text-transform: uppercase; font-size: 18px; font-weight: bolder;">{{ LANGUAGE_CODE }}</span> </a>
+                    <div class="dropdown-content__lang" style="display: none;" id="dropdown-content__lang">  
                       {% for language in languages %}
-                      <a href="/{{ language.code }}/" onclick="this.form.submit()" style="display: flex; align-items: center;  "> <div class="image__outerlang" style="border-radius: 50px; overflow: hidden;"> <img src="/static/{{language.code}}.svg" alt="" style="width: 35px; "> </div>{{ language.code }}</span> </a>
+                      <a href="/{{ language.code }}/" onclick="this.form.submit()" style="display: flex; align-items: center;  "><img src="/static/{{language.code}}.svg" alt="" style="width: 35px; "> <span style="color: black; padding-left: 10px; z-index: 999; text-transform: uppercase; font-size: 18px; font-weight: bolder;">{{ language.code }}</span> </a>
                       {% endfor %}
                     </div>
                   </div> 
@@ -220,14 +220,6 @@
   
 <style>
 
-.dropbtn__lang {
-  background-color: #4CAF50;
-  color: white;
-  padding: 5px;
-  font-size: 5px;
-  border: none;
-  cursor: pointer;
-}
 
 .dropdown__lang {
   position: relative;
@@ -256,9 +248,6 @@
   /* display: block; */
 /* } */
 
-.dropdown__lang:hover .dropbtn__lang {
-  background-color: #3e8e41;
-}
 
 
 
