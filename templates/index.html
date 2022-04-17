@@ -16,15 +16,15 @@ EduExpress Consulting
     <div class="swiper-wrapper">
       <div class="banner-slide swiper-slide" style="background-image: url('/static/img/banner-slider/01.png'); height: 100%; ">
         <div class="slide-container">
-          <div class="slide-content slide-content--left" data-caption-animate="fadeInUp" style="">
+          <div class="slide-content slide-content--left" data-caption-animate="fadeInUp" >
             <h2 class="slide-title" >{% trans ' Professional Consulting For Your Educational Success' %}</h2>
             <p class="slide-text">
-              Being a professional in Education Consulting for more than four years we use our experience at its fullest for your educational success
+              {% trans 'Being a professional in Education Consulting for more than four years we use our experience at its fullest for your educational success' %}
             </p>
 
             <div class="slide-btn-group">
-              <a href="about.html" class="btn btn--primary">Our Company</a>
-              <a href="contact-us.html" class="btn btn--primary">Contact Us</a>
+              <a href="about.html" class="btn btn--primary">{% trans 'Our Company' %}</a>
+              <a href="contact-us.html" class="btn btn--primary">{% trans 'Contact Us' %}</a>
             </div>
 
             <div class="slide-content_img slide-content_img--lg">
@@ -37,13 +37,13 @@ EduExpress Consulting
       <div class="banner-slide swiper-slide" style="background-image: url('/static/img/banner-slider/02.png'); ">
         <div class="slide-container">
           <div class="slide-content slide-content--right" data-caption-animate="fadeInUp">
-            <h2 class="slide-title" >Get your 100% scholarship In Top Universities .</h2>
-            <p class="slide-text">              Our company offers a variety of scholarship programs for students in more than 18 countries.
+            <h2 class="slide-title" >{% trans 'Get your 100% scholarship In Top Universities .' %}</h2>
+            <p class="slide-text">           {% trans '   Our company offers a variety of scholarship programs for students in more than 18 countries.' %}
             </p>
 
             <div class="slide-btn-group">
-              <a href="about.html" class="btn btn--primary">Our Company</a>
-              <a href="contact-us.html" class="btn btn--primary">Contact Us</a>
+              <a href="about.html" class="btn btn--primary">{% trans 'Our Company' %}</a>
+              <a href="contact-us.html" class="btn btn--primary">{% trans 'Contact Us' %}</a>
             </div>
 
             <div class="slide-content_img">
@@ -57,14 +57,14 @@ EduExpress Consulting
       <div class="banner-slide swiper-slide" style="background-image: url('/static/img/banner-slider/03.png'); background-size: cover; height: 100%;">
         <div class="slide-container">
           <div class="slide-content slide-content--left" data-caption-animate="fadeInUp">
-            <h2 class="slide-title">Start your new life at your Dream University  </h2>
+            <h2 class="slide-title">{% trans 'Start your new life at your Dream University' %}  </h2>
             <p class="slide-text">
-              We only offer top universities for our students.
+              {% trans 'We only offer top universities for our students.' %}
             </p>
 
             <div class="slide-btn-group">
-              <a href="about.html" class="btn btn--primary">Our Company</a>
-              <a href="contact-us.html" class="btn btn--primary">Contact Us</a>
+              <a href="about.html" class="btn btn--primary">{% trans 'Our Company' %}</a>
+              <a href="contact-us.html" class="btn btn--primary">{% trans 'Contact Us' %}</a>
             </div>
 
             <div class="slide-content_img slide-content_img--lg">
@@ -89,7 +89,7 @@ EduExpress Consulting
   <div class="container">
     <div class="section-heading" style="text-align: center;">
       <span class="section-heading_secondary">about</span>
-      <h2  class="font-white">About Our Company</h2>
+      <h2  class="font-white">{% trans 'About Our Company' %}</h2>
     </div>
     <div class="row">
       <div class="col-md-6 col-lg-6 col-sm-12" style="">
@@ -98,8 +98,8 @@ EduExpress Consulting
       </div>
       </div>
       <div class="col-md-6 col-lg-6 col-sm-12 pt-2">
-        <h4 class="font-white"> Why EduExpress ?</h4>
-        <p class="font-white" style="font-size: 1.75rem; font-weight: bold;"> Edu Express Consulting is the result of many years of work of our employees in the field of education abroad. Our company is one of the most trusted agencies that helps all international students to study in partnership with Top Universities in Uzbekistan and South Korea under agreements with more than 18 countries around the world. All employees of our company are foreign education specialists who have studied abroad and personally visited many educational institutions. We help and care for our students so that they don’t have to deal with all sorts of problems while fully immersed in reading.  </p>
+        <h4 class="font-white"> {% trans 'Why EduExpress ?' %}</h4>
+        <p class="font-white" style="font-size: 1.75rem; font-weight: bold;">{% trans ' Edu Express Consulting is the result of many years of work of our employees in the field of education abroad. Our company is one of the most trusted agencies that helps all international students to study in partnership with Top Universities in Uzbekistan and South Korea under agreements with more than 18 countries around the world. All employees of our company are foreign education specialists who have studied abroad and personally visited many educational institutions. We help and care for our students so that they don’t have to deal with all sorts of problems while fully immersed in reading.  ' %}</p>
       </div>
     </div>
   </div>
@@ -118,37 +118,11 @@ EduExpress Consulting
 
 <center>
 <!-- University Filter -->
-<div class="p-2 university_filter_container" style="margin-top: 50px;"  > 
-  <h4> Search By Country </h4>
+<div class="p-2 university_filter_container" style="margin-top: 50px;"  id="universities"> 
+  <h4> {% trans 'Search By Country' %} </h4>
   <div class="dropdown">
     <div onclick="myFunction()" class="dropbtn" id="dropdown_button" style="padding:8px 0px 8px 20px ;"> <p style="padding: 7px 0px 7px 20px ; font-weight: bold;">Countries  </p> </div>
     <div id="myDropdown" class="dropdown-content">
-      <!-- <div class="element_outer" onclick="DropdownItems(this.id, this.nonce)" nonce = "all" id="-- All --"> -->
-         <!-- <p style="padding: 6px 0px 6px 0;" id="link1inner" class="country_paragraph" > -- All --</p> -->
-      <!-- </div> -->
-
-      <!-- <div class="element_outer" onclick="DropdownItem(this.id)" id="Malaysia">
-        <img class="country_flag" src="/static/img/mal.png" alt="" style=""> <p id="link1inner" class="country_paragraph" > Malaysia</p>
-      </div>
-      <div class="element_outer" onclick="DropdownItem(this.id)" id="United States">
-        <img class="country_flag" src="/static/img/usa.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> United States</p>
-      </div>
-      <div class="element_outer" onclick="DropdownItem(this.id)" id="Australia">
-        <img class="country_flag" src="/static/img/aus.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> Australia</p>
-      </div>
-      <div class="element_outer" onclick="DropdownItem(this.id)" id="Germany">
-        <img class="country_flag" src="/static/img/germany.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> Germany</p> 
-      </div>
-      <div class="element_outer" onclick="DropdownItem(this.id)" id="England">
-        <img class="country_flag" src="/static/img/uk.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> England</p>
-      </div>
-      <div class="element_outer" onclick="DropdownItem(this.id)" id="Poland">
-        <img class="country_flag" src="/static/img/pol.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> Poland</p>
-      </div>
-          <div class="element_outer" onclick="DropdownItem(this.id)" id="Korea">
-        <img class="country_flag" src="/static/img/kor.png" alt="" style=""> <p id="link1inner" class="country_paragraph"> Korea</p>
-      </div>
-    -->
       
       {% for country in countries %}
       <div class="element_outer" onclick="DropdownItems(this.id, this.nonce)" style="cursor: pointer;" nonce = "{{country.id}}" id="{{country.name}}">
@@ -175,8 +149,8 @@ EduExpress Consulting
 <div class="row">
       <div class="">
         <div class="section-heading" style="text-align: center;">
-          <span class="section-heading_secondary">Our Partners</span>
-          <h2>The Most Popular Universities</h2>
+          <span class="section-heading_secondary">{% trans 'Our Partners' %}</span>
+          <h2>{% trans 'The Most Popular Universities' %}</h2>
         </div>
       </div>
     </div>
@@ -212,7 +186,7 @@ EduExpress Consulting
 
     </div>
 
-    <center> <button class="button__view_all" id="button__view_all" style="" onclick="LoadMore()"> View All </button> <button class="button__view_all trigger" style=""> Apply To University </button></center>
+    <center> <button class="button__view_all" id="button__view_all" style="" onclick="LoadMore()"> {% trans 'View All' %} </button> <button class="button__view_all trigger" style=""> {% trans 'Free consultation' %} </button></center>
 
 
   </div>
@@ -244,8 +218,8 @@ EduExpress Consulting
     <div class="row">
       <div class="col-md-12">
         <div class="section-heading" style="text-align: center;">
-          <span class="section-heading_secondary">Our Last</span>
-          <h2 class="section-heading_main">News</h2>
+          <span class="section-heading_secondary">{% trans 'news' %}</span>
+          <h2 class="font-white">{% trans 'Our Last News' %}</h2>
         </div>
       </div>
     </div>
@@ -262,12 +236,12 @@ EduExpress Consulting
 
       <div class="entry-content">
         <h3 class="post_title">
-          <a href="cases-single.html">{{post.title}} Post title Post title post title post title </a>
+          <a href="cases-single.html">{{post.title}}  </a>
         </h3>
       </div>
 
       <footer class="entry-footer">
-        <span class="date"><i class="fi fi-calendar"></i>{{post.date}}</span>
+        <span class="date"><i class="fi fi-calendar"></i>{{post.date|date:"M d, Y"}}</span>
       </footer>
     </article>
   </div>
@@ -307,27 +281,27 @@ EduExpress Consulting
         <button class="close-buttona" style="background-color: #fff; padding: 10px; "> <i class="fas fa-times "></i> </button>
           <form action="#" id="contact-form" class="form">
             <div class="row">
-              <h4 style="width: 100%; text-align: center;" > Applying for University </h4>
+              <h4 style="width: 100%; text-align: center;" > {% trans 'Get free Consultation' %} </h4>
               <div class="col-md-6">
-                <label for="name"> Your name </label>
+                <label for="name"> {% trans 'Your name ' %}</label>
                 <input type="text" class="form-control" name="name">
               </div>
 
               <div class="col-md-6">
-                <label for="name"> Your Phone number </label>
+                <label for="name"> {% trans 'Phone number' %} </label>
                 <input type="text" class="form-control" name="phone" placeholder="Phone Number" value="+998" >
               </div>
 
               <div class="col-md-6" style="display: flex; justify-content: center;  display: block;">
-                <label for=""> IELTS, TOPIC, TOEFL til sertifikatlari bormi? </label>
+                <label for=""> {% trans 'Do you have IELTS, TOPIC, TOEFL, CEFR ?' %} </label>
                 <div style="display: flex; justify-content: left;">
                 <p>
                   <input type="radio" id="test2" name="radio-group">
-                  <label for="test2">Yes</label>
+                  <label for="test2">{% trans 'Yes' %}</label>
                 </p>
                 <p style="margin-left: 30px;">
                   <input type="radio" id="test3" name="radio-group">
-                  <label for="test3">No</label>
+                  <label for="test3">{% trans 'No' %}</label>
                 </p> 
               </div>
               </div>
@@ -336,7 +310,7 @@ EduExpress Consulting
                 <textarea rows="8" class="form-control" name="message" placeholder="Your Message" ></textarea>
               </div>
               <div class="col-md-12 text-right text-center">
-                <center> <button class="button__view_all" style=""> Send </button> </center>
+                <center> <button class="button__view_all" style=""> {% trans 'Send' %} </button> </center>
                 <div id="progress" style="position: absolute; bottom: 0; display: none; ">msg</div>
               </div>
 
@@ -386,7 +360,7 @@ EduExpress Consulting
         <div class="col-md-12">
           <div class="section-heading">
             <span class="section-heading_secondary">comment</span>
-            <h2>Feedback form</h2>
+            <h2>{% trans 'Feedback form' %}</h2>
 
           </div>
         </div>
@@ -395,65 +369,65 @@ EduExpress Consulting
           <form action="#" id="contact-form" class="form">
             <div class="row">
               <div class="col-md-6">
-                <input type="text" class="form-control" name="first-name" placeholder="First Name">
+                <input type="text" class="form-control" name="first-name" placeholder="{% trans 'First Name' %}">
               </div>
 
               <div class="col-md-6">
-                <input type="email" class="form-control" name="email" placeholder="Email" >
+                <input type="email" class="form-control" name="email" placeholder="{% trans 'Email' %}" >
               </div>
 
               <div class="col-md-6">
-                <input type="text" class="form-control" name="phone" placeholder="Phone">
+                <input type="text" class="form-control" name="phone" placeholder="{% trans 'Phone Number' %}">
               </div>
 
               <div class="col-md-12">
-                <textarea rows="8" class="form-control" name="message" placeholder="Your Message" ></textarea>
+                <textarea rows="8" class="form-control" name="message" placeholder="{% trans 'Your Message' %}" ></textarea>
               </div>
               <div class="col-md-12 text-right text-center">
-                <center> <button class="button__view_all" style=""> Send </button> </center>
+                <center> <button class="button__view_all" style=""> {% trans 'Send' %} </button> </center>
                 <div id="progress" style="position: absolute; bottom: 0; display: none; ">msg</div>
               </div>
 
             </div>
           </form>
           </div>
-      <div class="col-md-6">
+      <div class="col-md-6" id="contact__social_media">
         <section >
           <!-- <h4> Our social media </h4> -->
           <div class="social-media col-md-6 col-sm-6 ">
-              <div class="outer_container" style="border: 2px solid red;">
+              <a href="https://www.youtube.com/channel/UCyEtsRSiuNuVmGvJVBhPxPg" class="outer_container" style="border: 2px solid red;">
                 <div class="social_icon_outer" style="background-color: red; padding: 12px 12px 12px 12px ;">
                   <i class="fab fa-youtube fa-2x" style="color: #fff;"></i>
                 </div>
                 <div class="social__text" style="color: red;">EduExpress_Consulting</div>
-              </div>
+              </a>
             </div>
 
             <div class="social-media col-md-6 col-sm-6 ">
-              <div class="outer_container" style="border: 2px solid #fd0054;">
+              <a href="https://www.instagram.com/eduexpress_consulting/" class="outer_container" style="border: 2px solid #fd0054;">
                 <div class="social_icon_outer font-white" style="background-color:#fd0054;  padding: 12px 15px 12px 15px; ">
                   <i class="fab fa-instagram fa-2x" ></i>
                 </div>
                 <div class="social__text" style="color:#fd0054;">EduExpress_Consulting</div>
-              </div>
+              </a>
             </div>
 
             <div class="social-media col-md-6 col-sm-6">
-              <div class="outer_container" style="border: 2px solid black;">
+              <a href="https://t.me/EduExpress_Consulting" class="outer_container" style="border: 2px solid black;">
                 <div class="social_icon_outer" style="background-color: black;padding: 12px 16px 12px 15px; "> 
                   <i class="fab fa-tiktok fa-2x font-white"></i>
                 </div>
                 <div class="social__text" style="color: black;">EduExpress_Consulting</div>
-              </div>
+              </a>
             </div>
 
             <div class="social-media col-md-6 col-sm-6 ">
-              <div class="outer_container" style="border: 2px solid #229ED9;">
+              <a href="https://t.me/EduExpress_Consulting" class="outer_container" style="border: 2px solid #229ED9;">
                 <div class="social_icon_outer" style="background-color: #229ED9; padding: 12px 16px 12px 15px;">
                   <i class="fab fa-telegram-plane fa-2x font-white" ></i>
                 </div>
                 <div class="social__text" style="color: #229ED9;">EduExpress_Consulting</div>
-              </div>
+              </a>
             </div>
             
             <!-- <h4> Location and Phone Numbers</h4> -->
@@ -482,17 +456,17 @@ EduExpress Consulting
                 <div class="social_icon_outer" style="background-color: #0c2c47; padding: 13px 18px 13px 18px;">
                   <i class="fas fa-map-marker-alt fa-2x font-white" ></i>
                 </div>
-                <div class="social__text" style="color: #0c2c47; display: flex; align-items: center;"> Uzbekistan, Tashkent, Sergeli, 412 Dom </div>
+                <div class="social__text" style="color: #0c2c47; display: flex; align-items: center;"> {% trans 'Tashkent, Mirzo Ulugbek metro, destination UzbekInvest Service' %}</div>
               </div>
             </div>
 
             <div class="social-media col-md-6 col-sm-12 " style="margin: 0px 0 0 0 ;">
-              <div class="outer_container" style="border: 2px solid #0c2c47;">
+              <a href="mailto:info2eduexpress.uz" class="outer_container" style="border: 2px solid #0c2c47;">
                 <div class="social_icon_outer" style="background-color: #0c2c47; padding: 13px 15px 13px 15px;">
                   <i class="fas fa-envelope fa-2x font-white"></i>
                 </div>
                 <div class="social__text" style="color: #0c2c47; display: flex; align-items: center;"> Info@eduexpress.uz </div>
-              </div>
+              </a>
             </div>
           </div>
 

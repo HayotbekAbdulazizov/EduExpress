@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-15 21:22+0000\n"
+"POT-Creation-Date: 2022-04-17 20:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,6 +74,7 @@ msgid "Doctoral studies (PHD)"
 msgstr ""
 
 #: templates/Trash/index.html:92 templates/Trash/indexss.html:92
+#: templates/index.html:291
 msgid "Phone number"
 msgstr ""
 
@@ -135,6 +136,184 @@ msgstr ""
 msgid "Welcome to our page"
 msgstr ""
 
-#: templates/index.html:23
+#: templates/index.html:20
 msgid " Professional Consulting For Your Educational Success"
 msgstr "Ta'limdagi muvaffaqiyatingiz uchun professional maslahat"
+
+#: templates/index.html:22
+msgid ""
+"Being a professional in Education Consulting for more than four years we use "
+"our experience at its fullest for your educational success"
+msgstr ""
+
+#: templates/index.html:26 templates/index.html:45 templates/index.html:66
+msgid "Our Company"
+msgstr ""
+
+#: templates/index.html:27 templates/index.html:46 templates/index.html:67
+msgid "Contact Us"
+msgstr ""
+
+#: templates/index.html:40
+#, python-format
+msgid "Get your 100%% scholarship In Top Universities ."
+msgstr ""
+
+#: templates/index.html:41
+msgid ""
+"   Our company offers a variety of scholarship programs for students in more "
+"than 18 countries."
+msgstr ""
+
+#: templates/index.html:60
+msgid "Start your new life at your Dream University"
+msgstr ""
+
+#: templates/index.html:62
+msgid "We only offer top universities for our students."
+msgstr ""
+
+#: templates/index.html:92
+msgid "About Our Company"
+msgstr ""
+
+#: templates/index.html:101
+msgid "Why EduExpress ?"
+msgstr ""
+
+#: templates/index.html:102
+msgid ""
+" Edu Express Consulting is the result of many years of work of our employees "
+"in the field of education abroad. Our company is one of the most trusted "
+"agencies that helps all international students to study in partnership with "
+"Top Universities in Uzbekistan and South Korea under agreements with more "
+"than 18 countries around the world. All employees of our company are foreign "
+"education specialists who have studied abroad and personally visited many "
+"educational institutions. We help and care for our students so that they "
+"don’t have to deal with all sorts of problems while fully immersed in "
+"reading.  "
+msgstr ""
+
+#: templates/index.html:122
+msgid "Search By Country"
+msgstr ""
+
+#: templates/index.html:152
+msgid "Our Partners"
+msgstr ""
+
+#: templates/index.html:153
+msgid "The Most Popular Universities"
+msgstr ""
+
+#: templates/index.html:189
+msgid "View All"
+msgstr ""
+
+#: templates/index.html:189
+msgid "Free consultation"
+msgstr ""
+
+#: templates/index.html:221
+msgid "news"
+msgstr ""
+
+#: templates/index.html:222
+msgid "Our Last News"
+msgstr ""
+
+#: templates/index.html:284
+msgid "Get free Consultation"
+msgstr ""
+
+#: templates/index.html:286
+msgid "Your name "
+msgstr ""
+
+#: templates/index.html:296
+msgid "Do you have IELTS, TOPIC, TOEFL, CEFR ?"
+msgstr ""
+
+#: templates/index.html:300
+msgid "Yes"
+msgstr ""
+
+#: templates/index.html:304
+msgid "No"
+msgstr ""
+
+#: templates/index.html:313 templates/index.html:387
+msgid "Send"
+msgstr ""
+
+#: templates/index.html:363
+msgid "Feedback form"
+msgstr ""
+
+#: templates/index.html:372
+msgid "First Name"
+msgstr ""
+
+#: templates/index.html:376
+msgid "Email"
+msgstr ""
+
+#: templates/index.html:380
+msgid "Phone Number"
+msgstr ""
+
+#: templates/index.html:384
+msgid "Your Message"
+msgstr ""
+
+#: templates/index.html:459 templates/wrapper.html:101
+msgid "Tashkent, Mirzo Ulugbek metro, destination UzbekInvest Service"
+msgstr ""
+
+#: templates/wrapper.html:67
+msgid "Home"
+msgstr ""
+
+#: templates/wrapper.html:70 templates/wrapper.html:173
+msgid "About us"
+msgstr ""
+
+#: templates/wrapper.html:73 templates/wrapper.html:174
+msgid "Universities"
+msgstr ""
+
+#: templates/wrapper.html:76
+msgid "News"
+msgstr ""
+
+#: templates/wrapper.html:79 templates/wrapper.html:177
+msgid "Contact"
+msgstr ""
+
+#: templates/wrapper.html:102
+msgid "Mon - Sat 9.00 - 18.00. Sunday CLOSED"
+msgstr ""
+
+#: templates/wrapper.html:169
+msgid "Useful Links"
+msgstr ""
+
+#: templates/wrapper.html:172
+msgid "Home Page"
+msgstr ""
+
+#: templates/wrapper.html:175
+msgid "Latest News"
+msgstr ""
+
+#: templates/wrapper.html:176
+msgid "Social Media"
+msgstr ""
+
+#: templates/wrapper.html:184
+msgid "Subscribe"
+msgstr ""
+
+#: templates/wrapper.html:194
+msgid "Developer by"
+msgstr ""

@@ -4,16 +4,17 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<!--[if IE]>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<![endif]-->
-        
     <title>
         {% block title %}  {% endblock title %}
     </title>            
 	<!-- <link href='/static/img/apple-touch-icon-precomposed.png' rel='apple-touch-icon-precomposed' sizes='192x192'> -->
 	<!-- <link href='/static/img/favicon.ico' rel='shortcut icon' type='image/x-icon'> -->
-	<meta name="theme-color" content="#ffffff">
+  <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
+  <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon"> -->
+	<!-- <link rel="apple-touch-icon" href="/static/logo.png"> -->
+  <link rel="apple-touch-icon" href="/static/logo.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/static/logo.png" sizes="280x280" type="image/png">
+  <meta name="theme-color" content="#ffffff">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -37,7 +38,7 @@
 
 
 <div class="wrapper"><!-- start #wrap -->
-<header class="header" >
+<header class="header" id="home">
 	<div class="container-fluid container-fluid--custom">
 		<div class="row">
 			<div class="col-md-12" style="height: 80%; padding: 5px 15px 10px 15px ;">
@@ -47,7 +48,7 @@
 						<div class="col-xs-12 col-md-3">
 							<div class="logo" style="margin: 0px;">
 								<a href="{% url 'main:home' %}" style="overflow: hidden;">
-									<img src="/static/main_logo.png" alt="" style="transform: scale(0.9);">
+									<img src="/static/main_logo.png" class="header__logo" alt="" style="">
 								</a>
 							</div>
 						</div>
@@ -63,19 +64,19 @@
 							<nav class="menu" style="align-items: center; padding-top: 10px;">
 								<ul class="menu_list">
 									<li class="menu_item  menu_item-has-children">
-										<a href="#home">Home </a>
+										<a href="#home"> {% trans 'Home' %} </a>
 									</li>
 									<li class="menu_item  menu_item-has-children">
-										<a href="#about">About us</a>
+										<a href="#about"> {% trans 'About us' %} </a>
 									</li>
 									<li class="menu_item menu_item-has-children">
-										<a href="#universities">Universities</a>
+										<a href="#universities">{% trans 'Universities' %}</a>
 									</li>
 									<li class="menu_item menu_item-has-children">
-										<a href="#news">News</a>
+										<a href="#news">{% trans 'News' %}</a>
 									</li>
 									<li class="menu_item menu_item-has-children">
-										<a href="#contact">Contact</a>
+										<a href="#contact">{% trans 'Contact' %}</a>
 									</li>
 								</ul>
 
@@ -97,10 +98,10 @@
               </form>
                 </ul>
                 <ul class="contacts hidden-md hidden-lg">
-                  <li class="contacts_item"><i class="fi fi-placeholder"></i>1010 Avenue of the Moon, New York, NY 10018 US.</li>
-                  <li class="contacts_item"><i class="fi fi-clock-circular-outline"></i>Mon - Sat 8.00 - 18.00. Sunday CLOSED</li>
-                  <li class="contacts_item"><i class="fi fi-phone-receiver"></i>+1 628 123 4000</li>
-                  <li class="contacts_item"><i class="fi fi-envelope"></i>jameson@example.com</li>
+                  <li class="contacts_item"><i class="fi fi-placeholder"></i>{% trans 'Tashkent, Mirzo Ulugbek metro, destination UzbekInvest Service' %}</li>
+                  <li class="contacts_item"><i class="fi fi-clock-circular-outline"></i> {% trans 'Mon - Sat 9.00 - 18.00. Sunday CLOSED' %}</li>
+                  <li class="contacts_item"><i class="fi fi-phone-receiver"></i> +998 99 108 7451 ,  +82 10 6785 3883 </li>
+                  <li class="contacts_item"><i class="fi fi-envelope"></i>info@eduexpress.uz</li>
                 </ul>
 							</nav>
 
@@ -148,10 +149,10 @@
 <footer class="footer-section">
     <div class="container pt-5" >
         <div class="footer-content pt-5 pb-5">
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 mb-50">
+            <div class="row" style="padding-top: 20px; padding-bottom: 20px;">
+                <div class=" social3 col-xl-4 col-lg-4 mb-50">
                     <div class="footer-widget">
-                        <div class="footer-logo" style="overflow: hidden; width: 230px; height: 100px; margin: 0%; display: flex; align-items: center; padding-left: 10px;">
+                        <div class="footer-logo" style="overflow: hidden; width: 230px; height: 150px; margin: 0%; display: flex; align-items: center; padding-left: 10px;">
                             <a href="{% url 'main:home' %}" ><img src="/static/footerlogo3.png" style="position: relative; transform: scale(1.2);" class="img-fluid" alt="logo"></a>
                         </div>
                         <div class="footer-text " style="padding-left: 0px;">
@@ -162,35 +163,35 @@
   
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-30 ptm-5">
+                <div class=" social3 col-xl-4 col-lg-4 col-md-6">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
-                            <h3>Useful Links</h3>
+                            <h3 >{% trans 'Useful Links' %}</h3>
                         </div>
                         <ul>
-                            <li><a href="#">Home Page</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Universities</a></li>
-                            <li><a href="#">Latest News</a></li>
-                            <li><a href="#">Social Media</a></li>
-                            <li><a href="#">Footer</a></li>
+                            <li><a href="#home"> {% trans 'Home Page' %} </a></li>
+                            <li><a href="#about">{% trans 'About us' %}</a></li>
+                            <li><a href="#universities">{% trans 'Universities' %}</a></li>
+                            <li><a href="#news">{% trans 'Latest News' %}</a></li>
+                            <li><a href="#contact__social_media">{% trans 'Social Media' %}</a></li>
+                            <li><a href="#footer">{% trans 'Contact' %}</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-50 ptm-5">
+                <div class=" social3 col-xl-4 col-lg-4 col-md-6">
                     <div class="footer-widget ">
                         <div class="footer-widget-heading">
-                            <h3>Subscribe</h3>
+                            <h3>{% trans 'Subscribe' %}</h3>
                         </div>
                         <div class="subscribe-form">
                           <div class="footer-social-icon">
-                            <a href="#"><i class="fab fa-youtube youtube-bg"></i></a>
-                            <a href="#"><i class="fab fa-instagram instagram-bg"></i></a>
+                            <a href="https://www.youtube.com/channel/UCyEtsRSiuNuVmGvJVBhPxPg"><i class="fab fa-youtube youtube-bg"></i></a>
+                            <a href="https://www.instagram.com/eduexpress_consulting/"><i class="fab fa-instagram instagram-bg"></i></a>
                             <a href="#"><i class="fab fa-tiktok tiktok-bg"></i></a>
-                            <a href="#"><i class="fab fa-telegram-plane telegram-bg"></i></a>
+                            <a href="https://t.me/EduExpress_Consulting"><i class="fab fa-telegram-plane telegram-bg"></i></a>
                         </div>
-                        <a class="creator font-white" style=" font-size:1.8rem; cursor: pointer;">
-                          Разработано в <img src="/static/mylogo2.png" style="width: 70px;"  alt="">
+                        <a href="https://www.instagram.com/hayotbekabdulazizov05/" class="creator font-white" style=" font-size:1.7rem; cursor: pointer; ">
+                          {% trans 'Developer by' %} <img src="/static/mylogo2.png" style="width: 70px;"  alt="">
 						</a>
                         </div>
                     </div>
@@ -203,7 +204,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-sm-12 text-center text-lg-left">
                     <div class="copyright-text">
-                        <p>Copyright &copy; 2019, EduExpress Consulting All Rights Reserved | Web-Site is developer by <a href="instgaram.com"> Hayotbek Abdulazizov </a></p>
+                        <p>Copyright &copy; 2019, EduExpress All Rights Reserved | Web-Site is developer by <a href="https://www.instagram.com/hayotbekabdulazizov05/"> Hayotbek Abdulazizov </a></p>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
@@ -219,34 +220,27 @@
   
   
 <style>
-
-
-.dropdown__lang {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown__lang .dropdown-content__lang {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 99;
-}
-
-.dropdown__lang .dropdown-content__lang a {
-  color: red;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
+.dropdown__lang {position: relative;display: inline-block;}
+.dropdown__lang .dropdown-content__lang {display: none;position: absolute;background-color: #f9f9f9;min-width: 160px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);z-index: 99;}
+.dropdown__lang .dropdown-content__lang a {color: red;padding: 12px 16px;text-decoration: none;display: block;}
 .dropdown__lang .dropdown-content__lang a:hover {background-color: #f1f1f1}
+.header__logo{transform: scale(0.9);}
+@media (max-width: 543px) {
+  .footer-section{height:85vh;}
+  .social3{height: 24vh;}
+  .header__logo{transform: scale(1.2);}
+}
 
-/* .dropdown__lang:hover .dropdown-content__lang { */
-  /* display: block; */
-/* } */
+ .footer-widget-heading h3::before {
+/* content: ""; */
+/* position: absolute; */
+/* left: 0; */
+/* bottom: 110px; */
+height: 2px;
+width: 50px;
+background: #ff5e14;
+display: none;
+} 
 
 
 
