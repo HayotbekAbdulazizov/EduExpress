@@ -178,6 +178,7 @@ if (lineChart.length) {
       $hesChildrenItem = $('.menu_item-has-children');
 
     $hamburgerIcon.click(function() {
+      console.log("hamburger")
       $menuList.slideToggle();
       $(this).toggleClass('open');
     });

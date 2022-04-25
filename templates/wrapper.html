@@ -12,8 +12,11 @@
   <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
   <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon"> -->
 	<!-- <link rel="apple-touch-icon" href="/static/logo.png"> -->
-  <link rel="apple-touch-icon" href="/static/logo.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="/static/logo.png" sizes="280x280" type="image/png">
+  <!-- <link rel="apple-touch-icon" href="/static/logo.png" sizes="32x32" type="image/png"> -->
+  <!-- <link rel="icon" href="/static/logo.png" sizes="280x280" type="image/png"> -->
+  <link rel="apple-touch-icon" href="/static/title_logo.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/static/title_logo.png" sizes="280x280" type="image/png">
+  
   <meta name="theme-color" content="#ffffff">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,13 +56,10 @@
 							</div>
 						</div>
 
-						<div class="col-xs-12 col-md-9 text-left">
-							<button type="button" class="btn btn--menu-mobile js-mobile-menu">
-								<span></span>
-								<span></span>
-								<span></span>
-								<span></span>
-							</button>
+						<div class="col-xs-12 col-md-9 text-left" style="">
+							<!-- <button type="button" class=""> -->
+                <i class="fa-solid fa-bars btn btn--menu-mobile js-mobile-menu" ></i>
+							<!-- </button> -->
 
 							<nav class="menu" style="align-items: center; padding-top: 10px;">
 								<ul class="menu_list">
@@ -168,14 +168,19 @@
                         <div class="footer-widget-heading">
                             <h3 >{% trans 'Useful Links' %}</h3>
                         </div>
+                    <div class="dflex" style="display: flex;">
                         <ul>
-                            <li><a href="#home"> {% trans 'Home Page' %} </a></li>
-                            <li><a href="#about">{% trans 'About us' %}</a></li>
-                            <li><a href="#universities">{% trans 'Universities' %}</a></li>
                             <li><a href="#news">{% trans 'Latest News' %}</a></li>
                             <li><a href="#contact__social_media">{% trans 'Social Media' %}</a></li>
                             <li><a href="#footer">{% trans 'Contact' %}</a></li>
                         </ul>
+
+                        <ul>
+                          <li><a href="#home"> {% trans 'Home Page' %} </a></li>
+                          <li><a href="#about">{% trans 'About us' %}</a></li>
+                          <li><a href="#universities">{% trans 'Universities' %}</a></li>
+                      </ul>
+                    </div>
                     </div>
                 </div>
                 <div class=" social3 col-xl-4 col-lg-4 col-md-6">

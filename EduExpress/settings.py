@@ -25,7 +25,16 @@ SECRET_KEY = 'django-insecure-&+agkg8=2y2c4k2fk6h%acd--@)bkl(gn-v6_pcvfez+fp120l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = ['192.168.1.86', "http://192.168.1.86:8080/:8080", "192.168.1.86:8080/", "http://192.168.1.86:8080/"]
 ALLOWED_HOSTS = []
+
+
+
+
+
+# ALLOWED_HOSTS = ['192.168.1.1:8080', "192.168.1.1", "http://192.168.1.1:8080"]
+# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ["www.eduexpress.uz", "https://eduexpress.uz", "http://eduexpress.uz", "eduexpress.uz"]
 
 
