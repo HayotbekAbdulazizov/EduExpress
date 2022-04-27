@@ -182,7 +182,7 @@ def country_filter(request):
 def get_message(request):
 	print("IN GET_MESSAGE FUNCTION ")
 	
-	return render(request, 'index.html')
+	return redirect("/")
 
 
 
