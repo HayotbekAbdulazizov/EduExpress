@@ -1,3 +1,4 @@
+from traceback import print_tb
 from .models import *
 from django.views.generic import DetailView, TemplateView, View
 from django.shortcuts import redirect, render
@@ -18,30 +19,27 @@ class HomePageView(View):
 		return render(request, 'index.html', context)
 
 	def post(self, request):
-		form  = RequestForm(request.POST)
-		if form.is_valid():
-			name = form.cleaned_data['name']
-			surname = form.cleaned_data['surname']
-			age = form.cleaned_data['age']
-			country = form.cleaned_data['country']
-			program = form.cleaned_data['program']
-			language = form.cleaned_data['language']
-			degree = form.cleaned_data['degree']
-			score = form.cleaned_data['score']
-			print(Request)
-			print(type(Request))
-			phone = form.cleaned_data['phone']
-			additional = form.cleaned_data['additional']
-			requester = Request.objects.create(name=name, surname=surname, age=age, country=country, program=program, language=language, degree=degree, score=score, phone=phone, additional=additional)
-			print(name, phone, "Thing have came !!!")
-			messages.success(request, _(f"{requester.name}, Your message was successfully submitted, please wait our call !"))
-			telegram_bot_sendtext('NEW USER')
-			print("redirecting !!!")
-			return redirect(f'/') 
+		types = request.POST.get("type")
+		print(types)
+		if types == "free_consulting":
+			print("Language Certificate YES",request.POST.get("radio-group"))
+			print("IN FREE CONSULTING")
 		else:
-			form = RequestForm
-			print("There is an ERROR !!!")
-			return redirect('/')
+			print("IN MESSAGE")
+		# name = form.cleaned_data['name']
+		# surname = form.cleaned_data['surname']
+		# age = form.cleaned_data['age']
+		# country = form.cleaned_data['country']
+		# program = form.cleaned_data['program']
+		# language = form.cleaned_data['language']
+		# degree = form.cleaned_data['degree']
+		# score = form.cleaned_data['score']
+		# phone = form.cleaned_data['phone']
+		# additional = form.cleaned_data['additional']
+		# requester = Request.objects.create(name=name, surname=surname, age=age, country=country, program=program, language=language, degree=degree, score=score, phone=phone, additional=additional)
+		# messages.success(request, _(f"{requester.name}, Your message was successfully submitted, please wait our call !"))
+		return redirect(f'/') 
+
 		
 		
 
@@ -181,7 +179,10 @@ def country_filter(request):
 
 
 
-
+def get_message(request):
+	print("IN GET_MESSAGE FUNCTION ")
+	
+	return render(request, 'index.html')
 
 
 

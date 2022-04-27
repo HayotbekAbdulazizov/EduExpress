@@ -279,7 +279,9 @@ EduExpress Consulting
 <div class="modal-former" style="z-index: 9; ">
     <div class="modal-content">
         <button class="close-buttona" style="background-color: #fff; padding: 10px; "> <i class="fas fa-times "></i> </button>
-          <form action="#" id="contact-form" class="form">
+          <form action="" id="" class="" method="POST">
+            {% csrf_token %}
+            <input type="text" name="type" value="free_consulting" hidden>
             <div class="row">
               <h4 style="width: 100%; text-align: center;" > {% trans 'Get free Consultation' %} </h4>
               <div class="col-md-6">
@@ -289,18 +291,18 @@ EduExpress Consulting
 
               <div class="col-md-6">
                 <label for="name"> {% trans 'Phone number' %} </label>
-                <input type="text" class="form-control" name="phone" placeholder="Phone Number" value="+998" >
+                <input type="text" class="form-control" name="phone" placeholder="Phone Number" value="+">
               </div>
 
               <div class="col-md-6" style="display: flex; justify-content: center;  display: block;">
                 <label for=""> {% trans 'Do you have IELTS, TOPIC, TOEFL, CEFR ?' %} </label>
                 <div style="display: flex; justify-content: left;">
                 <p>
-                  <input type="radio" id="test2" name="radio-group">
+                  <input type="radio" id="test2" name="radio-group" value="Yes">
                   <label for="test2">{% trans 'Yes' %}</label>
                 </p>
                 <p style="margin-left: 30px;">
-                  <input type="radio" id="test3" name="radio-group">
+                  <input type="radio" id="test3" name="radio-group" value="No">
                   <label for="test3">{% trans 'No' %}</label>
                 </p> 
               </div>
@@ -366,7 +368,9 @@ EduExpress Consulting
         </div>
       </div>
       <div class="col-md-6">
-          <form action="#" id="contact-form" class="form">
+          <form action="/message/" id="" class="form" method="POST">
+            {% csrf_token %}
+            <input type="text" name="type" value="message" hidden>
             <div class="row">
               <div class="col-md-6">
                 <input type="text" class="form-control" name="first-name" placeholder="{% trans 'First Name' %}">
