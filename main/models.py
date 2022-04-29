@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.forms import DateTimeField, ImageField, SlugField
 from django.urls import reverse
@@ -48,7 +49,7 @@ class University(models.Model):
 
 
 
-# Product Model --None ++Request
+# Product Model --None ++ClientRequest
 class Program(models.Model):
     name = models.CharField('Name', max_length=200)
     class Meta:
@@ -59,7 +60,7 @@ class Program(models.Model):
         return f"{self.name}"
 
 
-# Languages TRModel --None ++Request
+# Languages TRModel --None ++ClientRequest
 class Language(models.Model):
     name = models.CharField('Name', max_length=100)
 
@@ -84,8 +85,8 @@ class Degree(models.Model):
 
 
 
-# Request Model --Languages,Program,University  ++ None
-class Request(models.Model):
+# ClientRequest Model --Languages,Program,University  ++ None
+class ClientRequest(models.Model):
     university = models.ForeignKey(University, on_delete=models.CASCADE, blank=True, null=True)
     name = models.CharField('Name', max_length=200)
     surname = models.CharField("Surname", max_length=200, blank=True)    
@@ -93,6 +94,7 @@ class Request(models.Model):
     country = models.CharField('Country', max_length=300, blank=True)
     program = models.ForeignKey(Program, related_name="requests", null=True, blank=True, on_delete=models.CASCADE)
     language = models.ForeignKey(Language, related_name="requests", null=True, blank=True, on_delete=models.CASCADE)
+    lang_certificate = models.BooleanField('Language Certificate', default=False, blank=True)
     degree = models.ForeignKey(Degree, on_delete=models.CASCADE, blank=True, null=True)
     score = models.FloatField('Score', blank=True, null=True,default=0 )
     phone = models.CharField('Phone Number', max_length=30)
@@ -100,8 +102,8 @@ class Request(models.Model):
     date = models.DateTimeField('Date', auto_now_add=True, blank=True)  
     
     class Meta:
-        verbose_name = "Request"
-        verbose_name_plural = "Requests"
+        verbose_name = "ClientRequest"
+        verbose_name_plural = "ClientRequest"
 
     def __str__(self):
         return self.name
@@ -113,12 +115,12 @@ class Request(models.Model):
 
 
 
-# Student class -- University,Language,Program,Request,Country
+# Student class -- University,Language,Program,ClientRequest,Country
 class Student(models.Model):
     university = models.ForeignKey(University, on_delete=models.CASCADE, null=True, blank=True)
     language = models.ForeignKey(Language, on_delete=models.CASCADE, null=True, blank=True)
     program = models.ForeignKey(Program, on_delete=models.CASCADE, null=True, blank=True)
-    request = models.ForeignKey(Request, on_delete=models.CASCADE, null=True, blank=True)
+    request = models.ForeignKey(ClientRequest, on_delete=models.CASCADE, null=True, blank=True)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField('Name', max_length=200, blank=True),
     image = models.ImageField('Student image', upload_to='student_images/'),

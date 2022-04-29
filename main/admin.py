@@ -1,6 +1,6 @@
 # from tkinter import Widget
 from django.contrib import admin
-from .models import Creator, Language, Post, University, Country,  Program, Degree
+from .models import Creator, Language, Post, University, Country,  Program, Degree, ClientRequest
 # Register your models here.
 
 
@@ -36,8 +36,8 @@ class DegreeAdmin(admin.ModelAdmin):
     list_display_links = ("name",  "id")
 
 
-class RequestAdmin(admin.ModelAdmin):
-    list_display = ('university', "name", "id")
+class ClientRequestAdmin(admin.ModelAdmin):
+    list_display = ('university', "name", "phone","id")
     list_display_links = ('university', "name",  "id")
 
 class PostAdmin(admin.ModelAdmin):
@@ -54,3 +54,4 @@ admin.site.register(Program,ProgramAdmin )
 admin.site.register(Language,LanguageAdmin )
 admin.site.register(Degree,DegreeAdmin )
 admin.site.register(Post,PostAdmin)
+admin.site.register(ClientRequest,ClientRequestAdmin)

@@ -1,5 +1,5 @@
 from traceback import print_tb
-from .models import *
+from .models import ClientRequest, University, Country, Post
 from django.views.generic import DetailView, TemplateView, View
 from django.shortcuts import redirect, render
 from django.utils.translation import gettext as _
@@ -21,32 +21,16 @@ class HomePageView(View):
 	def post(self, request):
 		types = request.POST.get("type")
 		print(types)
-		if types == "free_consulting":
-			print("Language Certificate YES",request.POST.get("radio-group"))
-			print("IN FREE CONSULTING")
-		else:
-			print("IN MESSAGE")
-		# name = form.cleaned_data['name']
-		# surname = form.cleaned_data['surname']
-		# age = form.cleaned_data['age']
-		# country = form.cleaned_data['country']
-		# program = form.cleaned_data['program']
-		# language = form.cleaned_data['language']
-		# degree = form.cleaned_data['degree']
-		# score = form.cleaned_data['score']
-		# phone = form.cleaned_data['phone']
-		# additional = form.cleaned_data['additional']
-		# requester = Request.objects.create(name=name, surname=surname, age=age, country=country, program=program, language=language, degree=degree, score=score, phone=phone, additional=additional)
-		# messages.success(request, _(f"{requester.name}, Your message was successfully submitted, please wait our call !"))
+		print("Language Certificate",request.POST.get("radio-group"))
+		print("IN FREE CONSULTING")
+		name = request.POST.get('name')
+		language_certificate = request.POST.get('language_certificate')
+		phone = request.POST.get('phone')
+		additional = request.POST.get('message')
+		client_request = ClientRequest.objects.create(name=name, phone=phone, lang_certificate=language_certificate, additional=additional)
+		messages.success(request, _(f"{client_request.name}, Your message was successfully submitted, please wait our call !"))
+		telegram_bot_sendtext(f"  ClientMessage  \n Name: {client_request.name} \n Lang Certificate :  {client_request.lang_certificate}  \n Phone: +{client_request.phone} \n Link: https://www.eduexpress.info/admin/main/request/{client_request.id}/change")
 		return redirect(f'/') 
-
-		
-		
-
-
-		# client_message = ClientMessage.objects.create( name=name, phone=phone, email=email, message=message)
-		# telegram_bot_sendtext(f"  ClientMessage  \n Name: {name} \n Email :  {email}  \n Phone: +{phone} \n Link: https://paddingpack.uz/admin/main/clientmessage/{client_message.id}/change")
-		# messages.success(request, _("Your message was successfully submitted, please wait our call !"))
 	
 
 
@@ -187,12 +171,3 @@ def get_message(request):
 
 
 
-
-
-
-	DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}

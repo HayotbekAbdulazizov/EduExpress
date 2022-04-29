@@ -1,5 +1,5 @@
 from modeltranslation.translator import translator, TranslationOptions
-from .models import Country, Creator, University, Program, Language, Degree, Request, Student, Post 
+from .models import Country, Creator, University, Program, Language, Degree, Student, Post, ClientRequest
 
 
 class UniversityTranslationOptions(TranslationOptions):

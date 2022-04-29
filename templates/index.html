@@ -9,7 +9,42 @@ EduExpress Consulting
 
 
 {% block content %}
+
+
+
+<style>
+  div.alert-success {
+   position: fixed;
+   top: 0;
+   left: 0;
+   background-color: #dff0d8;
+   color: green;
+   padding: 20px;
+  }
+  </style>
+  
+  
+  {% if messages %}	
+  <div class="text-center" id="alert__message" style=" display:flex; justify-content: center; ;align-items: center;">
+    <div class="alert alert-success" role="alert" style="z-index: 9999;width: auto;" auto-close="2000">
+      {% for msg in messages %} {{msg}} {% endfor %}  <!--Your message was successfully submitted, please wait our call ! -->
+    </div>
+  </div>
+  {% endif %}
     
+  
+   <script>
+  setTimeout(() => {
+    const box = document.getElementById('alert__message');
+  
+    box.style.display = 'none';
+  
+  }, 4000); 
+  
+     </script>
+     
+
+
 <!-- SLider BAnner-->
 <section class="banner" >
   <div class="banner-slider swiper-container"  style="height: 100%;">
@@ -298,11 +333,11 @@ EduExpress Consulting
                 <label for=""> {% trans 'Do you have IELTS, TOPIC, TOEFL, CEFR ?' %} </label>
                 <div style="display: flex; justify-content: left;">
                 <p>
-                  <input type="radio" id="test2" name="radio-group" value="Yes">
+                  <input type="radio" id="test2" name="language_certificate" value="True">
                   <label for="test2">{% trans 'Yes' %}</label>
                 </p>
                 <p style="margin-left: 30px;">
-                  <input type="radio" id="test3" name="radio-group" value="No">
+                  <input type="radio" id="test3" name="language_certificate" value="False">
                   <label for="test3">{% trans 'No' %}</label>
                 </p> 
               </div>
