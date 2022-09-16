@@ -1,3 +1,1 @@
-# EduExpress
- EE
-Hs
+# EduExpress Consulting 
