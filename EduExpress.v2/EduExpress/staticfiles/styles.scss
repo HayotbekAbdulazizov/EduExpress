@@ -1,0 +1,43 @@
+.container{
+    padding:50px;
+  }
+  .slideControls, .slideControls2{
+    position: absolute;
+      width: 100%;
+      top: 47px;
+    left:0;
+    i{
+      font-size:30px;
+    }
+    .slideNext{
+      right:0;
+      position:absolute;
+      cursor:pointer;
+    }
+    .slidePrev{
+      left:0;
+      position:absolute;
+      cursor:pointer;
+    }
+  }
+  .carousel{
+    padding:15px 25px;
+    position:relative;
+    img { width:100%; }
+    .slide{padding:20px;
+      text-align:center;
+      
+      height:50px;
+    }
+    div{
+      
+      &.one{
+        background:#ac5253;
+      }
+      &.two{
+        background:#6d292a;
+      }
+    }
+  }
+  
+  

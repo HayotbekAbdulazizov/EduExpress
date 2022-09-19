@@ -1,0 +1,343 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+    <title>
+        {% block title %}  {% endblock title %}
+    </title>
+  <link rel="apple-touch-icon" href="/static/title_logo.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/static/title_logo.png" sizes="280x280" type="image/png">
+
+  <meta name="theme-color" content="#ffffff">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="/static/css/fontawesome-free-5.15.4-web/css/all.css">
+  <link rel="stylesheet" href="/static/css/fontawesome-free-5.15.4-web/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+<div class="wrapper"><!-- start #wrap -->
+<header class="header" id="home" style="background-color:white;z-index:9999;width:100vw;">
+	<div class="container-fluid container-fluid--custom">
+		<div class="row">
+			<div class="col-md-12" style="height: 80%; padding: 5px 15px 10px 15px ;">
+
+				<div class="header_bottom" style="height: 100%; padding: 0%;">
+					<div class="row row--flex row--flex-middle row--flex-wrap">
+						<div class="col-xs-12 col-md-3">
+							<div class="logo" style="margin: 0px;">
+								<a href="{% url 'main:home' %}" style="overflow: hidden;">
+									<img src="/static/main_logo.png" class="header__logo" alt="" style="">
+								</a>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-md-9 text-left" style="">
+							 <button type="button" class="btn btn--menu-mobile js-mobile-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+
+							<nav class="menu" style="align-items: center; padding-top: 10px;">
+								<ul class="menu_list">
+									<li class="menu_item  menu_item-has-children">
+										<a href="#home"> {% trans 'Home' %} </a>
+									</li>
+									<li class="menu_item  menu_item-has-children">
+										<a href="#about"> {% trans 'About us' %} </a>
+									</li>
+									<li class="menu_item menu_item-has-children">
+										<a href="#universities">{% trans 'Universities' %}</a>
+									</li>
+									<li class="menu_item menu_item-has-children">
+										<a href="#news">{% trans 'News' %}</a>
+									</li>
+									<li class="menu_item menu_item-has-children">
+										<a href="#contact">{% trans 'Contact' %}</a>
+									</li>
+								</ul>
+
+
+								<ul class="social hidden-md hidden-lg">
+                  <form action="{% url 'set_language' %}" method="post">
+                  <li class="menu_item menu_item-has-children hidden-md hidden-lg" style="display: flex;">
+                  {% csrf_token %}
+                  <input name="next" type="hidden" value="{{redirect_to}}" />
+
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+
+                    <a href="/{{ language.code }}/" onclick="this.form.submit()" style="display: flex; align-items: center;  "> <div class="image__outerlang" style="border-radius: 50px; overflow: hidden;"> <img src="/static/{{language.code}}.svg" alt="" style="width: 35px; "> </div><span style="text-transform: uppercase; padding-left: 5px;">{{ language.code }}</span> </a>
+                    {% endfor %}
+                </li>
+              </form>
+                </ul>
+                <ul class="contacts hidden-md hidden-lg">
+                  <li class="contacts_item"><i class="fi fi-placeholder"></i>{% trans 'Tashkent, Mirzo Ulugbek metro, destination UzbekInvest Service' %}</li>
+                  <li class="contacts_item"><i class="fi fi-clock-circular-outline"></i> {% trans 'Mon - Sat 9.00 - 18.00. Sunday CLOSED' %}</li>
+                  <li class="contacts_item"><i class="fi fi-phone-receiver"></i> +998 99 108 7451 ,  +82 10 6785 3883 </li>
+                  <li class="contacts_item"><i class="fi fi-envelope"></i>info@eduexpress.info</li>
+                </ul>
+							</nav>
+
+							<div class="socials hidden-xs hidden-sm">
+								<!-- <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-facebook-logo"></i>Facebook</a></li> -->
+								<!-- <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-twitter"></i>Twitter</a></li> -->
+								<!-- <li class="socials_item"><a href="#" class="socials_link"><i class="fi fi-google-plus"></i>Google Plus</a></li> -->
+                <form class="socials_item" action="{% url 'set_language' %}" method="post">
+                  {% csrf_token %}
+                  {% get_current_language as LANGUAGE_CODE %}
+                  {% get_available_languages as LANGUAGES %}
+                  {% get_language_info_list for LANGUAGES as languages %}
+                  <input name="next" type="hidden" value="{{redirect_to}}" />
+                  <div id="dropdown__lang" class="dropdown__lang">
+                    <a class="dropbtn__lang"  onclick="this.form.submit()" style="display: flex; align-items: center;"> <img src="/static/{{LANGUAGE_CODE}}.svg" alt="" style="width: 35px; "> <span style="color: black; padding-left: 10px; z-index: 999; text-transform: uppercase; font-size: 18px; font-weight: bolder;">{{ LANGUAGE_CODE }}</span> </a>
+                    <div class="dropdown-content__lang" style="display: none;" id="dropdown-content__lang">
+                      {% for language in languages %}
+                      <a href="/{{ language.code }}/" onclick="this.form.submit()" style="display: flex; align-items: center;  "><img src="/static/{{language.code}}.svg" alt="" style="width: 35px; "> <span style="color: black; padding-left: 10px; z-index: 999; text-transform: uppercase; font-size: 18px; font-weight: bolder;">{{ language.code }}</span> </a>
+                      {% endfor %}
+                    </div>
+                  </div>
+
+              </form>
+
+                </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+{% block content %}
+
+{% endblock content %}
+
+
+
+
+<!-- Site footer -->
+<footer class="footer-section">
+    <div class="container pt-5" >
+        <div class="footer-content pt-5 pb-5">
+            <div class="row" style="padding-top: 20px; padding-bottom: 20px;">
+                <div class=" social3 col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo" style="overflow: hidden; width: 230px; height: 150px; margin: 0%; display: flex; align-items: center; padding-left: 10px;">
+                            <a href="{% url 'main:home' %}" ><img src="/static/footerlogo3.png" style="position: relative; transform: scale(1.2);" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="footer-text " style="padding-left: 0px;">
+                          <!-- <a class="font-dark" style="padding: 0px  0 0 0;color: #878787; ">Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                            elit,Lorem ipsum dolor sit amet.</a> -->
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class=" social3 col-xl-4 col-lg-4 col-md-6">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3 >{% trans 'Useful Links' %}</h3>
+                        </div>
+                    <div class="dflex" style="display: flex;">
+                        <ul>
+                            <li><a href="#news">{% trans 'Latest News' %}</a></li>
+                            <li><a href="#contact__social_media">{% trans 'Social Media' %}</a></li>
+                            <li><a href="#footer">{% trans 'Contact' %}</a></li>
+                        </ul>
+
+                        <ul>
+                          <li><a href="#home"> {% trans 'Home Page' %} </a></li>
+                          <li><a href="#about">{% trans 'About us' %}</a></li>
+                          <li><a href="#universities">{% trans 'Universities' %}</a></li>
+                      </ul>
+                    </div>
+                    </div>
+                </div>
+                <div class=" social3 col-xl-4 col-lg-4 col-md-6">
+                    <div class="footer-widget ">
+                        <div class="footer-widget-heading">
+                            <h3>{% trans 'Subscribe' %}</h3>
+                        </div>
+                        <div class="subscribe-form">
+                          <div class="footer-social-icon">
+                            <a href="https://www.youtube.com/channel/UCyEtsRSiuNuVmGvJVBhPxPg"><i class="fab fa-youtube youtube-bg"></i></a>
+                            <a href="https://www.instagram.com/eduexpress_consulting/"><i class="fab fa-instagram instagram-bg"></i></a>
+                            <a href="#"><i class="fab fa-tiktok tiktok-bg"></i></a>
+                            <a href="https://t.me/EduExpress_Consulting"><i class="fab fa-telegram-plane telegram-bg"></i></a>
+                        </div>
+                        <a href="https://www.instagram.com/hayotbekabdulazizov05/" class="creator font-white" style=" font-size:1.7rem; cursor: pointer; ">
+                          {% trans 'Developed by' %} <img src="/static/mylogo2.png" style="width: 70px;"  alt="">
+						</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area" style="background-color: #081b2c;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-sm-12 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2019, EduExpress All Rights Reserved | Web-Site is developer by <a href="https://www.instagram.com/hayotbekabdulazizov05/"> Hayotbek Abdulazizov </a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+
+
+
+
+<style>
+.dropdown__lang {position: relative;display: inline-block;}
+.dropdown__lang .dropdown-content__lang {display: none;position: absolute;background-color: #f9f9f9;min-width: 160px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);z-index: 99;}
+.dropdown__lang .dropdown-content__lang a {color: red;padding: 12px 16px;text-decoration: none;display: block;}
+.dropdown__lang .dropdown-content__lang a:hover {background-color: #f1f1f1}
+.header__logo{transform: scale(0.9);}
+@media (max-width: 543px) {
+  .footer-section{height:85vh;}
+  .social3{height: 24vh;}
+  .header__logo{transform: scale(1.2);}
+}
+
+ .footer-widget-heading h3::before {
+/* content: ""; */
+/* position: absolute; */
+/* left: 0; */
+/* bottom: 110px; */
+height: 2px;
+width: 50px;
+background: #ff5e14;
+display: none;
+}
+
+
+
+
+.dblock{display: block;}
+.dinline{display:inline ;}
+.dnone{display: none;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+dropdown__lang = document.getElementById("dropdown__lang")
+function LanguageDropdown(){
+  console.log("Dropdown Lang")
+  // document.getElementById("dropdown-content__lang").style.display.toggle("block")
+  console.log(document.getElementById("dropdown-content__lang").style.display)
+
+  if(document.getElementById("dropdown-content__lang").style.display === 'none'){
+    document.getElementById("dropdown-content__lang").style.display = 'block'
+  }else{
+    document.getElementById("dropdown-content__lang").style.display = 'none'
+  }
+
+  console.log(document.getElementById("dropdown-content__lang").style.display)
+
+
+}
+dropdown__lang.addEventListener("click", LanguageDropdown)
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- inject:js -->
+  <script src="/static/js/vendor/jquery.js"></script>
+  <script src="/static/js/vendor/Chart.min.js"></script>
+  <script src="/static/js/vendor/bootstrap.min.js"></script>
+  <script src="/static/js/vendor/jquery.validate.min.js"></script>
+  <script src="/static/js/vendor/masonry.pkgd.min.js"></script>
+  <script src="/static/js/vendor/mixitup.min.js"></script>
+  <script src="/static/js/vendor/swiper.jquery.min.js"></script>
+  <!-- endinject -->
+
+  <script src="/static/js/main.js"></script>
+  <!-- <script>
+  function CountryFilter(){
+    country = document.getElementById("country_filter").value
+    console.log(country)
+  }
+  </script> -->
+
+</body>
+  </html>
+

@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-02 19:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: main/views.py:153
+#, fuzzy, python-brace-format
+#| msgid " Your message has been sent, please wait our call !"
+msgid "{name}, Your message has been sent, please wait our call !"
+msgstr ""
+"Ваше сообщение было успешно отправлено, пожалуйста, дождитесь нашего звонка"
+
+#: templates/index.html:57
+msgid " Professional Consulting For Your Educational Success"
+msgstr "Профессиональный консалтинг для вашего успеха в образовании"
+
+#: templates/index.html:59
+msgid ""
+"Being a professional in Education Consulting for more than four years we use "
+"our experience at its fullest for your educational success"
+msgstr ""
+"Будучи профессионалом в области образовательного консалтинга более четырех "
+"лет, мы используем наш опыт в полной мере для вашего успеха в обучении."
+
+#: templates/index.html:63 templates/index.html:82 templates/index.html:103
+msgid "Our Company"
+msgstr "Наша компания"
+
+#: templates/index.html:64 templates/index.html:83 templates/index.html:104
+msgid "Contact Us"
+msgstr "Связаться с нами"
+
+#: templates/index.html:77
+#, fuzzy, python-format
+#| msgid "Get your 100%% scholarship In Top Universities ."
+msgid "Get your 100%% scholarship In Top Universities ."
+msgstr "Получите 100% стипендию в лучших университетах."
+
+#: templates/index.html:78
+msgid ""
+"   Our company offers a variety of scholarship programs for students in more "
+"than 18 countries."
+msgstr ""
+"Наша компания предлагает разнообразные стипендиальные программы для "
+"студентов более чем в 18 странах мира."
+
+#: templates/index.html:97
+msgid "Start your new life at your Dream University"
+msgstr "Начните новую жизнь в университете своей мечты"
+
+#: templates/index.html:99
+msgid "We only offer top universities for our students."
+msgstr "Мы предлагаем только лучшие университеты для наших студентов."
+
+#: templates/index.html:129
+msgid "About Our Company"
+msgstr "О нашей компании"
+
+#: templates/index.html:138
+msgid "Why EduExpress ?"
+msgstr "Почему EduExpress?"
+
+#: templates/index.html:139
+msgid ""
+" Edu Express Consulting is the result of many years of work of our employees "
+"in the field of education abroad. Our company is one of the most trusted "
+"agencies that helps all international students to study in partnership with "
+"Top Universities in Uzbekistan and South Korea under agreements with more "
+"than 18 countries around the world. All employees of our company are foreign "
+"education specialists who have studied abroad and personally visited many "
+"educational institutions. We help and care for our students so that they "
+"don’t have to deal with all sorts of problems while fully immersed in "
+"reading.  "
+msgstr ""
+"Edu Express Consulting – это результат многолетней работы наших сотрудников "
+"в сфере образования за рубежом. Наша компания является одним из самых "
+"надежных агентств, которое помогает всем иностранным студентам учиться в "
+"партнерстве с ведущими университетами Узбекистана и Южной Кореи по "
+"соглашениям с более чем 18 странами мира. Все сотрудники нашей компании "
+"являются зарубежными специалистами в области образования, которые прошли "
+"обучение за границей и лично побывали во многих учебных заведениях. Мы "
+"помогаем и заботимся о наших учениках, чтобы им не приходилось сталкиваться "
+"со всевозможными проблемами, полностью погружаясь в чтение."
+
+#: templates/index.html:159
+msgid "Search By Country"
+msgstr "Поиск по стране"
+
+#: templates/index.html:189
+msgid "Our Partners"
+msgstr "Наши партнеры"
+
+#: templates/index.html:190
+msgid "The Most Popular Universities"
+msgstr "Самые популярные университеты"
+
+#: templates/index.html:226
+msgid "View All"
+msgstr "Посмотреть все"
+
+#: templates/index.html:226 templates/university_detail.html:45
+msgid "Free consultation"
+msgstr "Бесплатная консультация"
+
+#: templates/index.html:258
+msgid "news"
+msgstr "Новости"
+
+#: templates/index.html:259
+msgid "Our Last News"
+msgstr "Наши последние новости"
+
+#: templates/index.html:325 templates/university_detail.html:97
+msgid "Get free Consultation"
+msgstr "Получить бесплатную консультацию"
+
+#: templates/index.html:327 templates/university_detail.html:99
+#, fuzzy
+#| msgid "Your name"
+msgid "Your name "
+msgstr "Ваша имя"
+
+#: templates/index.html:332 templates/university_detail.html:104
+msgid "Phone number"
+msgstr "Телефонный номер"
+
+#: templates/index.html:337 templates/university_detail.html:109
+msgid "Do you have IELTS, TOPIC, TOEFL, CEFR ?"
+msgstr "У тебя есть IELTS, TOPIC, TOEFL, CEFR ?"
+
+#: templates/index.html:341 templates/university_detail.html:113
+msgid "Yes"
+msgstr "Да"
+
+#: templates/index.html:345 templates/university_detail.html:117
+msgid "No"
+msgstr "Нет"
+
+#: templates/index.html:354 templates/index.html:428
+#: templates/university_detail.html:126
+msgid "Send"
+msgstr "Отправлять"
+
+#: templates/index.html:403
+msgid "Feedback form"
+msgstr "Форма комментариев"
+
+#: templates/index.html:413
+msgid "First Name"
+msgstr "Имя"
+
+#: templates/index.html:417
+msgid "Email"
+msgstr "Эл. адрес"
+
+#: templates/index.html:421
+msgid "Phone Number"
+msgstr "Телефонный номер"
+
+#: templates/index.html:425
+msgid "Your Message"
+msgstr "Ваша Сообщение"
+
+#: templates/index.html:500 templates/wrapper.html:94
+msgid "Tashkent, Mirzo Ulugbek metro, destination UzbekInvest Service"
+msgstr "Ташкент, метро Мирзо Улугбека, пункт назначения УзбекИнвест Сервис"
+
+#: templates/post_detail.html:47
+#, fuzzy
+#| msgid "Universities"
+msgid "Similar Posts"
+msgstr "Похожие новости"
+
+#: templates/university_detail.html:52
+#, fuzzy
+#| msgid "Universities"
+msgid "Similar Universities"
+msgstr "Университеты"
+
+#: templates/wrapper.html:60
+msgid "Home"
+msgstr "Главный"
+
+#: templates/wrapper.html:63 templates/wrapper.html:172
+msgid "About us"
+msgstr "О нас"
+
+#: templates/wrapper.html:66 templates/wrapper.html:173
+msgid "Universities"
+msgstr "Университеты"
+
+#: templates/wrapper.html:69
+msgid "News"
+msgstr "Новости"
+
+#: templates/wrapper.html:72 templates/wrapper.html:167
+msgid "Contact"
+msgstr "Контакт"
+
+#: templates/wrapper.html:95
+msgid "Mon - Sat 9.00 - 18.00. Sunday CLOSED"
+msgstr "Пн - Сб 9.00 - 18.00. Воскресенье ЗАКРЫТО"
+
+#: templates/wrapper.html:161
+msgid "Useful Links"
+msgstr "Полезные ссылки"
+
+#: templates/wrapper.html:165
+msgid "Latest News"
+msgstr "Последние новости"
+
+#: templates/wrapper.html:166
+msgid "Social Media"
+msgstr "Социальные сети"
+
+#: templates/wrapper.html:171
+msgid "Home Page"
+msgstr "Главный"
+
+#: templates/wrapper.html:181
+msgid "Subscribe"
+msgstr "Подписывайся"
+
+#: templates/wrapper.html:191
+#, fuzzy
+#| msgid "Developer by"
+msgid "Developed by"
+msgstr "Разработано в "

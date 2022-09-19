@@ -1,0 +1,177 @@
+{% extends 'wrapper.html' %}
+{% load i18n %}
+
+{% block content %}
+
+
+
+<!-- main section -->
+<main class="content">
+
+
+
+  <section class="section-head section-head--partners" style="height: 50vh; background-image: url({{object.image.url}});background-size: cover;background-position: center; overflow: hidden; box-sizing: border-box;padding: 0%;">
+    <div class="overlay" style="width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;background-color: rgba(0,0,0,0.5);"></div>
+    <div class="text" style="position: absolute; bottom: 43%;left: 5%;">
+      <p class="detail__url" style="color: lightgoldenrodyellow; font-weight: bolder;">Home   /   University  /  {{object.name}}</p>
+      <h3 class="title__text" >  {{ object.name }} </h3>
+      <div class="bottom" style="display: flex; ">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g opacity="0.5">
+            <path d="M10 11.6667C11.3807 11.6667 12.5 10.5475 12.5 9.16675C12.5 7.78604 11.3807 6.66675 10 6.66675C8.61929 6.66675 7.5 7.78604 7.5 9.16675C7.5 10.5475 8.61929 11.6667 10 11.6667Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14.7142 13.8808L11.1783 17.4167C10.8658 17.7289 10.4422 17.9042 10.0004 17.9042C9.55869 17.9042 9.13503 17.7289 8.82251 17.4167L5.28585 13.8808C4.35353 12.9485 3.71863 11.7606 3.46142 10.4674C3.20421 9.17419 3.33625 7.83376 3.84085 6.61561C4.34544 5.39745 5.19993 4.35628 6.29625 3.62376C7.39257 2.89123 8.68149 2.50024 10 2.50024C11.3185 2.50024 12.6075 2.89123 13.7038 3.62376C14.8001 4.35628 15.6546 5.39745 16.1592 6.61561C16.6638 7.83376 16.7958 9.17419 16.5386 10.4674C16.2814 11.7606 15.6465 12.9485 14.7142 13.8808V13.8808Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>  <span style="color: whitesmoke; font-weight: bold; font-size: 1.4rem; margin-left: 5px;"> {{object.location}} </span>
+
+        <span style="color: whitesmoke; font-size: 1.4rem; font-weight: bold; margin-left: 45px;"> {{object.rating}} </span>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section-content" style="padding-top: 30px;">
+    <div class="container-fluid container-fluid--custom">
+      <div class="row">
+        <section class="col-md-8 pt-1" >
+          <div class="image__outer" style=" overflow: hidden; border-radius: 18px;" >
+            <!--<img src="https://i.pinimg.com/originals/7e/08/68/7e086832301b75cc3681a4ff18fd9575.jpg" alt="" style="border-radius:18px">-->
+            <!-- <div class="bottom__text" style="position: absolute; z-index: 999; bottom: 100px;left: 100px;"> -->
+              <!-- Korea -->
+              <!-- </div> -->
+            </div>
+            <br>
+
+            {{ object.description|safe }}
+            <button class="button__view_all trigger" style=""> {% trans 'Free consultation' %} </button>
+
+
+          </section>
+
+
+            <aside class="col-md-4 text-center" style="padding-top: 30px;">
+              <h4 style="color: #2a2d49;"> {% trans 'Similar Universities' %} </h4>
+              {% for univ in similar_universities %}
+              <div class="col-sm-12 university pt-2" style="position: relative;width: 100%;   overflow: hidden;" >
+                  <a href="{% url 'main:university_detail' univ.slug %}"  style=" ">
+                    <div class="university__inne" style=" box-shadow: inset 0 -40px 70px -0px #0e304b;border-radius: 15px;">
+                      <div class="img__oute" style="height: 33vh;overflow: hidden;">
+                      <img src="{{univ.image.url}}" alt="airplane" style=" position: relative;z-index: -4;border-radius: 15px; object-fit: cover; width: 100%; height: 100%;">
+                    </div>
+                    <h4 style=" color: white;  position: absolute; bottom: 34px; left: 30px;"> {{univ.name}}</h4>
+                    <!-- <div class="bottom" style="position: absolute; bottom: 15px; left: 7%;padding-left: 10px; display: flex;align-items: center;" > -->
+                      <div class="bottom__locations" style="position: absolute; bottom: 13px; display: flex; justify-content: left; left: 28px; ">
+                        <svg width="19" height="19" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g opacity="0.5">
+                            <path d="M10 11.6667C11.3807 11.6667 12.5 10.5475 12.5 9.16675C12.5 7.78604 11.3807 6.66675 10 6.66675C8.61929 6.66675 7.5 7.78604 7.5 9.16675C7.5 10.5475 8.61929 11.6667 10 11.6667Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.7142 13.8808L11.1783 17.4167C10.8658 17.7289 10.4422 17.9042 10.0004 17.9042C9.55869 17.9042 9.13503 17.7289 8.82251 17.4167L5.28585 13.8808C4.35353 12.9485 3.71863 11.7606 3.46142 10.4674C3.20421 9.17419 3.33625 7.83376 3.84085 6.61561C4.34544 5.39745 5.19993 4.35628 6.29625 3.62376C7.39257 2.89123 8.68149 2.50024 10 2.50024C11.3185 2.50024 12.6075 2.89123 13.7038 3.62376C14.8001 4.35628 15.6546 5.39745 16.1592 6.61561C16.6638 7.83376 16.7958 9.17419 16.5386 10.4674C16.2814 11.7606 15.6465 12.9485 14.7142 13.8808V13.8808Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                            </svg>
+                            <span style=" color: whitesmoke; font-weight: 700; opacity: 0.8; "> {{univ.country.name}} </span>
+                          </div>
+                          <!-- </div> -->
+                    </div>
+                  </a>
+                </div>
+              {% endfor %}
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+
+
+
+
+
+
+
+<div class="modal-former" style="z-index: 9; ">
+    <div class="modal-content">
+        <button class="close-buttona" style="background-color: #fff; padding: 10px; "> <i class="fas fa-times "></i> </button>
+          <form action="" id="" class="" method="POST">
+            {% csrf_token %}
+            <input type="text" name="univ_id" value="{{object.id}}" hidden>
+            <div class="row">
+              <h4 style="width: 100%; text-align: center;" > {% trans 'Get free Consultation' %} </h4>
+              <div class="col-md-6">
+                <label for="name"> {% trans 'Your name ' %}</label>
+                <input type="text" class="form-control" name="name" required=true>
+              </div>
+
+              <div class="col-md-6">
+                <label for="name"> {% trans 'Phone number' %} </label>
+                <input type="text" class="form-control" name="phone" placeholder="Phone Number" value="+" required=true>
+              </div>
+
+              <div class="col-md-6" style="display: flex; justify-content: center;  display: block;">
+                <label for=""> {% trans 'Do you have IELTS, TOPIC, TOEFL, CEFR ?' %} </label>
+                <div style="display: flex; justify-content: left;">
+                <p>
+                  <input type="radio" id="test2" name="language_certificate" value="True">
+                  <label for="test2">{% trans 'Yes' %}</label>
+                </p>
+                <p style="margin-left: 30px;">
+                  <input type="radio" id="test3" name="language_certificate" value="False">
+                  <label for="test3">{% trans 'No' %}</label>
+                </p>
+              </div>
+              </div>
+
+              <div class="col-md-12">
+                <textarea rows="8" class="form-control" name="message" placeholder="Your Message" ></textarea>
+              </div>
+              <div class="col-md-12 text-right text-center">
+                <center> <button class="button__view_all" style=""> {% trans 'Send' %} </button> </center>
+                <div id="progress" style="position: absolute; bottom: 0; display: none; ">msg</div>
+              </div>
+
+            </div>
+          </form>
+          <!-- <form action="#">
+
+          </form> -->
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<a href="#" class="back-to-top" title="Back to top"></a>
+</div>
+
+
+
+<script>
+
+
+    var modal = document.querySelector(".modal-former");
+var trigger = document.querySelector(".trigger");
+var closeButton = document.querySelector(".close-buttona");
+const body = document.querySelector("body");
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+    body.classList.toggle("overflow__hidden");
+}
+
+function windowOnClick(event) {
+  body.style.overflow = " "
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+
+
+</script>
+{% endblock content %}
